@@ -1,0 +1,27 @@
+#ignore the solution (.sln)
+*.sln
+
+#ignore the Visual studio temp something (.vs folder)
+.vs/
+
+#ignore the logfiles & txtfiles
+*.log
+*.txt
+
+#ignore the portable version (.pdb)
+*.pdb
+
+#ignore packages
+packages
+
+#ignore ini files (.ini)
+#*.ini
+
+#ignore Release
+LINDRA - Market/bin/Release/
+MarketUpdater/bin/Release/
+MarketOffsets/bin/Release/
+
+LINDRA - Market/obj/Release/
+MarketUpdater/obj/Release/
+MarketOffsets/obj/Release/
