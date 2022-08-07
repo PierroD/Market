@@ -140,6 +140,7 @@
             this.buttonFeed.Name = "buttonFeed";
             this.buttonFeed.Size = new System.Drawing.Size(40, 40);
             this.buttonFeed.TabIndex = 2;
+            this.buttonFeed.Visible = false;
             this.buttonFeed.Click += new System.EventHandler(this.buttons_SideBar_Click);
             // 
             // buttonDisable

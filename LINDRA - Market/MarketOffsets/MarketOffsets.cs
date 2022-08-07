@@ -20,7 +20,7 @@ namespace MarketOffsets
             {
                 if (new Trainer().Process_Handle(game))
                 {
-                    CallofDuty = Type.GetType("CODEXOffsets.Offsets" + "." + game);
+                    CallofDuty = Type.GetType("MarketOffsets.Offsets" + "." + game);
                     gameName = game;
                     return true;
                 }
