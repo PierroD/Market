@@ -34,7 +34,7 @@ namespace LINDRA___Market.form.Views
         private void trackbarFps_ValueChanged(object sender, EventArgs e)
         {
             labelFpsValue.Text = trackbarFps.Value.ToString();
-            fps_settings.bar_fov = trackbarFps.Value;
+            fps_settings.bar_fps = trackbarFps.Value;
         }
 
         private void comboBoxSpecularMap_SelectedIndexChanged(object sender, EventArgs e)
