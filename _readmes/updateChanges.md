@@ -1,3 +1,8 @@
+### v2.0.1
+
+- Minor fixes
+- (disable feed color changer due to memory leak bug)
+
 ### v2.0 First release
 
 - Market
