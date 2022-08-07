@@ -10,7 +10,7 @@ namespace MarketOffsets.Offsets
     internal class iw5mp : IFovAndFps, IVisuals, IDisable, IConsole
     {
         public int dvar { get { return 0xC; } }
-        public int cg_fov { get { return 0x5FC091C; } }
+        public int cg_fov { get { return 0xB0C738; } }
         public int com_maxfps { get { return 0x1CF0B84; } }
 
         public int r_lightMap { get { return 0x5FC07C8; } }
