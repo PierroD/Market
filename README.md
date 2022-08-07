@@ -16,7 +16,7 @@ Call of Duty FPS unlocker Market, is the latest version of my FPS Unlocker, if y
 
 # Installation guide
 
-- [Download the lastest version](https://raw.githubusercontent.com/PierroD/Market/main/_updates/Market%20v1.0.zip) - (check if some updates are needed)
+- [Download the lastest version](https://raw.githubusercontent.com/PierroD/Market/main/_updates/Market%20v2.0.1.zip) - (check if some updates are needed)
 - Unzip the archive somehere on your computer
 - Start `LINDRA - Market.exe`
 - Enjoy :smiley:
