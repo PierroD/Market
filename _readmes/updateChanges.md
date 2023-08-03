@@ -1,3 +1,6 @@
+### v2.0.2
+- Update offsets after 2023 update (v1.2.211 v2)
+
 ### v2.0.1
 
 - Minor fixes
