@@ -31,6 +31,6 @@ If an update is needed you will see the following buttons :
 If you want to submit a new idea or you faced a bug :bug:, feel free to create a new issue by clicking on the `Issues` tab in the github repo.
 
 # Creator :
-Coder & Designer :
+Dev & Designer :
  - Pierre DUVEAU aka LINDRA
 
