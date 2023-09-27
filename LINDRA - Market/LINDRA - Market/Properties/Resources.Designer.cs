@@ -73,6 +73,16 @@ namespace LINDRA___Market.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap align_left_on_bo1 {
+            get {
+                object obj = ResourceManager.GetObject("align-left_on_bo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap align_left_on_mw2 {
             get {
                 object obj = ResourceManager.GetObject("align-left_on_mw2", resourceCulture);
@@ -93,9 +103,39 @@ namespace LINDRA___Market.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bo1 {
+            get {
+                object obj = ResourceManager.GetObject("bo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cod4 {
+            get {
+                object obj = ResourceManager.GetObject("cod4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eye_off {
             get {
                 object obj = ResourceManager.GetObject("eye_off", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap eye_on_bo1 {
+            get {
+                object obj = ResourceManager.GetObject("eye_on_bo1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,6 +203,16 @@ namespace LINDRA___Market.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap play_bo1 {
+            get {
+                object obj = ResourceManager.GetObject("play_bo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap play_mw2 {
             get {
                 object obj = ResourceManager.GetObject("play_mw2", resourceCulture);
@@ -213,6 +263,16 @@ namespace LINDRA___Market.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sliders_on_bo1 {
+            get {
+                object obj = ResourceManager.GetObject("sliders_on_bo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sliders_on_mw2 {
             get {
                 object obj = ResourceManager.GetObject("sliders_on_mw2", resourceCulture);
@@ -256,6 +316,16 @@ namespace LINDRA___Market.Properties {
         internal static System.Drawing.Bitmap video_off {
             get {
                 object obj = ResourceManager.GetObject("video_off", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap video_on_bo1 {
+            get {
+                object obj = ResourceManager.GetObject("video_on_bo1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

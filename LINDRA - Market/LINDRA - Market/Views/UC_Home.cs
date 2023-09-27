@@ -32,12 +32,18 @@ namespace LINDRA___Market.Views
                 panelMain.BackColor = FormColors.backgroundPrimaryColor;
                 panelContainerMW2.BackColor = FormColors.backgroundPrimaryColor;
                 panelContainerMW3.BackColor = FormColors.backgroundPrimaryColor;
+                panelContainerBO1.BackColor = FormColors.backgroundPrimaryColor;
+                panelContainerCOD4.BackColor = FormColors.backgroundPrimaryColor;
                 panelBottomMW2.BackColor = FormColors.backgroundSecondaryColor;
                 panelBottomMW3.BackColor = FormColors.backgroundSecondaryColor;
+                panelBottomBO1.BackColor = FormColors.backgroundSecondaryColor;
+                panelBottomCOD4.BackColor = FormColors.backgroundSecondaryColor;
                 labelFpsUnlocker.ForeColor = FormColors.backgroundSecondaryColor;
                 separator.FillColor = FormColors.backgroundSecondaryColor;
                 labelTitleMW2.ForeColor = FormColors.backgroundPrimaryColor;
                 labelTitleMW3.ForeColor = FormColors.backgroundPrimaryColor;
+                labelTitleBO1.ForeColor = FormColors.backgroundPrimaryColor;
+                labelTitleCOD4.ForeColor = FormColors.backgroundPrimaryColor;
                 Thread.Sleep(100);
             }
         }
@@ -77,5 +83,25 @@ namespace LINDRA___Market.Views
                 form.Show();
             }
          }
+
+        private void buttonLaunchBO1_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<fps_unlocker>().Count() <= 0)
+            {
+                fps_unlocker form = new fps_unlocker((this.Parent.Parent as Form), "bo1");
+                FormColors.gameColor = Color.FromArgb(69, 76, 214);
+                form.Show();
+            }
+        }
+
+        private void buttonLaunchCOD4_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<fps_unlocker>().Count() <= 0)
+            {
+                fps_unlocker form = new fps_unlocker((this.Parent.Parent as Form), "cod4");
+                FormColors.gameColor = Color.FromArgb(221, 164, 72);
+                form.Show();
+            }
+        }
     }
 }

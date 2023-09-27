@@ -47,6 +47,8 @@ namespace LINDRA___Market
                 buttonClose.IconColor = FormColors.backgroundPrimaryColor;
                 labelTitle.ForeColor = FormColors.backgroundSecondaryColor;
                 labelSignature.ForeColor = FormColors.backgroundSecondaryColor;
+              /*  scrollBarPanel.FillColor = FormColors.backgroundSecondaryColor;
+                scrollBarPanel.ThumbColor = FormColors.backgroundPrimaryColor;*/
                 Thread.Sleep(100);
             }
 
@@ -68,10 +70,12 @@ namespace LINDRA___Market
                 case "Home":
                     if (home == null)
                         home = CreateUserControl(buttonName);
+                    panelMain.AutoScrollMinSize = new Size(1, 609);
                     return home;
                 case "Settings":
                     if (settings == null)
                         settings = CreateUserControl(buttonName);
+                    panelMain.AutoScrollMinSize = new Size(1, 1);
                     return settings;
                 default:
                     return null;

@@ -25,6 +25,7 @@ namespace LINDRA___Market.form
         {
             InitializeComponent();
             gameName = game;
+            Console.WriteLine(game);
             buttonVisuals.PerformClick();
             this.parent = parent;
             this.parent.Visible = false;
@@ -95,7 +96,6 @@ namespace LINDRA___Market.form
             {
                 if (COD.checkGame())
                 {
-                    Console.WriteLine(fps_settings.bar_fov);
                     dynamic cod = COD.Game();
                     t.Process_Handle(COD.GameName());
                     t.WriteFloat(t.ReadInteger((int)cod.GetType().GetProperty("cg_fov").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), fps_settings.bar_fov);

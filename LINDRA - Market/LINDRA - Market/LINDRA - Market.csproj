@@ -270,6 +270,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="market.ico" />
+    <Content Include="Resources\align-left_on_bo1.png" />
+    <Content Include="Resources\eye_on_bo1.png" />
+    <Content Include="Resources\sliders_on_bo1.png" />
+    <Content Include="Resources\video_on_bo1.png" />
+    <None Include="Resources\play_bo1.png" />
+    <None Include="Resources\bo1.jpg" />
+    <None Include="Resources\cod4.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

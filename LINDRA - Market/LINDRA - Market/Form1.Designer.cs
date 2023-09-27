@@ -161,6 +161,10 @@
             // 
             // panelMain
             // 
+            this.panelMain.AutoScroll = true;
+            this.panelMain.AutoScrollMargin = new System.Drawing.Size(1, 1);
+            this.panelMain.AutoScrollMinSize = new System.Drawing.Size(1, 609);
+            this.panelMain.AutoSize = true;
             this.panelMain.Location = new System.Drawing.Point(111, 25);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(677, 400);
@@ -202,9 +206,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panelTop);
             this.Controls.Add(this.labelSignature);
             this.Controls.Add(this.labelTitle);
-            this.Controls.Add(this.panelTop);
             this.Controls.Add(this.panelLeft);
             this.Controls.Add(this.panelMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

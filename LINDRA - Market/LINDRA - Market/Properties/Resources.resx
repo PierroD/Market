@@ -136,8 +136,8 @@
   <data name="video_on_mw3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\video_on_mw3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="play_mw2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\play_mw2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bo1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="home_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -156,6 +156,12 @@
   </data>
   <data name="video_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\video_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="update_on" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\update_on.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="play_mw2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\play_mw2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="settings_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\settings_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,10 +184,25 @@
   <data name="mw3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mw3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="play_bo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\play_bo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cod4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cod4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="update_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\update_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="update_on" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\update_on.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="align-left_on_bo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\align-left_on_bo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="eye_on_bo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eye_on_bo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sliders_on_bo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sliders_on_bo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="video_on_bo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\video_on_bo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
