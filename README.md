@@ -6,7 +6,7 @@
 </details>
 
 
-# Market (latest update 03/08/2023)
+# Market (latest update 08/03/2023)
 Call of Duty FPS unlocker Market, is the latest version of my FPS Unlocker, if you want to learn a bit more about this **Market**, I will let you take a look at another GitHub repo called *CODEx*.
 
 # Table of contents
@@ -31,6 +31,6 @@ If an update is needed you will see the following buttons :
 If you want to submit a new idea or you faced a bug :bug:, feel free to create a new issue by clicking on the `Issues` tab in the github repo.
 
 # Creator :
-Coder & Designer :
+Dev & Designer :
  - Pierre DUVEAU aka LINDRA
 
