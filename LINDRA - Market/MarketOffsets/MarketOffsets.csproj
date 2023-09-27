@@ -46,6 +46,8 @@
     <Compile Include="Interfaces\IFovAndFps.cs" />
     <Compile Include="Interfaces\IVisuals.cs" />
     <Compile Include="MarketOffsets.cs" />
+    <Compile Include="Offsets\BlackOpsMP.cs" />
+    <Compile Include="Offsets\iw3mp.cs" />
     <Compile Include="Offsets\iw4mp.cs" />
     <Compile Include="Offsets\iw5mp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
