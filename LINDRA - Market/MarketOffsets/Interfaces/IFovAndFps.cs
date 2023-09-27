@@ -10,6 +10,9 @@ namespace MarketOffsets.Interfaces
     {
         int dvar { get; }
         int cg_fov { get; }
+
+        int cg_fovScale { get; }
+
         int com_maxfps { get; }
     }
 }
