@@ -1,3 +1,8 @@
+### v2.1.2
+- Added FovScale to the fps unlocker
+- Added COD4
+- Added BO1
+
 ### v2.0.2
 - Update offsets after 2023 update (v1.2.211 v2)
 

@@ -1,1 +1,1 @@
-https://raw.githubusercontent.com/PierroD/Market/main/_updates/Market%20v2.0.2.zip
+https://raw.githubusercontent.com/PierroD/Market/main/_updates/Market%20v2.1.2.zip
