@@ -54,6 +54,11 @@ namespace LINDRA___Market.form.Views
                 fps_settings.sw_camos = (bool.Parse(ini.IniReadValue("Disable", "NoSkins")));
                 fps_settings.allies_feed = (Color.FromArgb(int.Parse(ini.IniReadValue("Feed", "Allies"))));
                 fps_settings.axis_feed = (Color.FromArgb(int.Parse(ini.IniReadValue("Feed", "Axis"))));
+                try
+                {
+                    fps_settings.bar_fovScale = (int.Parse(ini.IniReadValue("Fov&fps", "FovScale")));
+                }
+                catch { }
             }
 
         }
@@ -71,6 +76,7 @@ namespace LINDRA___Market.form.Views
                 {
                     sw.WriteLine("[FOV&FPS]");
                     sw.WriteLine("FieldOfView=" + fps_settings.bar_fov);
+                    sw.WriteLine("FovScale=" + fps_settings.bar_fovScale);
                     sw.WriteLine("Max_FPS=" + fps_settings.bar_fps);
                     sw.WriteLine("[VISUALS]");
                     sw.WriteLine("LightMap=" + fps_settings.lightmap);

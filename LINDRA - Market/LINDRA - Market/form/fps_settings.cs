@@ -10,6 +10,8 @@ namespace LINDRA___Market.form
     public class fps_settings
     {
         public static int bar_fov { get; set; } = 65;
+
+        public static int bar_fovScale { get; set; } = 1000;
         public static int bar_fps { get; set; } = 90;
         public static int specularmap { get; set; } = 1;
         public static int lightmap { get; set; } = 1;

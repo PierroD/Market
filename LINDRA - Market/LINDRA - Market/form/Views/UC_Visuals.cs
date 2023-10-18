@@ -22,6 +22,7 @@ namespace LINDRA___Market.form.Views
         {
             trackbarFov.ThumbColor = FormColors.gameColor;
             trackbarFps.ThumbColor = FormColors.gameColor;
+            trackbarFovScale.ThumbColor = FormColors.gameColor;
             switchMovie.CheckedState.FillColor = FormColors.gameColor;
         }
 
@@ -55,10 +56,17 @@ namespace LINDRA___Market.form.Views
         private void update_timer_Tick(object sender, EventArgs e)
         {
             if (trackbarFov.Value != fps_settings.bar_fov) trackbarFov.Value = fps_settings.bar_fov;
+            if (trackbarFovScale.Value != fps_settings.bar_fovScale) trackbarFovScale.Value = fps_settings.bar_fovScale;
             if (trackbarFps.Value != fps_settings.bar_fps) trackbarFps.Value = fps_settings.bar_fps;
             if (comboBoxLightMap.SelectedIndex != fps_settings.lightmap) comboBoxLightMap.SelectedIndex = fps_settings.lightmap;
             if (comboBoxSpecularMap.SelectedIndex != fps_settings.specularmap) comboBoxSpecularMap.SelectedIndex = fps_settings.specularmap;
             if (switchMovie.Checked != fps_settings.sw_movie) switchMovie.Checked = fps_settings.sw_movie;
+        }
+
+        private void trackbarFovScale_ValueChanged(object sender, EventArgs e)
+        {
+            labelFovScaleValue.Text = $"{(double)trackbarFovScale.Value / 1000}";
+            fps_settings.bar_fovScale = trackbarFovScale.Value;
         }
     }
 }

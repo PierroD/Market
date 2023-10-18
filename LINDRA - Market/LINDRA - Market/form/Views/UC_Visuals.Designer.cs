@@ -42,6 +42,9 @@
             this.labelFpsValue = new System.Windows.Forms.Label();
             this.labelFovValue = new System.Windows.Forms.Label();
             this.update_timer = new System.Windows.Forms.Timer(this.components);
+            this.labelFovScaleValue = new System.Windows.Forms.Label();
+            this.labelFovScale = new System.Windows.Forms.Label();
+            this.trackbarFovScale = new Guna.UI2.WinForms.Guna2TrackBar();
             this.SuspendLayout();
             // 
             // trackbarFov
@@ -85,7 +88,7 @@
             "Extrabright",
             "Toobright",
             "Fullbright"});
-            this.comboBoxLightMap.Location = new System.Drawing.Point(19, 182);
+            this.comboBoxLightMap.Location = new System.Drawing.Point(19, 203);
             this.comboBoxLightMap.Name = "comboBoxLightMap";
             this.comboBoxLightMap.Size = new System.Drawing.Size(249, 36);
             this.comboBoxLightMap.StartIndex = 1;
@@ -107,7 +110,7 @@
             "Disable",
             "Enable",
             "Chrome"});
-            this.comboBoxSpecularMap.Location = new System.Drawing.Point(19, 261);
+            this.comboBoxSpecularMap.Location = new System.Drawing.Point(19, 282);
             this.comboBoxSpecularMap.Name = "comboBoxSpecularMap";
             this.comboBoxSpecularMap.Size = new System.Drawing.Size(249, 36);
             this.comboBoxSpecularMap.StartIndex = 1;
@@ -119,7 +122,7 @@
             this.labelMovie.AutoSize = true;
             this.labelMovie.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMovie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(38)))));
-            this.labelMovie.Location = new System.Drawing.Point(83, 328);
+            this.labelMovie.Location = new System.Drawing.Point(83, 349);
             this.labelMovie.Name = "labelMovie";
             this.labelMovie.Size = new System.Drawing.Size(56, 21);
             this.labelMovie.TabIndex = 7;
@@ -131,7 +134,7 @@
             this.switchMovie.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.switchMovie.CheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.switchMovie.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.switchMovie.Location = new System.Drawing.Point(157, 329);
+            this.switchMovie.Location = new System.Drawing.Point(157, 350);
             this.switchMovie.Name = "switchMovie";
             this.switchMovie.Size = new System.Drawing.Size(35, 20);
             this.switchMovie.TabIndex = 6;
@@ -146,7 +149,7 @@
             this.labelSpecularmap.AutoSize = true;
             this.labelSpecularmap.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSpecularmap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(38)))));
-            this.labelSpecularmap.Location = new System.Drawing.Point(86, 237);
+            this.labelSpecularmap.Location = new System.Drawing.Point(86, 258);
             this.labelSpecularmap.Name = "labelSpecularmap";
             this.labelSpecularmap.Size = new System.Drawing.Size(106, 21);
             this.labelSpecularmap.TabIndex = 8;
@@ -157,7 +160,7 @@
             this.labelLightmap.AutoSize = true;
             this.labelLightmap.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLightmap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(38)))));
-            this.labelLightmap.Location = new System.Drawing.Point(96, 158);
+            this.labelLightmap.Location = new System.Drawing.Point(96, 179);
             this.labelLightmap.Name = "labelLightmap";
             this.labelLightmap.Size = new System.Drawing.Size(80, 21);
             this.labelLightmap.TabIndex = 9;
@@ -213,11 +216,47 @@
             this.update_timer.Interval = 2500;
             this.update_timer.Tick += new System.EventHandler(this.update_timer_Tick);
             // 
+            // labelFovScaleValue
+            // 
+            this.labelFovScaleValue.AutoSize = true;
+            this.labelFovScaleValue.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFovScaleValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(38)))));
+            this.labelFovScaleValue.Location = new System.Drawing.Point(240, 146);
+            this.labelFovScaleValue.Name = "labelFovScaleValue";
+            this.labelFovScaleValue.Size = new System.Drawing.Size(47, 21);
+            this.labelFovScaleValue.TabIndex = 16;
+            this.labelFovScaleValue.Text = "1,000";
+            // 
+            // labelFovScale
+            // 
+            this.labelFovScale.AutoSize = true;
+            this.labelFovScale.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFovScale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(38)))));
+            this.labelFovScale.Location = new System.Drawing.Point(96, 122);
+            this.labelFovScale.Name = "labelFovScale";
+            this.labelFovScale.Size = new System.Drawing.Size(74, 21);
+            this.labelFovScale.TabIndex = 15;
+            this.labelFovScale.Text = "FovScale";
+            // 
+            // trackbarFovScale
+            // 
+            this.trackbarFovScale.Location = new System.Drawing.Point(19, 146);
+            this.trackbarFovScale.Maximum = 2000;
+            this.trackbarFovScale.Name = "trackbarFovScale";
+            this.trackbarFovScale.Size = new System.Drawing.Size(212, 23);
+            this.trackbarFovScale.TabIndex = 14;
+            this.trackbarFovScale.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
+            this.trackbarFovScale.Value = 1000;
+            this.trackbarFovScale.ValueChanged += new System.EventHandler(this.trackbarFovScale_ValueChanged);
+            // 
             // UC_Visuals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
+            this.Controls.Add(this.labelFovScaleValue);
+            this.Controls.Add(this.labelFovScale);
+            this.Controls.Add(this.trackbarFovScale);
             this.Controls.Add(this.labelFovValue);
             this.Controls.Add(this.labelFpsValue);
             this.Controls.Add(this.labelFov);
@@ -253,5 +292,8 @@
         private System.Windows.Forms.Label labelFpsValue;
         private System.Windows.Forms.Label labelFovValue;
         private System.Windows.Forms.Timer update_timer;
+        private System.Windows.Forms.Label labelFovScaleValue;
+        private System.Windows.Forms.Label labelFovScale;
+        private Guna.UI2.WinForms.Guna2TrackBar trackbarFovScale;
     }
 }

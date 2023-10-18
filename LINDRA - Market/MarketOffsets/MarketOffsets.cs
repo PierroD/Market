@@ -9,8 +9,8 @@ using MarketOffsets.Interfaces;
 namespace MarketOffsets
 {
     public class COD
-    {                           //    mw2   ,   mw3   
-        static string[] games = {  "iw4mp",  "iw5mp", };
+    {                           //    cod4,  mw2  ,   mw3  , bo1
+        static string[] games = {  "iw3mp","iw4mp", "iw5mp", "BlackOpsMP" };
         static Type CallofDuty;
         static string gameName;
         public static bool checkGame()

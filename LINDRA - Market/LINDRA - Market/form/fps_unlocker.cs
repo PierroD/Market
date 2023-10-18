@@ -25,7 +25,6 @@ namespace LINDRA___Market.form
         {
             InitializeComponent();
             gameName = game;
-            Console.WriteLine(game);
             buttonVisuals.PerformClick();
             this.parent = parent;
             this.parent.Visible = false;
@@ -99,6 +98,7 @@ namespace LINDRA___Market.form
                     dynamic cod = COD.Game();
                     t.Process_Handle(COD.GameName());
                     t.WriteFloat(t.ReadInteger((int)cod.GetType().GetProperty("cg_fov").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), fps_settings.bar_fov);
+                    t.WriteFloat(t.ReadInteger((int)cod.GetType().GetProperty("cg_fovScale").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), (float)fps_settings.bar_fovScale/1000);
                     t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("com_maxfps").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), fps_settings.bar_fps);
                     t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_lightMap").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), fps_settings.lightmap);
                     t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_specularMap").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), fps_settings.specularmap);
