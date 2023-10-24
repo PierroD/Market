@@ -1,3 +1,6 @@
+### v2.1.3
+- Fix updater crashing 
+
 ### v2.1.2
 - Added FovScale to the fps unlocker
 - Added COD4
