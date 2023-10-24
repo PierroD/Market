@@ -86,7 +86,7 @@ namespace MarketUpdater
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
-            Process.Start($"{Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)}\\LINDRA - Market.exe.exe");
+            Process.Start($"{Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)}\\LINDRA - Market.exe");
             Application.Exit();
 
         }
