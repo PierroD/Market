@@ -9,6 +9,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Security;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic;
@@ -17,6 +18,7 @@ namespace MarketUpdater.Utils
 {
     static class ZipArchiveExtensions
     {
+        private static readonly string[] notToUpdate = { "Guna.UI2.dll", "MarketUpdater.exe", "MarketUpdater.pdb" };
         public static void ExtractToDirectory(this ZipArchive archive, string destinationDirPath, bool overwrite)
         {
             if (!overwrite)
@@ -29,7 +31,8 @@ namespace MarketUpdater.Utils
             foreach (ZipArchiveEntry entry in archive.Entries)
             {
                 string fullPath = Path.Combine(destinationDirPath, entry.FullName);
-
+                if (notToUpdate.Contains(entry.Name))
+                    continue;
                 // If it's a directory, it doesn't have a "Name".
                 if (string.IsNullOrEmpty(entry.Name))
                     Directory.CreateDirectory(Path.GetDirectoryName(fullPath));
