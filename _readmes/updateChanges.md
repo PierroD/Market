@@ -1,5 +1,5 @@
 ### v2.1.3
-- Fix updater crashing 
+- Fix updater crashing [Issue 3](https://github.com/PierroD/Market/issues/3)
 
 ### v2.1.2
 - Added FovScale to the fps unlocker
