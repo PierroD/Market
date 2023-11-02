@@ -93,6 +93,26 @@ namespace LINDRA___Market.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ConsoleDark {
+            get {
+                object obj = ResourceManager.GetObject("ConsoleDark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ConsoleLight {
+            get {
+                object obj = ResourceManager.GetObject("ConsoleLight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap EyeDark {
             get {
                 object obj = ResourceManager.GetObject("EyeDark", resourceCulture);
@@ -166,6 +186,26 @@ namespace LINDRA___Market.Properties {
         internal static System.Drawing.Bitmap PaletteLight {
             get {
                 object obj = ResourceManager.GetObject("PaletteLight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SearchDark {
+            get {
+                object obj = ResourceManager.GetObject("SearchDark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SearchLight {
+            get {
+                object obj = ResourceManager.GetObject("SearchLight", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

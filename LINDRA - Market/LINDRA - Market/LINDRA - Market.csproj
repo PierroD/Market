@@ -74,6 +74,30 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\Console\FormConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Console\FormConsole.Designer.cs">
+      <DependentUpon>FormConsole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Console\Views\UC_Console.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="form\Console\Views\UC_Console.Designer.cs">
+      <DependentUpon>UC_Console.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Console\Views\UC_Search.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="form\Console\Views\UC_Search.Designer.cs">
+      <DependentUpon>UC_Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Console\Views\UC_Settings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="form\Console\Views\UC_Settings.Designer.cs">
+      <DependentUpon>UC_Settings.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\FpsSettings.cs" />
     <Compile Include="form\fps_unlocker.cs">
       <SubType>Form</SubType>
@@ -133,6 +157,18 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Console\FormConsole.resx">
+      <DependentUpon>FormConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Console\Views\UC_Console.resx">
+      <DependentUpon>UC_Console.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Console\Views\UC_Search.resx">
+      <DependentUpon>UC_Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Console\Views\UC_Settings.resx">
+      <DependentUpon>UC_Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\fps_unlocker.resx">
       <DependentUpon>fps_unlocker.cs</DependentUpon>
@@ -286,6 +322,8 @@
     <None Include="Resources\CameraLight.png" />
     <None Include="Resources\EyeDark.png" />
     <None Include="Resources\EyeLight.png" />
+    <None Include="Resources\ConsoleDark.png" />
+    <None Include="Resources\ConsoleLight.png" />
     <Content Include="Resources\eye_on_bo1.png" />
     <None Include="Resources\HomeOn.png" />
     <None Include="Resources\PaintPaletteDark.png" />
@@ -300,6 +338,8 @@
     <None Include="Resources\SettingsLight.png" />
     <None Include="Resources\InfoDark.png" />
     <None Include="Resources\InfoLight.png" />
+    <None Include="Resources\SearchDark.png" />
+    <None Include="Resources\SearchLight.png" />
     <Content Include="Resources\sliders_on_bo1.png" />
     <None Include="Resources\UpdatesOn.png" />
     <None Include="Resources\UpdatesDark.png" />

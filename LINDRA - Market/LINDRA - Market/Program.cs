@@ -18,7 +18,6 @@ namespace LINDRA___Market
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new form_market());
-/*            Application.Run(new fps_unlocker());
-*/        }
+}
     }
 }

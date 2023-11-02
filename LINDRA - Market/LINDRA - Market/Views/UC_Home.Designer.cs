@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.panelMain = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelConsole = new Guna.UI2.WinForms.Guna2Panel();
+            this.labelConsoleDescription = new System.Windows.Forms.Label();
+            this.labelConsoleTitle = new System.Windows.Forms.Label();
+            this.pictureBoxConsole = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panelFps = new Guna.UI2.WinForms.Guna2Panel();
             this.buttonFpsRun = new Guna.UI2.WinForms.Guna2Button();
             this.labelFpsDescription = new System.Windows.Forms.Label();
             this.labelFpsTitle = new System.Windows.Forms.Label();
             this.pictureBoxFps = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.panelConsole = new Guna.UI2.WinForms.Guna2Panel();
-            this.labelConsoleDescription = new System.Windows.Forms.Label();
-            this.labelConsoleTitle = new System.Windows.Forms.Label();
-            this.pictureBoxConsole = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.labelInProgress = new System.Windows.Forms.Label();
+            this.buttonConsole = new Guna.UI2.WinForms.Guna2Button();
             this.panelMain.SuspendLayout();
-            this.panelFps.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFps)).BeginInit();
             this.panelConsole.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConsole)).BeginInit();
+            this.panelFps.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFps)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMain
@@ -56,6 +56,52 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(677, 400);
             this.panelMain.TabIndex = 3;
+            // 
+            // panelConsole
+            // 
+            this.panelConsole.BackColor = System.Drawing.Color.Transparent;
+            this.panelConsole.BorderRadius = 12;
+            this.panelConsole.Controls.Add(this.buttonConsole);
+            this.panelConsole.Controls.Add(this.labelConsoleDescription);
+            this.panelConsole.Controls.Add(this.labelConsoleTitle);
+            this.panelConsole.Controls.Add(this.pictureBoxConsole);
+            this.panelConsole.FillColor = System.Drawing.Color.Black;
+            this.panelConsole.Location = new System.Drawing.Point(413, 41);
+            this.panelConsole.Name = "panelConsole";
+            this.panelConsole.Size = new System.Drawing.Size(189, 194);
+            this.panelConsole.TabIndex = 4;
+            // 
+            // labelConsoleDescription
+            // 
+            this.labelConsoleDescription.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelConsoleDescription.ForeColor = System.Drawing.Color.White;
+            this.labelConsoleDescription.Location = new System.Drawing.Point(0, 77);
+            this.labelConsoleDescription.Name = "labelConsoleDescription";
+            this.labelConsoleDescription.Size = new System.Drawing.Size(189, 36);
+            this.labelConsoleDescription.TabIndex = 2;
+            this.labelConsoleDescription.Text = "External Call of Duty console, to unlock some Dvars";
+            this.labelConsoleDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelConsoleTitle
+            // 
+            this.labelConsoleTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelConsoleTitle.ForeColor = System.Drawing.Color.White;
+            this.labelConsoleTitle.Location = new System.Drawing.Point(0, 50);
+            this.labelConsoleTitle.Name = "labelConsoleTitle";
+            this.labelConsoleTitle.Size = new System.Drawing.Size(189, 23);
+            this.labelConsoleTitle.TabIndex = 1;
+            this.labelConsoleTitle.Text = "External Console";
+            this.labelConsoleTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBoxConsole
+            // 
+            this.pictureBoxConsole.ImageRotate = 0F;
+            this.pictureBoxConsole.Location = new System.Drawing.Point(12, 11);
+            this.pictureBoxConsole.Name = "pictureBoxConsole";
+            this.pictureBoxConsole.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pictureBoxConsole.Size = new System.Drawing.Size(10, 10);
+            this.pictureBoxConsole.TabIndex = 0;
+            this.pictureBoxConsole.TabStop = false;
             // 
             // panelFps
             // 
@@ -120,62 +166,22 @@
             this.pictureBoxFps.TabIndex = 0;
             this.pictureBoxFps.TabStop = false;
             // 
-            // panelConsole
+            // buttonConsole
             // 
-            this.panelConsole.BackColor = System.Drawing.Color.Transparent;
-            this.panelConsole.BorderRadius = 12;
-            this.panelConsole.Controls.Add(this.labelInProgress);
-            this.panelConsole.Controls.Add(this.labelConsoleDescription);
-            this.panelConsole.Controls.Add(this.labelConsoleTitle);
-            this.panelConsole.Controls.Add(this.pictureBoxConsole);
-            this.panelConsole.FillColor = System.Drawing.Color.Black;
-            this.panelConsole.Location = new System.Drawing.Point(413, 41);
-            this.panelConsole.Name = "panelConsole";
-            this.panelConsole.Size = new System.Drawing.Size(189, 194);
-            this.panelConsole.TabIndex = 4;
-            // 
-            // labelConsoleDescription
-            // 
-            this.labelConsoleDescription.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelConsoleDescription.ForeColor = System.Drawing.Color.White;
-            this.labelConsoleDescription.Location = new System.Drawing.Point(0, 77);
-            this.labelConsoleDescription.Name = "labelConsoleDescription";
-            this.labelConsoleDescription.Size = new System.Drawing.Size(189, 36);
-            this.labelConsoleDescription.TabIndex = 2;
-            this.labelConsoleDescription.Text = "External Call of Duty console, to unlock some Dvars";
-            this.labelConsoleDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelConsoleTitle
-            // 
-            this.labelConsoleTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelConsoleTitle.ForeColor = System.Drawing.Color.White;
-            this.labelConsoleTitle.Location = new System.Drawing.Point(0, 50);
-            this.labelConsoleTitle.Name = "labelConsoleTitle";
-            this.labelConsoleTitle.Size = new System.Drawing.Size(189, 23);
-            this.labelConsoleTitle.TabIndex = 1;
-            this.labelConsoleTitle.Text = "External Console";
-            this.labelConsoleTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBoxConsole
-            // 
-            this.pictureBoxConsole.ImageRotate = 0F;
-            this.pictureBoxConsole.Location = new System.Drawing.Point(12, 11);
-            this.pictureBoxConsole.Name = "pictureBoxConsole";
-            this.pictureBoxConsole.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pictureBoxConsole.Size = new System.Drawing.Size(10, 10);
-            this.pictureBoxConsole.TabIndex = 0;
-            this.pictureBoxConsole.TabStop = false;
-            // 
-            // labelInProgress
-            // 
-            this.labelInProgress.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInProgress.ForeColor = System.Drawing.Color.White;
-            this.labelInProgress.Location = new System.Drawing.Point(0, 134);
-            this.labelInProgress.Name = "labelInProgress";
-            this.labelInProgress.Size = new System.Drawing.Size(189, 36);
-            this.labelInProgress.TabIndex = 3;
-            this.labelInProgress.Text = "Working on it";
-            this.labelInProgress.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonConsole.BorderRadius = 8;
+            this.buttonConsole.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonConsole.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonConsole.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonConsole.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonConsole.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonConsole.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonConsole.ForeColor = System.Drawing.Color.White;
+            this.buttonConsole.Location = new System.Drawing.Point(47, 134);
+            this.buttonConsole.Name = "buttonConsole";
+            this.buttonConsole.Size = new System.Drawing.Size(103, 42);
+            this.buttonConsole.TabIndex = 4;
+            this.buttonConsole.Text = "Run";
+            this.buttonConsole.Click += new System.EventHandler(this.buttonConsole_Click);
             // 
             // UC_Home
             // 
@@ -187,10 +193,10 @@
             this.Size = new System.Drawing.Size(677, 400);
             this.Load += new System.EventHandler(this.UC_Home_Load);
             this.panelMain.ResumeLayout(false);
-            this.panelFps.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFps)).EndInit();
             this.panelConsole.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConsole)).EndInit();
+            this.panelFps.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFps)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -207,6 +213,6 @@
         private System.Windows.Forms.Label labelConsoleDescription;
         private System.Windows.Forms.Label labelConsoleTitle;
         private Guna.UI2.WinForms.Guna2CirclePictureBox pictureBoxConsole;
-        private System.Windows.Forms.Label labelInProgress;
+        private Guna.UI2.WinForms.Guna2Button buttonConsole;
     }
 }
