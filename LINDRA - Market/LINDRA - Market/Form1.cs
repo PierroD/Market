@@ -103,8 +103,14 @@ namespace LINDRA___Market
                 colorThread.Abort();
             }
             home.stopThreads();
-            about.stopThreads();
-            saveSettings();
+            try
+            {
+                about.stopThreads();
+            } catch (Exception ex)
+            {
+                // normal if about doesn't exist no need to throw an error
+            }
+             saveSettings();
         }
 
         private UserControl CreateUserControl(string usercontrolName)
