@@ -113,6 +113,12 @@
     <Compile Include="Utils\INIFile.cs" />
     <Compile Include="Utils\SwitchUserControl.cs" />
     <Compile Include="Utils\Trainer.cs" />
+    <Compile Include="Views\UC_About.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UC_About.Designer.cs">
+      <DependentUpon>UC_About.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\UC_Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -147,6 +153,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UC_About.resx">
+      <DependentUpon>UC_About.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UC_Home.resx">
       <DependentUpon>UC_Home.cs</DependentUpon>
@@ -289,6 +298,8 @@
     <None Include="Resources\PaletteLight.png" />
     <None Include="Resources\SettingsDark.png" />
     <None Include="Resources\SettingsLight.png" />
+    <None Include="Resources\InfoDark.png" />
+    <None Include="Resources\InfoLight.png" />
     <Content Include="Resources\sliders_on_bo1.png" />
     <None Include="Resources\UpdatesOn.png" />
     <None Include="Resources\UpdatesDark.png" />

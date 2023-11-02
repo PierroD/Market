@@ -32,8 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_market));
             this.formElipse = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panelLeft = new Guna.UI2.WinForms.Guna2Panel();
-            this.buttonSettings = new Guna.UI2.WinForms.Guna2Button();
-            this.buttonHome = new Guna.UI2.WinForms.Guna2Button();
             this.labelTitle = new System.Windows.Forms.Label();
             this.leftPanelElipse = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panelTop = new Guna.UI2.WinForms.Guna2Panel();
@@ -43,9 +41,12 @@
             this.topPanelElipse = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.formDragControl = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.labelSignature = new System.Windows.Forms.Label();
-            this.pictureBoxPage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.labelPage = new System.Windows.Forms.Label();
             this.panelMain = new Guna.UI2.WinForms.Guna2Panel();
+            this.pictureBoxPage = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.buttonAbout = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonSettings = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonHome = new Guna.UI2.WinForms.Guna2Button();
             this.panelLeft.SuspendLayout();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPage)).BeginInit();
@@ -60,6 +61,7 @@
             // 
             this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(38)))));
             this.panelLeft.BorderRadius = 20;
+            this.panelLeft.Controls.Add(this.buttonAbout);
             this.panelLeft.Controls.Add(this.buttonSettings);
             this.panelLeft.Controls.Add(this.buttonHome);
             this.panelLeft.Controls.Add(this.labelTitle);
@@ -67,50 +69,6 @@
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(80, 400);
             this.panelLeft.TabIndex = 0;
-            // 
-            // buttonSettings
-            // 
-            this.buttonSettings.BackColor = System.Drawing.Color.Transparent;
-            this.buttonSettings.BorderRadius = 10;
-            this.buttonSettings.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.buttonSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSettings.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonSettings.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonSettings.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonSettings.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonSettings.FillColor = System.Drawing.Color.Transparent;
-            this.buttonSettings.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonSettings.ForeColor = System.Drawing.Color.White;
-            this.buttonSettings.Image = ((System.Drawing.Image)(resources.GetObject("buttonSettings.Image")));
-            this.buttonSettings.Location = new System.Drawing.Point(13, 119);
-            this.buttonSettings.Name = "buttonSettings";
-            this.buttonSettings.Size = new System.Drawing.Size(50, 50);
-            this.buttonSettings.TabIndex = 1;
-            this.buttonSettings.UseTransparentBackground = true;
-            this.buttonSettings.Click += new System.EventHandler(this.buttons_SideBar_Click);
-            // 
-            // buttonHome
-            // 
-            this.buttonHome.BackColor = System.Drawing.Color.Transparent;
-            this.buttonHome.BorderColor = System.Drawing.Color.Transparent;
-            this.buttonHome.BorderRadius = 10;
-            this.buttonHome.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.buttonHome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonHome.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.buttonHome.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonHome.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonHome.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonHome.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonHome.FillColor = System.Drawing.Color.Transparent;
-            this.buttonHome.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonHome.ForeColor = System.Drawing.Color.White;
-            this.buttonHome.Image = ((System.Drawing.Image)(resources.GetObject("buttonHome.Image")));
-            this.buttonHome.Location = new System.Drawing.Point(13, 36);
-            this.buttonHome.Name = "buttonHome";
-            this.buttonHome.Size = new System.Drawing.Size(50, 50);
-            this.buttonHome.TabIndex = 0;
-            this.buttonHome.UseTransparentBackground = true;
-            this.buttonHome.Click += new System.EventHandler(this.buttons_SideBar_Click);
             // 
             // labelTitle
             // 
@@ -206,19 +164,6 @@
             this.labelSignature.Text = "Made with  ❤   by LINDRA";
             this.labelSignature.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBoxPage
-            // 
-            this.pictureBoxPage.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxPage.FillColor = System.Drawing.Color.Transparent;
-            this.pictureBoxPage.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPage.Image")));
-            this.pictureBoxPage.ImageRotate = 0F;
-            this.pictureBoxPage.Location = new System.Drawing.Point(113, 3);
-            this.pictureBoxPage.Name = "pictureBoxPage";
-            this.pictureBoxPage.Size = new System.Drawing.Size(19, 19);
-            this.pictureBoxPage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxPage.TabIndex = 5;
-            this.pictureBoxPage.TabStop = false;
-            // 
             // labelPage
             // 
             this.labelPage.AutoSize = true;
@@ -238,6 +183,84 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(677, 400);
             this.panelMain.TabIndex = 7;
+            // 
+            // pictureBoxPage
+            // 
+            this.pictureBoxPage.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxPage.FillColor = System.Drawing.Color.Transparent;
+            this.pictureBoxPage.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPage.Image")));
+            this.pictureBoxPage.ImageRotate = 0F;
+            this.pictureBoxPage.Location = new System.Drawing.Point(113, 3);
+            this.pictureBoxPage.Name = "pictureBoxPage";
+            this.pictureBoxPage.Size = new System.Drawing.Size(19, 19);
+            this.pictureBoxPage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxPage.TabIndex = 5;
+            this.pictureBoxPage.TabStop = false;
+            // 
+            // buttonAbout
+            // 
+            this.buttonAbout.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAbout.BorderRadius = 10;
+            this.buttonAbout.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.buttonAbout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAbout.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonAbout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonAbout.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonAbout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonAbout.FillColor = System.Drawing.Color.Transparent;
+            this.buttonAbout.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonAbout.ForeColor = System.Drawing.Color.White;
+            this.buttonAbout.Image = global::LINDRA___Market.Properties.Resources.InfoLight;
+            this.buttonAbout.Location = new System.Drawing.Point(13, 332);
+            this.buttonAbout.Name = "buttonAbout";
+            this.buttonAbout.Size = new System.Drawing.Size(50, 50);
+            this.buttonAbout.TabIndex = 4;
+            this.buttonAbout.UseTransparentBackground = true;
+            this.buttonAbout.Click += new System.EventHandler(this.buttons_SideBar_Click);
+            // 
+            // buttonSettings
+            // 
+            this.buttonSettings.BackColor = System.Drawing.Color.Transparent;
+            this.buttonSettings.BorderRadius = 10;
+            this.buttonSettings.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.buttonSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSettings.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonSettings.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonSettings.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonSettings.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonSettings.FillColor = System.Drawing.Color.Transparent;
+            this.buttonSettings.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonSettings.ForeColor = System.Drawing.Color.White;
+            this.buttonSettings.Image = ((System.Drawing.Image)(resources.GetObject("buttonSettings.Image")));
+            this.buttonSettings.Location = new System.Drawing.Point(13, 119);
+            this.buttonSettings.Name = "buttonSettings";
+            this.buttonSettings.Size = new System.Drawing.Size(50, 50);
+            this.buttonSettings.TabIndex = 1;
+            this.buttonSettings.UseTransparentBackground = true;
+            this.buttonSettings.Click += new System.EventHandler(this.buttons_SideBar_Click);
+            // 
+            // buttonHome
+            // 
+            this.buttonHome.BackColor = System.Drawing.Color.Transparent;
+            this.buttonHome.BorderColor = System.Drawing.Color.Transparent;
+            this.buttonHome.BorderRadius = 10;
+            this.buttonHome.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.buttonHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonHome.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.buttonHome.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonHome.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonHome.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonHome.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonHome.FillColor = System.Drawing.Color.Transparent;
+            this.buttonHome.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonHome.ForeColor = System.Drawing.Color.White;
+            this.buttonHome.Image = ((System.Drawing.Image)(resources.GetObject("buttonHome.Image")));
+            this.buttonHome.Location = new System.Drawing.Point(13, 36);
+            this.buttonHome.Name = "buttonHome";
+            this.buttonHome.Size = new System.Drawing.Size(50, 50);
+            this.buttonHome.TabIndex = 0;
+            this.buttonHome.UseTransparentBackground = true;
+            this.buttonHome.Click += new System.EventHandler(this.buttons_SideBar_Click);
             // 
             // form_market
             // 
@@ -285,6 +308,7 @@
         private System.Windows.Forms.Label labelPage;
         private Guna.UI2.WinForms.Guna2PictureBox pictureBoxPage;
         private Guna.UI2.WinForms.Guna2Panel panelMain;
+        private Guna.UI2.WinForms.Guna2Button buttonAbout;
     }
 }
 

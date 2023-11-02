@@ -43,6 +43,7 @@ namespace LINDRA___Market
                 buttonHome.Image = AppColors.getImage("Home");
                 buttonHome.CheckedState.FillColor = AppColors.secondaryColor;
                 buttonUpdate.Image = AppColors.getImage("Updates");
+                buttonAbout.Image = AppColors.getImage("Info");
                 labelPage.ForeColor = AppColors.textColor;
                 #endregion
                 this.BackColor = AppColors.backgroundColor;
@@ -70,7 +71,7 @@ namespace LINDRA___Market
             SwitchUserControl.SwitchUserControl.Switch(panelMain, GetUserControlInstance(button.Name.Replace("button", String.Empty)));
         }
 
-        dynamic home, settings;
+        dynamic home, settings, about;
         private UserControl GetUserControlInstance(string buttonName)
         {
             switch (buttonName)
@@ -78,13 +79,18 @@ namespace LINDRA___Market
                 case "Home":
                     if (home == null)
                         home = CreateUserControl(buttonName);
-                    panelMain.AutoScrollMinSize = new Size(1, 609);
+                    panelMain.AutoScrollMinSize = new Size(1, 1); // change to 609 to add scrollbar to the page
                     return home;
                 case "Settings":
                     if (settings == null)
                         settings = CreateUserControl(buttonName);
                     panelMain.AutoScrollMinSize = new Size(1, 1);
                     return settings;
+                case "About":
+                    if (about == null)
+                        about = CreateUserControl(buttonName);
+                    return about;
+
                 default:
                     return null;
             }
