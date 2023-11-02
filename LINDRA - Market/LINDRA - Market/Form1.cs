@@ -120,7 +120,7 @@ namespace LINDRA___Market
                 INIFile ini = new INIFile(configFileLoad);
                 
                 AppSettings.version = ini.IniReadValue("Version", "AppVersion");
-                AppSettings.darkMode = bool.Parse(ini.IniReadValue("Settings", "DarkMode"));
+                AppSettings.isDarkMode = bool.Parse(ini.IniReadValue("Settings", "DarkMode"));
                 using (var wc = new System.Net.WebClient())
                     AppSettings.latestVersion = wc.DownloadString(ini.IniReadValue("Version", "LastestVersionUrl"));
                     buttonUpdate.Visible = (AppSettings.version != AppSettings.latestVersion);
@@ -138,7 +138,7 @@ namespace LINDRA___Market
             INIFile ini = new INIFile(configFileLoad);
 
             ini.IniWriteValue("Version", "AppVersion", AppSettings.version);
-            ini.IniWriteValue("Settings", "DarkMode", AppSettings.darkMode.ToString());
+            ini.IniWriteValue("Settings", "DarkMode", AppSettings.isDarkMode.ToString());
         }
 
     }

@@ -57,7 +57,7 @@ namespace LINDRA___Market.Views
 
         private void switchDarkMode_CheckedChanged(object sender, EventArgs e)
         {
-            AppSettings.darkMode = switchDarkMode.Checked;
+            AppSettings.isDarkMode = switchDarkMode.Checked;
             loadColorTheme();
         }
 
@@ -67,9 +67,9 @@ namespace LINDRA___Market.Views
             {
                 version = AppSettings.version;
             }
-            if (AppSettings.darkMode != switchDarkMode.Checked)
+            if (AppSettings.isDarkMode != switchDarkMode.Checked)
             {
-                switchDarkMode.Checked = AppSettings.darkMode;
+                switchDarkMode.Checked = AppSettings.isDarkMode;
                 loadColorTheme();
             }
         }

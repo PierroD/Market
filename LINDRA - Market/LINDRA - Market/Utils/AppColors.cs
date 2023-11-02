@@ -13,28 +13,28 @@ namespace LINDRA___Market.Utils
     {       
         public static Color textColor
         {
-            get { return (AppSettings.darkMode) ? DarkMode.text : LightMode.text; }
+            get { return (AppSettings.isDarkMode) ? DarkMode.text : LightMode.text; }
         }
         public static Color backgroundColor
         {
-            get { return (AppSettings.darkMode) ? DarkMode.background : LightMode.background; }
+            get { return (AppSettings.isDarkMode) ? DarkMode.background : LightMode.background; }
         }   
         public static Color backgroundTransparencyColor
         {
-            get { return (AppSettings.darkMode) ? DarkMode.backgroundTransparency : LightMode.backgroundTransparency; }
+            get { return (AppSettings.isDarkMode) ? DarkMode.backgroundTransparency : LightMode.backgroundTransparency; }
         }
         public static Color primaryColor
         {
-            get { return (AppSettings.darkMode) ? DarkMode.primary : LightMode.primary; }
+            get { return (AppSettings.isDarkMode) ? DarkMode.primary : LightMode.primary; }
         }
         public static Color secondaryColor
         {
-            get { return (AppSettings.darkMode) ? DarkMode.secondary : LightMode.secondary; }
+            get { return (AppSettings.isDarkMode) ? DarkMode.secondary : LightMode.secondary; }
         }
 
         public static Bitmap getImage(string name)
         {
-            return (Bitmap)Properties.Resources.ResourceManager.GetObject($"{name}{((AppSettings.darkMode) ? "Dark" : "Light")}");
+            return (Bitmap)Properties.Resources.ResourceManager.GetObject($"{name}{((AppSettings.isDarkMode) ? "Dark" : "Light")}");
         }
     }
 
