@@ -13,6 +13,8 @@ Call of Duty FPS unlocker Market, is the latest version of my FPS Unlocker, if y
 - Installation guide
 - Any suggestions ?
 - Creator
+- [History](https://github.com/PierroD/Market/blob/main/_readmes/History.md)
+- [F.A.Q](https://github.com/PierroD/Market/blob/main/_readmes/FAQ.md)
 
 # Installation guide
 
