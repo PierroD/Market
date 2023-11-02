@@ -19,6 +19,10 @@ namespace LINDRA___Market.form.Views
         {
             InitializeComponent();
         }
+        private void UC_Feed_Load(object sender, EventArgs e)
+        {
+            this.BackColor = AppColors.backgroundColor;
+        }
 
         private void button_reset_Click(object sender, EventArgs e)
         {
@@ -33,14 +37,14 @@ namespace LINDRA___Market.form.Views
             {
                 if (colorDialogAllies.ShowDialog() == DialogResult.OK)
                 {
-                    setColor(colorDialogAllies.Color, fps_settings.axis_feed);
+                    setColor(colorDialogAllies.Color, FpsSettings.axis_feed);
                 }
             }
             else
             {
                 if (colorDialogAxis.ShowDialog() == DialogResult.OK)
                 {
-                    setColor(fps_settings.allies_feed, colorDialogAxis.Color);
+                    setColor(FpsSettings.allies_feed, colorDialogAxis.Color);
                 }
 
             }
@@ -48,37 +52,32 @@ namespace LINDRA___Market.form.Views
 
         private void setColor(Color allies, Color axis)
         {
-            fps_settings.allies_feed = allies;
-            fps_settings.axis_feed = axis;
+            FpsSettings.allies_feed = allies;
+            FpsSettings.axis_feed = axis;
 
-            panelAllies.BackColor = fps_settings.allies_feed;
-            panelAxis.BackColor = fps_settings.axis_feed;
+            panelAllies.BackColor = FpsSettings.allies_feed;
+            panelAxis.BackColor = FpsSettings.axis_feed;
 
-        }
-
-        private void UC_Feed_Load(object sender, EventArgs e)
-        {
-            buttonSetFeedColor.FillColor = FormColors.gameColor;
         }
 
         private void buttonSetFeedColor_Click(object sender, EventArgs e)
         {
             if (COD.GameName() == "iw4mp")
             {
-                ExternalConsole.Send($"g_teamcolor_axis {fps_settings.axis_feed.R / 255} {fps_settings.axis_feed.G / 255} {fps_settings.axis_feed.B / 255}; g_teamcolor_allies {fps_settings.allies_feed.R / 255} {fps_settings.allies_feed.G / 255} {fps_settings.allies_feed.B / 255}");
+                ExternalConsole.Send($"g_teamcolor_axis {FpsSettings.axis_feed.R / 255} {FpsSettings.axis_feed.G / 255} {FpsSettings.axis_feed.B / 255}; g_teamcolor_allies {FpsSettings.allies_feed.R / 255} {FpsSettings.allies_feed.G / 255} {FpsSettings.allies_feed.B / 255}");
             }
             else
             {
-                ExternalConsole.Send($"cg_teamcolor_axis {fps_settings.axis_feed.R / 255} {fps_settings.axis_feed.G / 255} {fps_settings.axis_feed.B / 255}; cg_teamcolor_allies {fps_settings.allies_feed.R / 255} {fps_settings.allies_feed.G / 255} {fps_settings.allies_feed.B / 255}");
+                ExternalConsole.Send($"cg_teamcolor_axis {FpsSettings.axis_feed.R / 255} {FpsSettings.axis_feed.G / 255} {FpsSettings.axis_feed.B / 255}; cg_teamcolor_allies {FpsSettings.allies_feed.R / 255} {FpsSettings.allies_feed.G / 255} {FpsSettings.allies_feed.B / 255}");
             }
         }
 
         private void update_timer_Tick(object sender, EventArgs e)
         {
-            if (panelAllies.BackColor != fps_settings.allies_feed || panelAxis.BackColor != fps_settings.axis_feed)
+            if (panelAllies.BackColor != FpsSettings.allies_feed || panelAxis.BackColor != FpsSettings.axis_feed)
             {
-                panelAllies.BackColor = fps_settings.allies_feed;
-                panelAxis.BackColor = fps_settings.axis_feed;
+                panelAllies.BackColor = FpsSettings.allies_feed;
+                panelAxis.BackColor = FpsSettings.axis_feed;
                 buttonSetFeedColor.PerformClick();
             }
 

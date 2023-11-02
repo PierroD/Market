@@ -74,7 +74,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="form\fps_settings.cs" />
+    <Compile Include="form\FpsSettings.cs" />
     <Compile Include="form\fps_unlocker.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,9 +107,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utils\app_settings.cs" />
+    <Compile Include="Utils\AppSettings.cs" />
     <Compile Include="Utils\ExternalConsole.cs" />
-    <Compile Include="Utils\FormColors.cs" />
+    <Compile Include="Utils\AppColors.cs" />
     <Compile Include="Utils\INIFile.cs" />
     <Compile Include="Utils\SwitchUserControl.cs" />
     <Compile Include="Utils\Trainer.cs" />
@@ -271,8 +271,28 @@
   <ItemGroup>
     <Content Include="market.ico" />
     <Content Include="Resources\align-left_on_bo1.png" />
+    <None Include="Resources\CameraOn.png" />
+    <None Include="Resources\EyeOn.png" />
+    <None Include="Resources\CameraDark.png" />
+    <None Include="Resources\CameraLight.png" />
+    <None Include="Resources\EyeDark.png" />
+    <None Include="Resources\EyeLight.png" />
     <Content Include="Resources\eye_on_bo1.png" />
+    <None Include="Resources\HomeOn.png" />
+    <None Include="Resources\PaintPaletteDark.png" />
+    <None Include="Resources\PaintPaletteLight.png" />
+    <None Include="Resources\PaintPaletteOn.png" />
+    <None Include="Resources\SettingsOn.png" />
+    <None Include="Resources\HomeDark.png" />
+    <None Include="Resources\HomeLight.png" />
+    <None Include="Resources\PaletteDark.png" />
+    <None Include="Resources\PaletteLight.png" />
+    <None Include="Resources\SettingsDark.png" />
+    <None Include="Resources\SettingsLight.png" />
     <Content Include="Resources\sliders_on_bo1.png" />
+    <None Include="Resources\UpdatesOn.png" />
+    <None Include="Resources\UpdatesDark.png" />
+    <None Include="Resources\UpdatesLight.png" />
     <Content Include="Resources\video_on_bo1.png" />
     <None Include="Resources\play_bo1.png" />
     <None Include="Resources\bo1.jpg" />

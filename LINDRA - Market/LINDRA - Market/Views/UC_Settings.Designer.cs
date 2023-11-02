@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.separator = new Guna.UI2.WinForms.Guna2Separator();
-            this.labelSettings = new System.Windows.Forms.Label();
             this.switchDarkMode = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.labelDarkMode = new System.Windows.Forms.Label();
             this.labelVersion = new System.Windows.Forms.Label();
@@ -42,27 +40,6 @@
             this.buttonUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.buttonShortcut = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
-            // 
-            // separator
-            // 
-            this.separator.BackColor = System.Drawing.Color.Transparent;
-            this.separator.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(38)))));
-            this.separator.Location = new System.Drawing.Point(25, 41);
-            this.separator.Name = "separator";
-            this.separator.Size = new System.Drawing.Size(600, 10);
-            this.separator.TabIndex = 3;
-            // 
-            // labelSettings
-            // 
-            this.labelSettings.AutoSize = true;
-            this.labelSettings.BackColor = System.Drawing.Color.Transparent;
-            this.labelSettings.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(38)))));
-            this.labelSettings.Location = new System.Drawing.Point(21, 17);
-            this.labelSettings.Name = "labelSettings";
-            this.labelSettings.Size = new System.Drawing.Size(70, 21);
-            this.labelSettings.TabIndex = 2;
-            this.labelSettings.Text = "Settings";
             // 
             // switchDarkMode
             // 
@@ -200,8 +177,6 @@
             this.Controls.Add(this.labelVersion);
             this.Controls.Add(this.labelDarkMode);
             this.Controls.Add(this.switchDarkMode);
-            this.Controls.Add(this.separator);
-            this.Controls.Add(this.labelSettings);
             this.Name = "UC_Settings";
             this.Size = new System.Drawing.Size(677, 400);
             this.Load += new System.EventHandler(this.UC_Settings_Load);
@@ -211,9 +186,6 @@
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2Separator separator;
-        private System.Windows.Forms.Label labelSettings;
         private Guna.UI2.WinForms.Guna2ToggleSwitch switchDarkMode;
         private System.Windows.Forms.Label labelDarkMode;
         private System.Windows.Forms.Label labelVersion;

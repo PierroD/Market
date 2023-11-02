@@ -73,39 +73,29 @@ namespace LINDRA___Market.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap align_left_on_bo1 {
-            get {
-                object obj = ResourceManager.GetObject("align-left_on_bo1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap align_left_on_mw2 {
-            get {
-                object obj = ResourceManager.GetObject("align-left_on_mw2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap align_left_on_mw3 {
-            get {
-                object obj = ResourceManager.GetObject("align-left_on_mw3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap bo1 {
             get {
                 object obj = ResourceManager.GetObject("bo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CameraDark {
+            get {
+                object obj = ResourceManager.GetObject("CameraDark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CameraLight {
+            get {
+                object obj = ResourceManager.GetObject("CameraLight", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +113,9 @@ namespace LINDRA___Market.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap eye_off {
+        internal static System.Drawing.Bitmap EyeDark {
             get {
-                object obj = ResourceManager.GetObject("eye_off", resourceCulture);
+                object obj = ResourceManager.GetObject("EyeDark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +123,9 @@ namespace LINDRA___Market.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap eye_on_bo1 {
+        internal static System.Drawing.Bitmap EyeLight {
             get {
-                object obj = ResourceManager.GetObject("eye_on_bo1", resourceCulture);
+                object obj = ResourceManager.GetObject("EyeLight", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +133,9 @@ namespace LINDRA___Market.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap eye_on_mw2 {
+        internal static System.Drawing.Bitmap HomeDark {
             get {
-                object obj = ResourceManager.GetObject("eye_on_mw2", resourceCulture);
+                object obj = ResourceManager.GetObject("HomeDark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,29 +143,9 @@ namespace LINDRA___Market.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap eye_on_mw3 {
+        internal static System.Drawing.Bitmap HomeLight {
             get {
-                object obj = ResourceManager.GetObject("eye_on_mw3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap home_off {
-            get {
-                object obj = ResourceManager.GetObject("home_off", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap home_on {
-            get {
-                object obj = ResourceManager.GetObject("home_on", resourceCulture);
+                object obj = ResourceManager.GetObject("HomeLight", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -196,6 +166,26 @@ namespace LINDRA___Market.Properties {
         internal static System.Drawing.Bitmap mw3 {
             get {
                 object obj = ResourceManager.GetObject("mw3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PaletteDark {
+            get {
+                object obj = ResourceManager.GetObject("PaletteDark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PaletteLight {
+            get {
+                object obj = ResourceManager.GetObject("PaletteLight", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,9 +223,9 @@ namespace LINDRA___Market.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap settings_off {
+        internal static System.Drawing.Bitmap SettingsDark {
             get {
-                object obj = ResourceManager.GetObject("settings_off", resourceCulture);
+                object obj = ResourceManager.GetObject("SettingsDark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,9 +233,9 @@ namespace LINDRA___Market.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap settings_on {
+        internal static System.Drawing.Bitmap SettingsLight {
             get {
-                object obj = ResourceManager.GetObject("settings_on", resourceCulture);
+                object obj = ResourceManager.GetObject("SettingsLight", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -253,9 +243,9 @@ namespace LINDRA___Market.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap sliders_off {
+        internal static System.Drawing.Bitmap UpdatesDark {
             get {
-                object obj = ResourceManager.GetObject("sliders_off", resourceCulture);
+                object obj = ResourceManager.GetObject("UpdatesDark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,89 +253,9 @@ namespace LINDRA___Market.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap sliders_on_bo1 {
+        internal static System.Drawing.Bitmap UpdatesLight {
             get {
-                object obj = ResourceManager.GetObject("sliders_on_bo1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap sliders_on_mw2 {
-            get {
-                object obj = ResourceManager.GetObject("sliders_on_mw2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap sliders_on_mw3 {
-            get {
-                object obj = ResourceManager.GetObject("sliders_on_mw3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap update_off {
-            get {
-                object obj = ResourceManager.GetObject("update_off", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap update_on {
-            get {
-                object obj = ResourceManager.GetObject("update_on", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap video_off {
-            get {
-                object obj = ResourceManager.GetObject("video_off", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap video_on_bo1 {
-            get {
-                object obj = ResourceManager.GetObject("video_on_bo1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap video_on_mw2 {
-            get {
-                object obj = ResourceManager.GetObject("video_on_mw2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap video_on_mw3 {
-            get {
-                object obj = ResourceManager.GetObject("video_on_mw3", resourceCulture);
+                object obj = ResourceManager.GetObject("UpdatesLight", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

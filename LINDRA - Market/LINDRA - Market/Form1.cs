@@ -37,19 +37,27 @@ namespace LINDRA___Market
         {
             while (true)
             {
-                this.BackColor = FormColors.backgroundPrimaryColor;
-                panelMain.BackColor = FormColors.backgroundPrimaryColor;
-                panelLeft.BackColor = FormColors.backgroundSecondaryColor;
-                panelTop.BackColor = FormColors.backgroundSecondaryColor;
-                buttonMinimize.FillColor = FormColors.backgroundSecondaryColor;
-                buttonClose.FillColor = FormColors.backgroundSecondaryColor;
-                buttonMinimize.IconColor = FormColors.backgroundPrimaryColor;
-                buttonClose.IconColor = FormColors.backgroundPrimaryColor;
-                labelTitle.ForeColor = FormColors.backgroundSecondaryColor;
-                labelSignature.ForeColor = FormColors.backgroundSecondaryColor;
-              /*  scrollBarPanel.FillColor = FormColors.backgroundSecondaryColor;
-                scrollBarPanel.ThumbColor = FormColors.backgroundPrimaryColor;*/
-                Thread.Sleep(100);
+                #region leftPanelButtons
+                buttonSettings.Image = AppColors.getImage("Settings");
+                buttonSettings.CheckedState.FillColor = AppColors.secondaryColor;
+                buttonHome.Image = AppColors.getImage("Home");
+                buttonHome.CheckedState.FillColor = AppColors.secondaryColor;
+                buttonUpdate.Image = AppColors.getImage("Updates");
+                labelPage.ForeColor = AppColors.textColor;
+                #endregion
+                this.BackColor = AppColors.backgroundColor;
+                panelMain.BackColor = AppColors.backgroundColor;
+                panelLeft.BackColor = AppColors.backgroundTransparencyColor;
+                panelTop.BackColor = AppColors.backgroundTransparencyColor;
+                buttonMinimize.FillColor = AppColors.backgroundTransparencyColor;
+                buttonClose.FillColor = AppColors.backgroundTransparencyColor;
+                buttonMinimize.IconColor = AppColors.textColor;
+                buttonClose.IconColor = AppColors.textColor;
+                labelTitle.ForeColor = AppColors.textColor;
+                labelSignature.ForeColor = AppColors.textColor;
+                /*  scrollBarPanel.FillColor = FormColors.backgroundSecondaryColor;
+                  scrollBarPanel.ThumbColor = FormColors.backgroundPrimaryColor;*/
+                Thread.Sleep(10);
             }
 
         }
@@ -57,8 +65,8 @@ namespace LINDRA___Market
         private void buttons_SideBar_Click(object sender, EventArgs e)
         {
             Guna2Button button = ((Guna2Button)sender);
-            buttonSettings.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(buttonSettings.Name == button.Name ? "settings_on" : "settings_off");
-            buttonHome.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(buttonHome.Name == button.Name ? "home_on" : "home_off");
+            labelPage.Text = button.Name.Replace("button", String.Empty);
+            pictureBoxPage.Image = (Bitmap)button.Image;
             SwitchUserControl.SwitchUserControl.Switch(panelMain, GetUserControlInstance(button.Name.Replace("button", String.Empty)));
         }
 
@@ -105,23 +113,12 @@ namespace LINDRA___Market
             {
                 INIFile ini = new INIFile(configFileLoad);
                 
-                app_settings.version = ini.IniReadValue("Version", "AppVersion");
-                app_settings.darkMode = bool.Parse(ini.IniReadValue("Settings", "DarkMode"));
+                AppSettings.version = ini.IniReadValue("Version", "AppVersion");
+                AppSettings.darkMode = bool.Parse(ini.IniReadValue("Settings", "DarkMode"));
                 using (var wc = new System.Net.WebClient())
-                    app_settings.latestVersion = wc.DownloadString(ini.IniReadValue("Version", "LastestVersionUrl"));
-                    buttonUpdate.Visible = (app_settings.version != app_settings.latestVersion);
-
-                if (app_settings.darkMode)
-                {
-                    FormColors.backgroundPrimaryColor = Color.FromArgb(28, 40, 38);
-                    FormColors.backgroundSecondaryColor = Color.FromArgb(217, 247, 250);
-                }
-                else
-                {
-                    FormColors.backgroundSecondaryColor = Color.FromArgb(28, 40, 38);
-                    FormColors.backgroundPrimaryColor = Color.FromArgb(217, 247, 250);
-                }
-            }
+                    AppSettings.latestVersion = wc.DownloadString(ini.IniReadValue("Version", "LastestVersionUrl"));
+                    buttonUpdate.Visible = (AppSettings.version != AppSettings.latestVersion);
+           }
         }
 
         private void buttonUpdate_Click(object sender, EventArgs e)
@@ -134,8 +131,8 @@ namespace LINDRA___Market
             string configFileLoad = config_folder + "app.ini";
             INIFile ini = new INIFile(configFileLoad);
 
-            ini.IniWriteValue("Version", "AppVersion", app_settings.version);
-            ini.IniWriteValue("Settings", "DarkMode", app_settings.darkMode.ToString());
+            ini.IniWriteValue("Version", "AppVersion", AppSettings.version);
+            ini.IniWriteValue("Settings", "DarkMode", AppSettings.darkMode.ToString());
         }
 
     }

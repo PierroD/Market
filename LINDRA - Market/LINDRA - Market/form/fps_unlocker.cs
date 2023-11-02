@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using Guna.UI2.WinForms;
 using MarketOffsets;
 using LINDRA___Market.Utils;
+using Guna.UI2.WinForms.Enums;
 
 namespace LINDRA___Market.form
 {
@@ -19,12 +20,10 @@ namespace LINDRA___Market.form
     {
         Trainer t = new Trainer();
         Thread gameThread;
-        private string gameName;
         Form parent;
-        public fps_unlocker(Form parent, string game)
+        public fps_unlocker(Form parent)
         {
             InitializeComponent();
-            gameName = game;
             buttonVisuals.PerformClick();
             this.parent = parent;
             this.parent.Visible = false;
@@ -33,7 +32,6 @@ namespace LINDRA___Market.form
         private void buttons_SideBar_Click(object sender, EventArgs e)
         {
             Guna2Button button = ((Guna2Button)sender);
-            updateButton(button.Name);
             SwitchUserControl.SwitchUserControl.Switch(panelMain, GetUserControlInstance(button.Name.Replace("button", String.Empty)));
         }
 
@@ -43,6 +41,24 @@ namespace LINDRA___Market.form
         {
             gameThread = new Thread(new ThreadStart(injectInGame));
             gameThread.Start();
+            loadColorTheme();
+        }
+
+        private void loadColorTheme()
+        {
+            this.BackColor = AppColors.backgroundColor;
+            panelTop.BackColor = AppColors.backgroundTransparencyColor;
+            panelBottom.BackColor = Color.Transparent;
+            panelMain.BackColor = AppColors.backgroundColor;
+            labelTitle.ForeColor = AppColors.textColor;
+            buttonVisuals.Image = AppColors.getImage("Camera");
+            buttonVisuals.CheckedState.FillColor = AppColors.secondaryColor;
+            buttonDisable.Image = AppColors.getImage("Eye");
+            buttonDisable.CheckedState.FillColor = AppColors.secondaryColor;
+            buttonSettings.Image = AppColors.getImage("Settings");
+            buttonSettings.CheckedState.FillColor = AppColors.secondaryColor;
+            buttonMinimize.IconColor = AppColors.textColor;
+            buttonClose.IconColor = AppColors.textColor;
         }
 
         private UserControl GetUserControlInstance(string buttonName)
@@ -81,38 +97,35 @@ namespace LINDRA___Market.form
             return (UserControl)Assembly.GetExecutingAssembly().CreateInstance($"LINDRA___Market.form.Views.UC_{usercontrolName}"); ;
         }
 
-        private void updateButton(string buttonName)
-        {
-            buttonVisuals.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(buttonVisuals.Name == buttonName ? $"video_on_{gameName}" : "video_off");
-            buttonDisable.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(buttonDisable.Name == buttonName ? $"eye_on_{gameName}" : "eye_off");
-            buttonFeed.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(buttonFeed.Name == buttonName ? $"align-left_on_{gameName}" : "align-left_off");
-            buttonSettings.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(buttonSettings.Name == buttonName ? $"sliders_on_{gameName}" : "sliders_off");
-        }
-
         private void injectInGame()
         {
             while (true)
             {
                 if (COD.checkGame())
                 {
+                    labelGameName.Text = COD.LongGameName();
+                    labelGameName.ForeColor = AppColors.textColor;
                     dynamic cod = COD.Game();
                     t.Process_Handle(COD.GameName());
-                    t.WriteFloat(t.ReadInteger((int)cod.GetType().GetProperty("cg_fov").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), fps_settings.bar_fov);
-                    t.WriteFloat(t.ReadInteger((int)cod.GetType().GetProperty("cg_fovScale").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), (float)fps_settings.bar_fovScale/1000);
-                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("com_maxfps").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), fps_settings.bar_fps);
-                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_lightMap").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), fps_settings.lightmap);
-                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_specularMap").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), fps_settings.specularmap);
-                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_filmUseTweaks").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), fps_settings.sw_movie ? 1 : 0);
-                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_fog").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), fps_settings.sw_fog ? 0 : 1);
-                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_glow").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), fps_settings.sw_glow ? 0 : 1);
-                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_detail").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), fps_settings.sw_camos ? 0 : 1);
-                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_detailMap").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), fps_settings.sw_camos ? 0 : 1);
-                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("cg_brass").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), fps_settings.sw_bullet ? 0 : 1);
+                    t.WriteFloat(t.ReadInteger((int)cod.GetType().GetProperty("cg_fov").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.bar_fov);
+                    t.WriteFloat(t.ReadInteger((int)cod.GetType().GetProperty("cg_fovScale").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), (float)FpsSettings.bar_fovScale/1000);
+                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("com_maxfps").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.bar_fps);
+                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_lightMap").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.lightmap);
+                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_specularMap").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.specularmap);
+                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_filmUseTweaks").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_movie ? 1 : 0);
+                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_fog").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_fog ? 0 : 1);
+                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_glow").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_glow ? 0 : 1);
+                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_detail").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_camos ? 0 : 1);
+                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_detailMap").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_camos ? 0 : 1);
+                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("cg_brass").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_bullet ? 0 : 1);
 
                     Thread.Sleep(100);
+                } else
+                {
+                    labelGameName.Text = "No game found";
+                    labelGameName.ForeColor = AppColors.secondaryColor;
                 }
             }
-
         }
     }
 }

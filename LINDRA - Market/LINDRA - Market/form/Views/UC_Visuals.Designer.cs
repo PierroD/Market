@@ -76,7 +76,7 @@
             this.comboBoxLightMap.BackColor = System.Drawing.Color.Transparent;
             this.comboBoxLightMap.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboBoxLightMap.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxLightMap.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
+            this.comboBoxLightMap.FillColor = System.Drawing.Color.Black;
             this.comboBoxLightMap.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comboBoxLightMap.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comboBoxLightMap.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -100,7 +100,7 @@
             this.comboBoxSpecularMap.BackColor = System.Drawing.Color.Transparent;
             this.comboBoxSpecularMap.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboBoxSpecularMap.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxSpecularMap.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
+            this.comboBoxSpecularMap.FillColor = System.Drawing.Color.Black;
             this.comboBoxSpecularMap.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comboBoxSpecularMap.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comboBoxSpecularMap.Font = new System.Drawing.Font("Segoe UI", 10F);

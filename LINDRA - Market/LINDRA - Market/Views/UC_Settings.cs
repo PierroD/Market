@@ -42,45 +42,34 @@ namespace LINDRA___Market.Views
 
         private void loadColorTheme()
         {
-            this.BackColor = FormColors.backgroundPrimaryColor;
-            labelSettings.ForeColor = FormColors.backgroundSecondaryColor;
-            labelDarkMode.ForeColor = FormColors.backgroundSecondaryColor;
-            separator.FillColor = FormColors.backgroundSecondaryColor;
-            labelVersion.ForeColor = FormColors.backgroundSecondaryColor;
-            labelLatestVersion.ForeColor = FormColors.backgroundSecondaryColor;
-            buttonUpdate.FillColor = FormColors.backgroundSecondaryColor;
-            buttonUpdate.ForeColor = FormColors.backgroundPrimaryColor;
-            labelVersions.ForeColor = FormColors.backgroundSecondaryColor;
-            separator1.FillColor = FormColors.backgroundSecondaryColor;
-            buttonShortcut.ForeColor = FormColors.backgroundPrimaryColor;
-            buttonShortcut.FillColor = FormColors.backgroundSecondaryColor;
+            this.BackColor = AppColors.backgroundColor;
+            labelDarkMode.ForeColor = AppColors.textColor;
+            labelVersion.ForeColor = AppColors.textColor;
+            labelLatestVersion.ForeColor = AppColors.textColor;
+            buttonUpdate.FillColor = AppColors.primaryColor;
+            buttonUpdate.ForeColor = AppColors.textColor;
+            labelVersions.ForeColor = AppColors.textColor;
+            separator1.FillColor = AppColors.textColor;
+            buttonShortcut.ForeColor = AppColors.textColor;
+            buttonShortcut.FillColor = AppColors.primaryColor;
+            switchDarkMode.CheckedState.FillColor = AppColors.primaryColor;
         }
 
         private void switchDarkMode_CheckedChanged(object sender, EventArgs e)
         {
-            app_settings.darkMode = switchDarkMode.Checked;
-            if (switchDarkMode.Checked)
-            {
-                FormColors.backgroundPrimaryColor = Color.FromArgb(28, 40, 38);
-                FormColors.backgroundSecondaryColor = Color.FromArgb(217, 247, 250);
-            }
-            else
-            {
-                FormColors.backgroundSecondaryColor = Color.FromArgb(28, 40, 38);
-                FormColors.backgroundPrimaryColor = Color.FromArgb(217, 247, 250);
-            }
+            AppSettings.darkMode = switchDarkMode.Checked;
             loadColorTheme();
         }
 
         private void timer_update_Tick(object sender, EventArgs e)
         {
-            if(app_settings.version != version)
+            if(AppSettings.version != version)
             {
-                version = app_settings.version;
+                version = AppSettings.version;
             }
-            if (app_settings.darkMode != switchDarkMode.Checked)
+            if (AppSettings.darkMode != switchDarkMode.Checked)
             {
-                switchDarkMode.Checked = app_settings.darkMode;
+                switchDarkMode.Checked = AppSettings.darkMode;
                 loadColorTheme();
             }
         }
@@ -93,16 +82,16 @@ namespace LINDRA___Market.Views
             string updates;
             using (var wc = new System.Net.WebClient())
                 updates = wc.DownloadString(ini.IniReadValue("Version", "UpdateChangesUrl"));
-            webBrowser.DocumentText = Markdown.ToHtml(updates + $"<body style='background-color:{ColorTranslator.ToHtml(FormColors.backgroundPrimaryColor)}; color:{ColorTranslator.ToHtml(FormColors.backgroundSecondaryColor)}'></body>");
+            webBrowser.DocumentText = Markdown.ToHtml(updates + $"<body style='background-color:{ColorTranslator.ToHtml(AppColors.backgroundColor)}; color:{ColorTranslator.ToHtml(AppColors.textColor)}'></body>");
         }
 
         void checkLastestVersion()
         {
-            if (!app_settings.version.Equals(app_settings.latestVersion))
+            if (!AppSettings.version.Equals(AppSettings.latestVersion))
                 buttonUpdate.Visible = true;
 
-            labelVersion.Text = $"Current version : v{app_settings.version}";
-            labelLatestVersion.Text = $"Latest version : v{app_settings.latestVersion}";
+            labelVersion.Text = $"Current version : v{AppSettings.version}";
+            labelLatestVersion.Text = $"Latest version : v{AppSettings.latestVersion}";
         }
 
         private void buttonShortcut_Click(object sender, EventArgs e)

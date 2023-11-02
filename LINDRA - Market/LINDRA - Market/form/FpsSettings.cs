@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace LINDRA___Market.form
 {
-    public class fps_settings
+    public class FpsSettings
     {
         public static int bar_fov { get; set; } = 65;
 
