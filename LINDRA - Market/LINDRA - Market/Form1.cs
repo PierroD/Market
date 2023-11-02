@@ -103,6 +103,7 @@ namespace LINDRA___Market
                 colorThread.Abort();
             }
             home.stopThreads();
+            about.stopThreads();
             saveSettings();
         }
 

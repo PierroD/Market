@@ -32,6 +32,8 @@
             this.buttonReport = new Guna.UI2.WinForms.Guna2Button();
             this.labelDiscord = new System.Windows.Forms.Label();
             this.labelDiscordTag = new System.Windows.Forms.Label();
+            this.buttonVisit = new Guna.UI2.WinForms.Guna2Button();
+            this.labelVisit = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelReport
@@ -81,10 +83,39 @@
             this.labelDiscordTag.TabIndex = 3;
             this.labelDiscordTag.Text = "lindra";
             // 
+            // buttonVisit
+            // 
+            this.buttonVisit.BorderRadius = 8;
+            this.buttonVisit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonVisit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonVisit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonVisit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonVisit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonVisit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonVisit.ForeColor = System.Drawing.Color.White;
+            this.buttonVisit.Location = new System.Drawing.Point(548, 53);
+            this.buttonVisit.Name = "buttonVisit";
+            this.buttonVisit.Size = new System.Drawing.Size(116, 45);
+            this.buttonVisit.TabIndex = 5;
+            this.buttonVisit.Text = "Visit";
+            this.buttonVisit.Click += new System.EventHandler(this.buttonVisit_Click);
+            // 
+            // labelVisit
+            // 
+            this.labelVisit.AutoSize = true;
+            this.labelVisit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelVisit.Location = new System.Drawing.Point(460, 18);
+            this.labelVisit.Name = "labelVisit";
+            this.labelVisit.Size = new System.Drawing.Size(204, 21);
+            this.labelVisit.TabIndex = 4;
+            this.labelVisit.Text = "See the project on Github";
+            // 
             // UC_About
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonVisit);
+            this.Controls.Add(this.labelVisit);
             this.Controls.Add(this.labelDiscordTag);
             this.Controls.Add(this.labelDiscord);
             this.Controls.Add(this.buttonReport);
@@ -103,5 +134,7 @@
         private Guna.UI2.WinForms.Guna2Button buttonReport;
         private System.Windows.Forms.Label labelDiscord;
         private System.Windows.Forms.Label labelDiscordTag;
+        private Guna.UI2.WinForms.Guna2Button buttonVisit;
+        private System.Windows.Forms.Label labelVisit;
     }
 }
