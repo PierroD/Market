@@ -1,3 +1,11 @@
+### v.2.2.4
+- Add an about section as asked [Issue 4](https://github.com/PierroD/Market/issues/4)
+
+### v.2.2.3
+- Rebranding the app and make it easier to use
+- Refacto some code 
+- New Light / Dark mode
+
 ### v2.1.3
 - Fix updater crashing [Issue 3](https://github.com/PierroD/Market/issues/3)
 
