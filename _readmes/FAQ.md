@@ -10,11 +10,11 @@ You need to click on the following link : [https://github.com/PierroD/Market/iss
 
 If an update is needed you will see the following buttons :
 
-![](./_images/Update1.png)
+![](../_images/Update1.png)
 
 And then click on the update button (you are also able to see what's included in the latest release)
 
-![](./_images/Update2.png)
+![](../_images/Update2.png)
 
 ### 🛑 Is it bannable ?
 
