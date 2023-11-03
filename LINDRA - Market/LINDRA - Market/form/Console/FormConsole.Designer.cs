@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConsole));
             this.panelTopRight = new Guna.UI2.WinForms.Guna2Panel();
             this.buttonMinimize = new Guna.UI2.WinForms.Guna2ControlBox();
             this.buttonClose = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -38,13 +39,14 @@
             this.labelTitle = new System.Windows.Forms.Label();
             this.topLeftPanelElipse = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panelLeft = new Guna.UI2.WinForms.Guna2Panel();
+            this.buttonSettings = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonSearch = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonConsole = new Guna.UI2.WinForms.Guna2Button();
             this.panelMain = new Guna.UI2.WinForms.Guna2Panel();
             this.formDragControl = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.labelPage = new System.Windows.Forms.Label();
             this.pictureBoxPage = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.buttonSettings = new Guna.UI2.WinForms.Guna2Button();
-            this.buttonSearch = new Guna.UI2.WinForms.Guna2Button();
-            this.buttonConsole = new Guna.UI2.WinForms.Guna2Button();
+            this.labelGameName = new System.Windows.Forms.Label();
             this.panelTopRight.SuspendLayout();
             this.panelTopLeft.SuspendLayout();
             this.panelLeft.SuspendLayout();
@@ -134,44 +136,6 @@
             this.panelLeft.Size = new System.Drawing.Size(96, 322);
             this.panelLeft.TabIndex = 4;
             // 
-            // panelMain
-            // 
-            this.panelMain.Location = new System.Drawing.Point(117, 55);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(470, 320);
-            this.panelMain.TabIndex = 5;
-            // 
-            // formDragControl
-            // 
-            this.formDragControl.DockIndicatorTransparencyValue = 0.6D;
-            this.formDragControl.TargetControl = this;
-            this.formDragControl.UseTransparentDrag = true;
-            // 
-            // labelPage
-            // 
-            this.labelPage.AutoSize = true;
-            this.labelPage.BackColor = System.Drawing.Color.Transparent;
-            this.labelPage.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(38)))));
-            this.labelPage.Location = new System.Drawing.Point(189, 31);
-            this.labelPage.Name = "labelPage";
-            this.labelPage.Size = new System.Drawing.Size(56, 17);
-            this.labelPage.TabIndex = 9;
-            this.labelPage.Text = "Console";
-            // 
-            // pictureBoxPage
-            // 
-            this.pictureBoxPage.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxPage.FillColor = System.Drawing.Color.Transparent;
-            this.pictureBoxPage.Image = global::LINDRA___Market.Properties.Resources.ConsoleLight;
-            this.pictureBoxPage.ImageRotate = 0F;
-            this.pictureBoxPage.Location = new System.Drawing.Point(166, 30);
-            this.pictureBoxPage.Name = "pictureBoxPage";
-            this.pictureBoxPage.Size = new System.Drawing.Size(19, 19);
-            this.pictureBoxPage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxPage.TabIndex = 8;
-            this.pictureBoxPage.TabStop = false;
-            // 
             // buttonSettings
             // 
             this.buttonSettings.BackColor = System.Drawing.Color.Transparent;
@@ -193,6 +157,7 @@
             this.buttonSettings.Size = new System.Drawing.Size(50, 50);
             this.buttonSettings.TabIndex = 3;
             this.buttonSettings.UseTransparentBackground = true;
+            this.buttonSettings.Visible = false;
             this.buttonSettings.Click += new System.EventHandler(this.buttons_SideBar_Click);
             // 
             // buttonSearch
@@ -241,11 +206,60 @@
             this.buttonConsole.UseTransparentBackground = true;
             this.buttonConsole.Click += new System.EventHandler(this.buttons_SideBar_Click);
             // 
+            // panelMain
+            // 
+            this.panelMain.Location = new System.Drawing.Point(117, 55);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(470, 320);
+            this.panelMain.TabIndex = 5;
+            // 
+            // formDragControl
+            // 
+            this.formDragControl.DockIndicatorTransparencyValue = 0.6D;
+            this.formDragControl.TargetControl = this;
+            this.formDragControl.UseTransparentDrag = true;
+            // 
+            // labelPage
+            // 
+            this.labelPage.AutoSize = true;
+            this.labelPage.BackColor = System.Drawing.Color.Transparent;
+            this.labelPage.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(38)))));
+            this.labelPage.Location = new System.Drawing.Point(189, 31);
+            this.labelPage.Name = "labelPage";
+            this.labelPage.Size = new System.Drawing.Size(56, 17);
+            this.labelPage.TabIndex = 9;
+            this.labelPage.Text = "Console";
+            // 
+            // pictureBoxPage
+            // 
+            this.pictureBoxPage.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxPage.FillColor = System.Drawing.Color.Transparent;
+            this.pictureBoxPage.Image = global::LINDRA___Market.Properties.Resources.ConsoleLight;
+            this.pictureBoxPage.ImageRotate = 0F;
+            this.pictureBoxPage.Location = new System.Drawing.Point(166, 30);
+            this.pictureBoxPage.Name = "pictureBoxPage";
+            this.pictureBoxPage.Size = new System.Drawing.Size(19, 19);
+            this.pictureBoxPage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxPage.TabIndex = 8;
+            this.pictureBoxPage.TabStop = false;
+            // 
+            // labelGameName
+            // 
+            this.labelGameName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGameName.Location = new System.Drawing.Point(117, 378);
+            this.labelGameName.Name = "labelGameName";
+            this.labelGameName.Size = new System.Drawing.Size(472, 13);
+            this.labelGameName.TabIndex = 10;
+            this.labelGameName.Text = "No game found";
+            this.labelGameName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormConsole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 400);
+            this.Controls.Add(this.labelGameName);
             this.Controls.Add(this.labelPage);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.pictureBoxPage);
@@ -253,8 +267,10 @@
             this.Controls.Add(this.panelTopLeft);
             this.Controls.Add(this.panelTopRight);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormConsole";
             this.Text = "External Console";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormConsole_FormClosing);
             this.Load += new System.EventHandler(this.FormConsole_Load);
             this.panelTopRight.ResumeLayout(false);
             this.panelTopLeft.ResumeLayout(false);
@@ -284,5 +300,6 @@
         private Guna.UI2.WinForms.Guna2Button buttonSearch;
         private System.Windows.Forms.Label labelPage;
         private Guna.UI2.WinForms.Guna2PictureBox pictureBoxPage;
+        private System.Windows.Forms.Label labelGameName;
     }
 }
