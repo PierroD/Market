@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LINDRA___Market.Utils;
 using LINDRA___Market.form;
+using LINDRA___Market.form.Console;
 
 namespace LINDRA___Market.Views
 {
@@ -42,7 +43,8 @@ namespace LINDRA___Market.Views
                 pictureBoxConsole.FillColor = AppColors.secondaryColor;
                 labelConsoleTitle.ForeColor = AppColors.secondaryColor;
                 labelConsoleDescription.ForeColor = AppColors.textColor;
-                labelInProgress.ForeColor = AppColors.secondaryColor;
+                buttonConsole.FillColor = AppColors.secondaryColor;
+                buttonConsole.ForeColor = AppColors.textColor;
                 #endregion
                 Thread.Sleep(10);
             }
@@ -72,6 +74,15 @@ namespace LINDRA___Market.Views
                 form.Show();
             }
 
+        }
+
+        private void buttonConsole_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<FormConsole>().Count() <= 0)
+            {
+                FormConsole form = new FormConsole((this.Parent.Parent as Form));
+                form.Show();
+            }
         }
     }
 }

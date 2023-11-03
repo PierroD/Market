@@ -34,13 +34,15 @@
             this.labelDiscordTag = new System.Windows.Forms.Label();
             this.buttonVisit = new Guna.UI2.WinForms.Guna2Button();
             this.labelVisit = new System.Windows.Forms.Label();
+            this.buttonFAQ = new Guna.UI2.WinForms.Guna2Button();
+            this.labelFAQ = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelReport
             // 
             this.labelReport.AutoSize = true;
             this.labelReport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelReport.Location = new System.Drawing.Point(14, 18);
+            this.labelReport.Location = new System.Drawing.Point(14, 116);
             this.labelReport.Name = "labelReport";
             this.labelReport.Size = new System.Drawing.Size(251, 21);
             this.labelReport.TabIndex = 0;
@@ -56,7 +58,7 @@
             this.buttonReport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.buttonReport.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.buttonReport.ForeColor = System.Drawing.Color.White;
-            this.buttonReport.Location = new System.Drawing.Point(18, 53);
+            this.buttonReport.Location = new System.Drawing.Point(18, 151);
             this.buttonReport.Name = "buttonReport";
             this.buttonReport.Size = new System.Drawing.Size(116, 45);
             this.buttonReport.TabIndex = 1;
@@ -110,10 +112,39 @@
             this.labelVisit.TabIndex = 4;
             this.labelVisit.Text = "See the project on Github";
             // 
+            // buttonFAQ
+            // 
+            this.buttonFAQ.BorderRadius = 8;
+            this.buttonFAQ.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonFAQ.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonFAQ.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonFAQ.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonFAQ.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonFAQ.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonFAQ.ForeColor = System.Drawing.Color.White;
+            this.buttonFAQ.Location = new System.Drawing.Point(18, 53);
+            this.buttonFAQ.Name = "buttonFAQ";
+            this.buttonFAQ.Size = new System.Drawing.Size(116, 45);
+            this.buttonFAQ.TabIndex = 7;
+            this.buttonFAQ.Text = "Check the F.A.Q";
+            this.buttonFAQ.Click += new System.EventHandler(this.buttonFAQ_Click);
+            // 
+            // labelFAQ
+            // 
+            this.labelFAQ.AutoSize = true;
+            this.labelFAQ.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFAQ.Location = new System.Drawing.Point(14, 18);
+            this.labelFAQ.Name = "labelFAQ";
+            this.labelFAQ.Size = new System.Drawing.Size(234, 21);
+            this.labelFAQ.TabIndex = 6;
+            this.labelFAQ.Text = "Any question, check the F.A.Q";
+            // 
             // UC_About
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonFAQ);
+            this.Controls.Add(this.labelFAQ);
             this.Controls.Add(this.buttonVisit);
             this.Controls.Add(this.labelVisit);
             this.Controls.Add(this.labelDiscordTag);
@@ -136,5 +167,7 @@
         private System.Windows.Forms.Label labelDiscordTag;
         private Guna.UI2.WinForms.Guna2Button buttonVisit;
         private System.Windows.Forms.Label labelVisit;
+        private Guna.UI2.WinForms.Guna2Button buttonFAQ;
+        private System.Windows.Forms.Label labelFAQ;
     }
 }

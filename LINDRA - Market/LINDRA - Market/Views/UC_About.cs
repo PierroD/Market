@@ -33,14 +33,17 @@ namespace LINDRA___Market.Views
                 labelVisit.ForeColor = AppColors.textColor;
                 buttonVisit.ForeColor = AppColors.textColor;
                 buttonVisit.FillColor = AppColors.primaryColor;
+                labelFAQ.ForeColor = AppColors.textColor;
+                buttonFAQ.ForeColor = AppColors.textColor;
+                buttonFAQ.FillColor = AppColors.primaryColor;
                 Thread.Sleep(10);
             }
         }
-       private void UC_About_Load(object sender, EventArgs e)
-       {
+        private void UC_About_Load(object sender, EventArgs e)
+        {
             colorThread = new Thread(new ThreadStart(() => loadColorTheme()));
             colorThread.Start();
-       }
+        }
 
         public void stopThreads()
         {
@@ -55,7 +58,11 @@ namespace LINDRA___Market.Views
         private void buttonVisit_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/PierroD/Market/");
+        }
 
+        private void buttonFAQ_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/PierroD/Market/blob/main/_readmes/FAQ.md");
         }
     }
 }
