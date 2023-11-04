@@ -71,6 +71,7 @@ namespace LINDRA___Market.form.Views
                 FpsSettings.axis_feed = (Color.FromArgb(int.Parse(ini.IniReadValue("Feed", "Axis"))));
                 try
                 {
+                    FpsSettings.bar_fovScale = (int.Parse(ini.IniReadValue("Fov&fps", "FovMinimum")));
                     FpsSettings.bar_fovScale = (int.Parse(ini.IniReadValue("Fov&fps", "FovScale")));
                 }
                 catch { }
@@ -91,6 +92,7 @@ namespace LINDRA___Market.form.Views
                 {
                     sw.WriteLine("[FOV&FPS]");
                     sw.WriteLine("FieldOfView=" + FpsSettings.bar_fov);
+                    sw.WriteLine("FovMinimum=" + FpsSettings.bar_fovMin);
                     sw.WriteLine("FovScale=" + FpsSettings.bar_fovScale);
                     sw.WriteLine("Max_FPS=" + FpsSettings.bar_fps);
                     sw.WriteLine("[VISUALS]");

@@ -23,21 +23,16 @@ namespace LINDRA___Market.form.Views
             this.BackColor = AppColors.backgroundColor;
             trackbarFov.ThumbColor = AppColors.primaryColor;
             trackbarFps.ThumbColor = AppColors.primaryColor;
-            trackbarFovScale.ThumbColor = AppColors.primaryColor ;
-            switchMovie.CheckedState.FillColor = AppColors.primaryColor;
+            trackbarFovScale.ThumbColor = AppColors.primaryColor;
+            trackbarFovMinimum.ThumbColor = AppColors.primaryColor;
             labelFov.ForeColor = AppColors.textColor;
             labelFovValue.ForeColor = AppColors.textColor;
             labelFps.ForeColor = AppColors.textColor;
             labelFpsValue.ForeColor = AppColors.textColor;
             labelFovScale.ForeColor = AppColors.textColor;
             labelFovScaleValue.ForeColor = AppColors.textColor;
-            labelLightmap.ForeColor = AppColors.textColor;
-            labelSpecularmap.ForeColor = AppColors.textColor;
-            labelMovie.ForeColor = AppColors.textColor;
-            comboBoxLightMap.FillColor = AppColors.backgroundColor;
-            comboBoxLightMap.ForeColor = AppColors.textColor;
-            comboBoxSpecularMap.FillColor = AppColors.backgroundColor;
-            comboBoxSpecularMap.ForeColor = AppColors.textColor;
+            labelFovMinimum.ForeColor = AppColors.textColor;
+            labelFovMinimumValue.ForeColor = AppColors.textColor;
         }
 
         private void trackbarFov_ValueChanged(object sender, EventArgs e)
@@ -52,35 +47,25 @@ namespace LINDRA___Market.form.Views
             FpsSettings.bar_fps = trackbarFps.Value;
         }
 
-        private void comboBoxSpecularMap_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            FpsSettings.specularmap = comboBoxSpecularMap.SelectedIndex;
-        }
-
-        private void comboBoxLightMap_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            FpsSettings.lightmap = comboBoxLightMap.SelectedIndex;
-        }
-
-        private void switchMovie_CheckedChanged(object sender, EventArgs e)
-        {
-            FpsSettings.sw_movie = switchMovie.Checked;
-        }
-
-        private void update_timer_Tick(object sender, EventArgs e)
-        {
-            if (trackbarFov.Value != FpsSettings.bar_fov) trackbarFov.Value = FpsSettings.bar_fov;
-            if (trackbarFovScale.Value != FpsSettings.bar_fovScale) trackbarFovScale.Value = FpsSettings.bar_fovScale;
-            if (trackbarFps.Value != FpsSettings.bar_fps) trackbarFps.Value = FpsSettings.bar_fps;
-            if (comboBoxLightMap.SelectedIndex != FpsSettings.lightmap) comboBoxLightMap.SelectedIndex = FpsSettings.lightmap;
-            if (comboBoxSpecularMap.SelectedIndex != FpsSettings.specularmap) comboBoxSpecularMap.SelectedIndex = FpsSettings.specularmap;
-            if (switchMovie.Checked != FpsSettings.sw_movie) switchMovie.Checked = FpsSettings.sw_movie;
-        }
-
         private void trackbarFovScale_ValueChanged(object sender, EventArgs e)
         {
             labelFovScaleValue.Text = $"{(double)trackbarFovScale.Value / 1000}";
             FpsSettings.bar_fovScale = trackbarFovScale.Value;
         }
+
+        private void trackbarFovMinimum_ValueChanged(object sender, EventArgs e)
+        {
+            labelFovMinimumValue.Text = trackbarFovMinimum.Value.ToString();
+            FpsSettings.bar_fovMin = trackbarFovMinimum.Value;
+        }
+
+        private void update_timer_Tick(object sender, EventArgs e)
+        {
+            if (trackbarFov.Value != FpsSettings.bar_fov) trackbarFov.Value = FpsSettings.bar_fov;
+            if (trackbarFps.Value != FpsSettings.bar_fps) trackbarFps.Value = FpsSettings.bar_fps;
+            if (trackbarFovScale.Value != FpsSettings.bar_fovScale) trackbarFovScale.Value = FpsSettings.bar_fovScale;
+            if (trackbarFovMinimum.Value != FpsSettings.bar_fovMin) trackbarFovMinimum.Value = FpsSettings.bar_fovMin;
+        }
+
     }
 }
