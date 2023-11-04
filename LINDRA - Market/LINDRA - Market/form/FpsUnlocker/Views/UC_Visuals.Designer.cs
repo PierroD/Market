@@ -31,12 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.trackbarFov = new Guna.UI2.WinForms.Guna2TrackBar();
             this.trackbarFps = new Guna.UI2.WinForms.Guna2TrackBar();
-            this.comboBoxLightMap = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.comboBoxSpecularMap = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.labelMovie = new System.Windows.Forms.Label();
-            this.switchMovie = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.labelSpecularmap = new System.Windows.Forms.Label();
-            this.labelLightmap = new System.Windows.Forms.Label();
             this.labelFps = new System.Windows.Forms.Label();
             this.labelFov = new System.Windows.Forms.Label();
             this.labelFpsValue = new System.Windows.Forms.Label();
@@ -45,6 +39,9 @@
             this.labelFovScaleValue = new System.Windows.Forms.Label();
             this.labelFovScale = new System.Windows.Forms.Label();
             this.trackbarFovScale = new Guna.UI2.WinForms.Guna2TrackBar();
+            this.labelFovMinimum = new System.Windows.Forms.Label();
+            this.trackbarFovMinimum = new Guna.UI2.WinForms.Guna2TrackBar();
+            this.labelFovMinimumValue = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // trackbarFov
@@ -70,101 +67,6 @@
             this.trackbarFps.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
             this.trackbarFps.Value = 90;
             this.trackbarFps.ValueChanged += new System.EventHandler(this.trackbarFps_ValueChanged);
-            // 
-            // comboBoxLightMap
-            // 
-            this.comboBoxLightMap.BackColor = System.Drawing.Color.Transparent;
-            this.comboBoxLightMap.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxLightMap.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxLightMap.FillColor = System.Drawing.Color.Black;
-            this.comboBoxLightMap.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxLightMap.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxLightMap.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.comboBoxLightMap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.comboBoxLightMap.ItemHeight = 30;
-            this.comboBoxLightMap.Items.AddRange(new object[] {
-            "Invert",
-            "Normal",
-            "Extrabright",
-            "Toobright",
-            "Fullbright"});
-            this.comboBoxLightMap.Location = new System.Drawing.Point(19, 203);
-            this.comboBoxLightMap.Name = "comboBoxLightMap";
-            this.comboBoxLightMap.Size = new System.Drawing.Size(249, 36);
-            this.comboBoxLightMap.StartIndex = 1;
-            this.comboBoxLightMap.TabIndex = 2;
-            this.comboBoxLightMap.SelectedIndexChanged += new System.EventHandler(this.comboBoxLightMap_SelectedIndexChanged);
-            // 
-            // comboBoxSpecularMap
-            // 
-            this.comboBoxSpecularMap.BackColor = System.Drawing.Color.Transparent;
-            this.comboBoxSpecularMap.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxSpecularMap.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxSpecularMap.FillColor = System.Drawing.Color.Black;
-            this.comboBoxSpecularMap.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxSpecularMap.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxSpecularMap.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.comboBoxSpecularMap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.comboBoxSpecularMap.ItemHeight = 30;
-            this.comboBoxSpecularMap.Items.AddRange(new object[] {
-            "Disable",
-            "Enable",
-            "Chrome"});
-            this.comboBoxSpecularMap.Location = new System.Drawing.Point(19, 282);
-            this.comboBoxSpecularMap.Name = "comboBoxSpecularMap";
-            this.comboBoxSpecularMap.Size = new System.Drawing.Size(249, 36);
-            this.comboBoxSpecularMap.StartIndex = 1;
-            this.comboBoxSpecularMap.TabIndex = 3;
-            this.comboBoxSpecularMap.SelectedIndexChanged += new System.EventHandler(this.comboBoxSpecularMap_SelectedIndexChanged);
-            // 
-            // labelMovie
-            // 
-            this.labelMovie.AutoSize = true;
-            this.labelMovie.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMovie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(38)))));
-            this.labelMovie.Location = new System.Drawing.Point(83, 349);
-            this.labelMovie.Name = "labelMovie";
-            this.labelMovie.Size = new System.Drawing.Size(56, 21);
-            this.labelMovie.TabIndex = 7;
-            this.labelMovie.Text = "Movie";
-            // 
-            // switchMovie
-            // 
-            this.switchMovie.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.switchMovie.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.switchMovie.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.switchMovie.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.switchMovie.Location = new System.Drawing.Point(157, 350);
-            this.switchMovie.Name = "switchMovie";
-            this.switchMovie.Size = new System.Drawing.Size(35, 20);
-            this.switchMovie.TabIndex = 6;
-            this.switchMovie.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.switchMovie.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.switchMovie.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.switchMovie.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.switchMovie.CheckedChanged += new System.EventHandler(this.switchMovie_CheckedChanged);
-            // 
-            // labelSpecularmap
-            // 
-            this.labelSpecularmap.AutoSize = true;
-            this.labelSpecularmap.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSpecularmap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(38)))));
-            this.labelSpecularmap.Location = new System.Drawing.Point(86, 258);
-            this.labelSpecularmap.Name = "labelSpecularmap";
-            this.labelSpecularmap.Size = new System.Drawing.Size(106, 21);
-            this.labelSpecularmap.TabIndex = 8;
-            this.labelSpecularmap.Text = "SpecularMap";
-            // 
-            // labelLightmap
-            // 
-            this.labelLightmap.AutoSize = true;
-            this.labelLightmap.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLightmap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(38)))));
-            this.labelLightmap.Location = new System.Drawing.Point(96, 179);
-            this.labelLightmap.Name = "labelLightmap";
-            this.labelLightmap.Size = new System.Drawing.Size(80, 21);
-            this.labelLightmap.TabIndex = 9;
-            this.labelLightmap.Text = "LightMap";
             // 
             // labelFps
             // 
@@ -249,11 +151,48 @@
             this.trackbarFovScale.Value = 1000;
             this.trackbarFovScale.ValueChanged += new System.EventHandler(this.trackbarFovScale_ValueChanged);
             // 
+            // labelFovMinimum
+            // 
+            this.labelFovMinimum.AutoSize = true;
+            this.labelFovMinimum.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFovMinimum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(38)))));
+            this.labelFovMinimum.Location = new System.Drawing.Point(86, 186);
+            this.labelFovMinimum.Name = "labelFovMinimum";
+            this.labelFovMinimum.Size = new System.Drawing.Size(105, 21);
+            this.labelFovMinimum.TabIndex = 18;
+            this.labelFovMinimum.Text = "FovMinimum";
+            // 
+            // trackbarFovMinimum
+            // 
+            this.trackbarFovMinimum.Location = new System.Drawing.Point(19, 210);
+            this.trackbarFovMinimum.Maximum = 130;
+            this.trackbarFovMinimum.Minimum = 65;
+            this.trackbarFovMinimum.Name = "trackbarFovMinimum";
+            this.trackbarFovMinimum.Size = new System.Drawing.Size(212, 23);
+            this.trackbarFovMinimum.TabIndex = 17;
+            this.trackbarFovMinimum.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
+            this.trackbarFovMinimum.Value = 65;
+            this.trackbarFovMinimum.ValueChanged += new System.EventHandler(this.trackbarFovMinimum_ValueChanged);
+            // 
+            // labelFovMinimumValue
+            // 
+            this.labelFovMinimumValue.AutoSize = true;
+            this.labelFovMinimumValue.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFovMinimumValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(38)))));
+            this.labelFovMinimumValue.Location = new System.Drawing.Point(240, 210);
+            this.labelFovMinimumValue.Name = "labelFovMinimumValue";
+            this.labelFovMinimumValue.Size = new System.Drawing.Size(28, 21);
+            this.labelFovMinimumValue.TabIndex = 19;
+            this.labelFovMinimumValue.Text = "65";
+            // 
             // UC_Visuals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
+            this.Controls.Add(this.labelFovMinimumValue);
+            this.Controls.Add(this.labelFovMinimum);
+            this.Controls.Add(this.trackbarFovMinimum);
             this.Controls.Add(this.labelFovScaleValue);
             this.Controls.Add(this.labelFovScale);
             this.Controls.Add(this.trackbarFovScale);
@@ -261,12 +200,6 @@
             this.Controls.Add(this.labelFpsValue);
             this.Controls.Add(this.labelFov);
             this.Controls.Add(this.labelFps);
-            this.Controls.Add(this.labelLightmap);
-            this.Controls.Add(this.labelSpecularmap);
-            this.Controls.Add(this.labelMovie);
-            this.Controls.Add(this.switchMovie);
-            this.Controls.Add(this.comboBoxSpecularMap);
-            this.Controls.Add(this.comboBoxLightMap);
             this.Controls.Add(this.trackbarFps);
             this.Controls.Add(this.trackbarFov);
             this.Name = "UC_Visuals";
@@ -281,12 +214,6 @@
 
         private Guna.UI2.WinForms.Guna2TrackBar trackbarFov;
         private Guna.UI2.WinForms.Guna2TrackBar trackbarFps;
-        private Guna.UI2.WinForms.Guna2ComboBox comboBoxLightMap;
-        private Guna.UI2.WinForms.Guna2ComboBox comboBoxSpecularMap;
-        private System.Windows.Forms.Label labelMovie;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch switchMovie;
-        private System.Windows.Forms.Label labelSpecularmap;
-        private System.Windows.Forms.Label labelLightmap;
         private System.Windows.Forms.Label labelFps;
         private System.Windows.Forms.Label labelFov;
         private System.Windows.Forms.Label labelFpsValue;
@@ -295,5 +222,8 @@
         private System.Windows.Forms.Label labelFovScaleValue;
         private System.Windows.Forms.Label labelFovScale;
         private Guna.UI2.WinForms.Guna2TrackBar trackbarFovScale;
+        private System.Windows.Forms.Label labelFovMinimum;
+        private Guna.UI2.WinForms.Guna2TrackBar trackbarFovMinimum;
+        private System.Windows.Forms.Label labelFovMinimumValue;
     }
 }
