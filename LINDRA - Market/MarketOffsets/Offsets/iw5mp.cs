@@ -11,6 +11,9 @@ namespace MarketOffsets.Offsets
     {
         public int dvar { get { return 0xC; } }
         public int cg_fov { get { return 0xB0C738; } }
+
+        public int cg_fovMin { get { return 0x8FC8D8;  } }
+
         public int cg_fovScale { get { return 0xB065C8;  } }
         public int com_maxfps { get { return 0x1CF0B84; } }
 
