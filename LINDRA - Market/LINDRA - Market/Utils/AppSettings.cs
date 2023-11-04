@@ -9,7 +9,7 @@ namespace LINDRA___Market.Utils
     public static class AppSettings
     {
         public static bool isDarkMode { get; set; } = false;
-        public static string version { get; set; } = "2.2.4";
-        public static string latestVersion { get; set; } = "2.2.4";
+        public static string version { get; set; } = "2.3.5";
+        public static string latestVersion { get; set; } = "2.3.5";
     }
 }

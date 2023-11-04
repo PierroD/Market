@@ -1,7 +1,17 @@
-### v.2.2.4
+### v2.3.5
+- Add the external console to the Market
+- Add the F.A.Q ot the about page
+- Better contrast for light and dark mode
+
+
+### v2.2.5
+- Add cg_fovMin to the fps unlocker
+- Move specularmap, lightmap, movie to the none camera settings
+
+### v2.2.4
 - Add an about section as asked [Issue 4](https://github.com/PierroD/Market/issues/4)
 
-### v.2.2.3
+### v2.2.3
 - Rebranding the app and make it easier to use
 - Refacto some code 
 - New Light / Dark mode
