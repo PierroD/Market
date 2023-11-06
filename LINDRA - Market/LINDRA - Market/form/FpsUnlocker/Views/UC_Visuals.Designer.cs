@@ -165,13 +165,12 @@
             // trackbarFovMinimum
             // 
             this.trackbarFovMinimum.Location = new System.Drawing.Point(19, 210);
-            this.trackbarFovMinimum.Maximum = 130;
-            this.trackbarFovMinimum.Minimum = 65;
+            this.trackbarFovMinimum.Maximum = 120;
             this.trackbarFovMinimum.Name = "trackbarFovMinimum";
             this.trackbarFovMinimum.Size = new System.Drawing.Size(212, 23);
             this.trackbarFovMinimum.TabIndex = 17;
             this.trackbarFovMinimum.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
-            this.trackbarFovMinimum.Value = 65;
+            this.trackbarFovMinimum.Value = 1;
             this.trackbarFovMinimum.ValueChanged += new System.EventHandler(this.trackbarFovMinimum_ValueChanged);
             // 
             // labelFovMinimumValue
@@ -181,9 +180,9 @@
             this.labelFovMinimumValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(38)))));
             this.labelFovMinimumValue.Location = new System.Drawing.Point(240, 210);
             this.labelFovMinimumValue.Name = "labelFovMinimumValue";
-            this.labelFovMinimumValue.Size = new System.Drawing.Size(28, 21);
+            this.labelFovMinimumValue.Size = new System.Drawing.Size(16, 21);
             this.labelFovMinimumValue.TabIndex = 19;
-            this.labelFovMinimumValue.Text = "65";
+            this.labelFovMinimumValue.Text = "1";
             // 
             // UC_Visuals
             // 
