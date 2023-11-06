@@ -6,7 +6,7 @@
 </details>
 
 
-# Market (latest update 11/04/2023)
+# Market (latest update 11/06/2023)
 Call of Duty FPS unlocker Market, is the latest version of my FPS Unlocker, if you want to learn a bit more about this **Market**, I will let you take a look at another GitHub repo called *CODEx*.
 
 # Table of contents
@@ -18,7 +18,7 @@ Call of Duty FPS unlocker Market, is the latest version of my FPS Unlocker, if y
 
 # Installation guide
 
-- [Download the lastest version](https://raw.githubusercontent.com/PierroD/Market/main/_updates/Market%20v2.3.5.zip) - (check if some updates are needed)
+- [Download the lastest version](https://raw.githubusercontent.com/PierroD/Market/main/_updates/Market%20v2.3.6.zip) - (check if some updates are needed)
 - Unzip the archive somehere on your computer
 - Start `LINDRA - Market.exe`
 - Enjoy :smiley:

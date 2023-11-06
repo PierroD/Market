@@ -1,3 +1,6 @@
+### v2.3.6
+- Fixed cg_fovMin range change from (65/130) to (0/120)
+
 ### v2.3.5
 - Add the external console to the Market
 - Add the F.A.Q ot the about page
