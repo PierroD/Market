@@ -1,3 +1,6 @@
+### v2.3.7
+- Fixed prevent game thread from crashing the game & Market
+
 ### v2.3.6
 - Fixed cg_fovMin range change from (65/130) to (0/120)
 

@@ -47,6 +47,7 @@
             this.labelPage = new System.Windows.Forms.Label();
             this.pictureBoxPage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.labelGameName = new System.Windows.Forms.Label();
+            this.timerGame = new System.Windows.Forms.Timer(this.components);
             this.panelTopRight.SuspendLayout();
             this.panelTopLeft.SuspendLayout();
             this.panelLeft.SuspendLayout();
@@ -247,12 +248,17 @@
             // labelGameName
             // 
             this.labelGameName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGameName.Location = new System.Drawing.Point(117, 378);
+            this.labelGameName.Location = new System.Drawing.Point(15, 378);
             this.labelGameName.Name = "labelGameName";
-            this.labelGameName.Size = new System.Drawing.Size(472, 13);
+            this.labelGameName.Size = new System.Drawing.Size(574, 13);
             this.labelGameName.TabIndex = 10;
             this.labelGameName.Text = "No game found";
             this.labelGameName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // timerGame
+            // 
+            this.timerGame.Enabled = true;
+            this.timerGame.Tick += new System.EventHandler(this.timerGame_Tick);
             // 
             // FormConsole
             // 
@@ -301,5 +307,6 @@
         private System.Windows.Forms.Label labelPage;
         private Guna.UI2.WinForms.Guna2PictureBox pictureBoxPage;
         private System.Windows.Forms.Label labelGameName;
+        private System.Windows.Forms.Timer timerGame;
     }
 }

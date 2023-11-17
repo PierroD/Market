@@ -86,6 +86,17 @@ namespace LINDRA___Market.form
             }
         }
 
+        private void timerGame_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                labelGameName.Text = COD.LongGameName();
+                labelGameName.ForeColor = AppColors.textColor;
+            }
+            catch (Exception ex) { }
+
+        }
+
         private void fps_unlocker_FormClosing(object sender, FormClosingEventArgs e)
         {
             gameThread.Abort();
@@ -103,8 +114,6 @@ namespace LINDRA___Market.form
             {
                 if (COD.checkGame())
                 {
-                    labelGameName.Text = COD.LongGameName();
-                    labelGameName.ForeColor = AppColors.textColor;
                     dynamic cod = COD.Game();
                     t.Process_Handle(COD.GameName());
                     t.WriteFloat(t.ReadInteger((int)cod.GetType().GetProperty("cg_fov").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.bar_fov);

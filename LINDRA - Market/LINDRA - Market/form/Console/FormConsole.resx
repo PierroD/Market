@@ -1873,6 +1873,9 @@
     <value>113, 16</value>
   </metadata>
   <metadata name="formDragControl.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>534, 16</value>
+    <value>533, 16</value>
+  </metadata>
+  <metadata name="timerGame.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>421, 16</value>
   </metadata>
 </root>

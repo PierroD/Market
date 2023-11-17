@@ -45,24 +45,6 @@ namespace LINDRA___Market.form.Console
 
             this.parent.Visible = false;
             buttonConsole.PerformClick();
-            gameThread = new Thread(new ThreadStart(checkGameStatus));
-        }
-
-        private void checkGameStatus()
-        {
-            while (true)
-            {
-                if (COD.checkGame())
-                {
-                    labelGameName.Text = COD.LongGameName();
-                    labelGameName.ForeColor = AppColors.textColor;
-                }
-                else
-                {
-                    labelGameName.Text = "No game found";
-                    labelGameName.ForeColor = AppColors.secondaryColor;
-                }
-            }
         }
 
         private void buttons_SideBar_Click(object sender, EventArgs e)
@@ -79,6 +61,23 @@ namespace LINDRA___Market.form.Console
         {
             gameThread.Abort();
             parent.Visible = true;
+        }
+
+        private void timerGame_Tick(object sender, EventArgs e)
+        {
+            if (COD.checkGame())
+            {
+
+                labelGameName.Text = COD.LongGameName();
+                labelGameName.ForeColor = AppColors.textColor;
+
+            }
+            else
+            {
+                labelGameName.Text = "No game found";
+                labelGameName.ForeColor = AppColors.secondaryColor;
+            }
+
         }
 
         private UserControl GetUserControlInstance(string buttonName)

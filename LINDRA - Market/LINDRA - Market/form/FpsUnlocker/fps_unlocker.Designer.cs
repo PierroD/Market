@@ -44,6 +44,7 @@
             this.formDragControl = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.panelMain = new Guna.UI2.WinForms.Guna2Panel();
             this.labelGameName = new System.Windows.Forms.Label();
+            this.timerGame = new System.Windows.Forms.Timer(this.components);
             this.panelTop.SuspendLayout();
             this.panelBottom.SuspendLayout();
             this.SuspendLayout();
@@ -236,6 +237,11 @@
             this.labelGameName.Text = "No game found";
             this.labelGameName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // timerGame
+            // 
+            this.timerGame.Enabled = true;
+            this.timerGame.Tick += new System.EventHandler(this.timerGame_Tick);
+            // 
             // fps_unlocker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,5 +282,6 @@
         private Guna.UI2.WinForms.Guna2Button buttonDisable;
         private Guna.UI2.WinForms.Guna2Panel panelMain;
         private System.Windows.Forms.Label labelGameName;
+        private System.Windows.Forms.Timer timerGame;
     }
 }
