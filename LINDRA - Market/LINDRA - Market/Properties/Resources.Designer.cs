@@ -133,6 +133,26 @@ namespace LINDRA___Market.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FullScreenDark {
+            get {
+                object obj = ResourceManager.GetObject("FullScreenDark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FullScreenLight {
+            get {
+                object obj = ResourceManager.GetObject("FullScreenLight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap HomeDark {
             get {
                 object obj = ResourceManager.GetObject("HomeDark", resourceCulture);

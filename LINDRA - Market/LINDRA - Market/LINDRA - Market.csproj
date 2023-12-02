@@ -129,6 +129,12 @@
     <Compile Include="form\FpsUnlocker\fps_unlocker.Designer.cs">
       <DependentUpon>fps_unlocker.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\FpsUnlocker\Views\UC_Area.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="form\FpsUnlocker\Views\UC_Area.Designer.cs">
+      <DependentUpon>UC_Area.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\FpsUnlocker\Views\UC_Disable.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -199,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\FpsUnlocker\fps_unlocker.resx">
       <DependentUpon>fps_unlocker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\FpsUnlocker\Views\UC_Area.resx">
+      <DependentUpon>UC_Area.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\FpsUnlocker\Views\UC_Disable.resx">
       <DependentUpon>UC_Disable.cs</DependentUpon>
@@ -367,6 +376,8 @@
     <None Include="Resources\InfoLight.png" />
     <None Include="Resources\SearchDark.png" />
     <None Include="Resources\SearchLight.png" />
+    <None Include="Resources\FullScreenDark.png" />
+    <None Include="Resources\FullScreenLight.png" />
     <Content Include="Resources\sliders_on_bo1.png" />
     <None Include="Resources\UpdatesOn.png" />
     <None Include="Resources\UpdatesDark.png" />
