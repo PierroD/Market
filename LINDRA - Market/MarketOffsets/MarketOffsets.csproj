@@ -44,6 +44,7 @@
     <Compile Include="Interfaces\IConsole.cs" />
     <Compile Include="Interfaces\IDisable.cs" />
     <Compile Include="Interfaces\IFovAndFps.cs" />
+    <Compile Include="Interfaces\ISafeArea.cs" />
     <Compile Include="Interfaces\IVisuals.cs" />
     <Compile Include="MarketOffsets.cs" />
     <Compile Include="Offsets\BlackOpsMP.cs" />

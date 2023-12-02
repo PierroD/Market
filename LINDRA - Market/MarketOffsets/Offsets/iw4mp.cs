@@ -20,7 +20,7 @@ namespace MarketOffsets.Offsets
         public int r_lightMap { get { return 0x695D9C8; } }
         public int r_specularMap { get { return 0x695D9AC; } }
         public int r_filmUseTweaks { get { return 0x695D898; } }
-       
+
         public int cg_brass { get { return 0x88E20C; } }
         public int r_fog { get { return 0x695DB18; } }
         public int r_glow { get { return 0x695D9D0; } }
@@ -30,10 +30,8 @@ namespace MarketOffsets.Offsets
         public int cbuf_addtext { get { return 0x563BE0; } }
         public int nop_address { get { return 0x0; } }
 
-        public int safeArea_horizontal { get { return 0x10FB7F4; } }
-        public int safeArea_vertical { get { return 0x10FB77C; } }
-        public int safeArea_adjusted_horizontal { get { return 0x10FB7F0; } }
-        public int safeArea_adjusted_vertical { get { return 0x10FB778; } }
+        public int profileMenuOption_safeAreaHorz { get { return 0x10F5984; } }
+        public int profileMenuOption_safeAreaVert { get { return 0x10F4600; } }
 
     }
 }
