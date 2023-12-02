@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LINDRA___Market.Utils;
 
-namespace LINDRA___Market.form.Views
+namespace LINDRA___Market.form.FpsUnlocker.Views
 {
     public partial class UC_Settings : UserControl
     {
@@ -73,6 +73,8 @@ namespace LINDRA___Market.form.Views
                 {
                     FpsSettings.bar_fovScale = (int.Parse(ini.IniReadValue("Fov&fps", "FovMinimum")));
                     FpsSettings.bar_fovScale = (int.Parse(ini.IniReadValue("Fov&fps", "FovScale")));
+                    FpsSettings.bar_horizontal = (int.Parse(ini.IniReadValue("Area", "Horizontal")));
+                    FpsSettings.bar_vertical = (int.Parse(ini.IniReadValue("Area", "Vertical")));
                 }
                 catch { }
             }
@@ -104,9 +106,9 @@ namespace LINDRA___Market.form.Views
                     sw.WriteLine("NoGlow=" + FpsSettings.sw_glow);
                     sw.WriteLine("NoBullet=" + FpsSettings.sw_bullet);
                     sw.WriteLine("NoSkins=" + FpsSettings.sw_bullet);
-                    sw.WriteLine("[FEED]");
-                    sw.WriteLine("Allies=" + FpsSettings.allies_feed.ToArgb());
-                    sw.WriteLine("Axis=" + FpsSettings.axis_feed.ToArgb());
+                    sw.WriteLine("[AREA]");
+                    sw.WriteLine("Horizontal=" + FpsSettings.bar_vertical);
+                    sw.WriteLine("Vertical=" + FpsSettings.bar_horizontal);
 
                     MessageBox.Show("Your config named : " + textboxSave.Text + " has been successfully saved", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
