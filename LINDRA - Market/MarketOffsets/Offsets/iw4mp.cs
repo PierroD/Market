@@ -7,7 +7,7 @@ using MarketOffsets.Interfaces;
 
 namespace MarketOffsets.Offsets
 {
-    internal class iw4mp : IFovAndFps, IVisuals, IDisable, IConsole
+    internal class iw4mp : IFovAndFps, IVisuals, IDisable, IConsole, ISafeArea
     {
         public int dvar { get { return 0xC; } }
         public int cg_fov { get { return 0xAAC1F8; } }
@@ -29,6 +29,11 @@ namespace MarketOffsets.Offsets
 
         public int cbuf_addtext { get { return 0x563BE0; } }
         public int nop_address { get { return 0x0; } }
+
+        public int safeArea_horizontal { get { return 0x10FB7F4; } }
+        public int safeArea_vertical { get { return 0x10FB77C; } }
+        public int safeArea_adjusted_horizontal { get { return 0x10FB7F0; } }
+        public int safeArea_adjusted_vertical { get { return 0x10FB778; } }
 
     }
 }
