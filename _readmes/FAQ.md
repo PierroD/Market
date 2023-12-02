@@ -45,7 +45,7 @@ And I also don't play those games anymore so I do it when I'm motivated to do it
 I prefer not to at the moment, but who knows 😏
 
 
-###❓ What does this do ?
+### ❓ What does this do ?
 
 This is all the console command included to the fps unlocker (with default value, and description) :
 
@@ -94,6 +94,14 @@ This is all the console command included to the fps unlocker (with default value
   {
     "Content": "r_detailMap \"Unchanged\" ",
     "Description": " Replace all detail maps with an image that effectively disables them"
+  },
+  {
+    "Content": "profileMenuOption_safeAreaHorz \"1\" ",
+    "Description": " Adjust the UI safeArea horizontally"
+  },
+  {
+    "Content": "profileMenuOption_safeAreaVert \"1\" ",
+    "Description": " Adjust the UI safeArea vertically"
   },
 ```
 
