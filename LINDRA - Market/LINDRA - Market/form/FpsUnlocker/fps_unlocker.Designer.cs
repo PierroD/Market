@@ -37,7 +37,7 @@
             this.buttonClose = new Guna.UI2.WinForms.Guna2ControlBox();
             this.panelBottom = new Guna.UI2.WinForms.Guna2Panel();
             this.buttonSettings = new Guna.UI2.WinForms.Guna2Button();
-            this.buttonFeed = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonArea = new Guna.UI2.WinForms.Guna2Button();
             this.buttonDisable = new Guna.UI2.WinForms.Guna2Button();
             this.buttonVisuals = new Guna.UI2.WinForms.Guna2Button();
             this.elipsePanelBottom = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -109,7 +109,7 @@
             this.panelBottom.BorderColor = System.Drawing.Color.White;
             this.panelBottom.BorderRadius = 24;
             this.panelBottom.Controls.Add(this.buttonSettings);
-            this.panelBottom.Controls.Add(this.buttonFeed);
+            this.panelBottom.Controls.Add(this.buttonArea);
             this.panelBottom.Controls.Add(this.buttonDisable);
             this.panelBottom.Controls.Add(this.buttonVisuals);
             this.panelBottom.Location = new System.Drawing.Point(10, 434);
@@ -139,28 +139,28 @@
             this.buttonSettings.UseTransparentBackground = true;
             this.buttonSettings.Click += new System.EventHandler(this.buttons_SideBar_Click);
             // 
-            // buttonFeed
+            // buttonArea
             // 
-            this.buttonFeed.AutoRoundedCorners = true;
-            this.buttonFeed.BackColor = System.Drawing.Color.Transparent;
-            this.buttonFeed.BorderRadius = 19;
-            this.buttonFeed.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.buttonFeed.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonFeed.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonFeed.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonFeed.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonFeed.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonFeed.FillColor = System.Drawing.Color.Transparent;
-            this.buttonFeed.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonFeed.ForeColor = System.Drawing.Color.White;
-            this.buttonFeed.Image = global::LINDRA___Market.Properties.Resources.align_left_off;
-            this.buttonFeed.Location = new System.Drawing.Point(160, 0);
-            this.buttonFeed.Name = "buttonFeed";
-            this.buttonFeed.Size = new System.Drawing.Size(40, 40);
-            this.buttonFeed.TabIndex = 2;
-            this.buttonFeed.UseTransparentBackground = true;
-            this.buttonFeed.Visible = false;
-            this.buttonFeed.Click += new System.EventHandler(this.buttons_SideBar_Click);
+            this.buttonArea.AutoRoundedCorners = true;
+            this.buttonArea.BackColor = System.Drawing.Color.Transparent;
+            this.buttonArea.BorderRadius = 19;
+            this.buttonArea.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.buttonArea.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonArea.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonArea.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonArea.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonArea.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonArea.FillColor = System.Drawing.Color.Transparent;
+            this.buttonArea.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonArea.ForeColor = System.Drawing.Color.White;
+            this.buttonArea.Image = global::LINDRA___Market.Properties.Resources.FullScreenLight;
+            this.buttonArea.Location = new System.Drawing.Point(160, 0);
+            this.buttonArea.Name = "buttonArea";
+            this.buttonArea.Size = new System.Drawing.Size(40, 40);
+            this.buttonArea.TabIndex = 2;
+            this.buttonArea.UseTransparentBackground = true;
+            this.buttonArea.Visible = false;
+            this.buttonArea.Click += new System.EventHandler(this.buttons_SideBar_Click);
             // 
             // buttonDisable
             // 
@@ -278,7 +278,7 @@
         private Guna.UI2.WinForms.Guna2DragControl formDragControl;
         private Guna.UI2.WinForms.Guna2Button buttonVisuals;
         private Guna.UI2.WinForms.Guna2Button buttonSettings;
-        private Guna.UI2.WinForms.Guna2Button buttonFeed;
+        private Guna.UI2.WinForms.Guna2Button buttonArea;
         private Guna.UI2.WinForms.Guna2Button buttonDisable;
         private Guna.UI2.WinForms.Guna2Panel panelMain;
         private System.Windows.Forms.Label labelGameName;

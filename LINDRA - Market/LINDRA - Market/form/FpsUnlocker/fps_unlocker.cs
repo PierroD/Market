@@ -21,6 +21,8 @@ namespace LINDRA___Market.form
         Trainer t = new Trainer();
         Thread gameThread;
         Form parent;
+        private string[] allowedSafeAreaGames = { "iw4mp", "iw5mp" };
+        private string previousGame = "";
         public fps_unlocker(Form parent)
         {
             InitializeComponent();
@@ -35,7 +37,7 @@ namespace LINDRA___Market.form
             SwitchUserControl.SwitchUserControl.Switch(panelMain, GetUserControlInstance(button.Name.Replace("button", String.Empty)));
         }
 
-        dynamic visuals, disable, feed, settings;
+        dynamic visuals, disable, area, settings;
 
         private void fps_unlocker_Load(object sender, EventArgs e)
         {
@@ -44,6 +46,10 @@ namespace LINDRA___Market.form
             loadColorTheme();
         }
 
+        private bool isGameAllowed(string gameName)
+        {
+            return allowedSafeAreaGames.Contains(gameName);
+        }
         private void loadColorTheme()
         {
             this.BackColor = AppColors.backgroundColor;
@@ -57,6 +63,9 @@ namespace LINDRA___Market.form
             buttonDisable.CheckedState.FillColor = AppColors.secondaryColor;
             buttonSettings.Image = AppColors.getImage("Settings");
             buttonSettings.CheckedState.FillColor = AppColors.secondaryColor;
+            buttonArea.Image = AppColors.getImage("FullScreen");
+            buttonArea.CheckedState.FillColor = AppColors.secondaryColor;
+
             buttonMinimize.IconColor = AppColors.textColor;
             buttonClose.IconColor = AppColors.textColor;
         }
@@ -73,10 +82,10 @@ namespace LINDRA___Market.form
                     if (disable == null)
                         disable = CreateUserControl(buttonName);
                     return disable;
-                case "Feed":
-                    if (feed == null)
-                        feed = CreateUserControl(buttonName);
-                    return feed;
+                case "Area":
+                    if (area == null)
+                        area = CreateUserControl(buttonName);
+                    return area;
                 case "Settings":
                     if (settings == null)
                         settings = CreateUserControl(buttonName);
@@ -90,8 +99,22 @@ namespace LINDRA___Market.form
         {
             try
             {
-                labelGameName.Text = COD.LongGameName();
-                labelGameName.ForeColor = AppColors.textColor;
+                string gameName = COD.GameName();
+                if (previousGame != gameName)
+                {
+                    buttonArea.Visible = isGameAllowed(gameName);
+                }
+                if (COD.checkGame())
+                {
+                    labelGameName.Text = COD.LongGameName();
+                    labelGameName.ForeColor = AppColors.textColor;
+                }
+                else
+                {
+                    labelGameName.Text = "No game found";
+                    labelGameName.ForeColor = AppColors.secondaryColor;
+                }
+
             }
             catch (Exception ex) { }
 
@@ -105,7 +128,7 @@ namespace LINDRA___Market.form
 
         private UserControl CreateUserControl(string usercontrolName)
         {
-            return (UserControl)Assembly.GetExecutingAssembly().CreateInstance($"LINDRA___Market.form.Views.UC_{usercontrolName}"); ;
+            return (UserControl)Assembly.GetExecutingAssembly().CreateInstance($"LINDRA___Market.form.FpsUnlocker.Views.UC_{usercontrolName}"); ;
         }
 
         private void injectInGame()
@@ -115,9 +138,10 @@ namespace LINDRA___Market.form
                 if (COD.checkGame())
                 {
                     dynamic cod = COD.Game();
-                    t.Process_Handle(COD.GameName());
+                    string gameName = COD.GameName();
+                    t.Process_Handle(gameName);
                     t.WriteFloat(t.ReadInteger((int)cod.GetType().GetProperty("cg_fov").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.bar_fov);
-                    t.WriteFloat(t.ReadInteger((int)cod.GetType().GetProperty("cg_fovScale").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), (float)FpsSettings.bar_fovScale/1000);
+                    t.WriteFloat(t.ReadInteger((int)cod.GetType().GetProperty("cg_fovScale").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), (float)FpsSettings.bar_fovScale / 1000);
                     t.WriteFloat(t.ReadInteger((int)cod.GetType().GetProperty("cg_fovMin").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.bar_fovMin);
                     t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("com_maxfps").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.bar_fps);
                     t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_lightMap").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.lightmap);
@@ -128,12 +152,12 @@ namespace LINDRA___Market.form
                     t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_detail").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_camos ? 0 : 1);
                     t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_detailMap").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_camos ? 0 : 1);
                     t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("cg_brass").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_bullet ? 0 : 1);
-
+                    if (buttonArea.Visible)
+                    {
+                        t.WriteFloat(t.ReadInteger((int)cod.GetType().GetProperty("profileMenuOption_safeAreaHorz").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), (float)FpsSettings.bar_horizontal / 100);
+                        t.WriteFloat(t.ReadInteger((int)cod.GetType().GetProperty("profileMenuOption_safeAreaVert").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), (float)FpsSettings.bar_vertical / 100);
+                    }
                     Thread.Sleep(100);
-                } else
-                {
-                    labelGameName.Text = "No game found";
-                    labelGameName.ForeColor = AppColors.secondaryColor;
                 }
             }
         }

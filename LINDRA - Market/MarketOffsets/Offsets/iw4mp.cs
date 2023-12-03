@@ -7,7 +7,7 @@ using MarketOffsets.Interfaces;
 
 namespace MarketOffsets.Offsets
 {
-    internal class iw4mp : IFovAndFps, IVisuals, IDisable, IConsole
+    internal class iw4mp : IFovAndFps, IVisuals, IDisable, IConsole, ISafeArea
     {
         public int dvar { get { return 0xC; } }
         public int cg_fov { get { return 0xAAC1F8; } }
@@ -20,7 +20,7 @@ namespace MarketOffsets.Offsets
         public int r_lightMap { get { return 0x695D9C8; } }
         public int r_specularMap { get { return 0x695D9AC; } }
         public int r_filmUseTweaks { get { return 0x695D898; } }
-       
+
         public int cg_brass { get { return 0x88E20C; } }
         public int r_fog { get { return 0x695DB18; } }
         public int r_glow { get { return 0x695D9D0; } }
@@ -29,6 +29,9 @@ namespace MarketOffsets.Offsets
 
         public int cbuf_addtext { get { return 0x563BE0; } }
         public int nop_address { get { return 0x0; } }
+
+        public int profileMenuOption_safeAreaHorz { get { return 0x10F5984; } }
+        public int profileMenuOption_safeAreaVert { get { return 0x10F4600; } }
 
     }
 }

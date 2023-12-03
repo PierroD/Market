@@ -1,4 +1,4 @@
-﻿namespace LINDRA___Market.form.Views
+﻿namespace LINDRA___Market.form.FpsUnlocker.Views
 {
     partial class UC_Visuals
     {

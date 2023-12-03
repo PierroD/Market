@@ -1,3 +1,7 @@
+### v2.4.7
+- Fixed prevent FpsUnlocker from crashing when you close the game
+- Add the SafeArea option to the FpsUnlocker
+
 ### v2.3.7
 - Fixed prevent game thread from crashing the game & Market
 

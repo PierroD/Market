@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LINDRA___Market.Utils;
 
-namespace LINDRA___Market.form.Views
+namespace LINDRA___Market.form.FpsUnlocker.Views
 {
     public partial class UC_Visuals : UserControl
     {

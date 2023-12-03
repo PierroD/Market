@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.ComponentModel;
 
 namespace LINDRA___Market.form
 {
@@ -20,6 +21,9 @@ namespace LINDRA___Market.form
         public static bool sw_glow { get; set; } = false;
         public static bool sw_camos { get; set; } = false;
         public static bool sw_bullet { get; set; } = false;
+
+        public static int bar_horizontal { get; set; } = 100;
+        public static int bar_vertical { get; set; } = 100;
 
         public static Color allies_feed { get; set; } = Color.FromArgb(153, 163, 176);
         public static Color axis_feed { get; set; } = Color.FromArgb(166, 145, 105); //"0.64999998 0.56999999 0.41";
