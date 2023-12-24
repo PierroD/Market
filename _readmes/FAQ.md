@@ -2,6 +2,22 @@
 
 You need to click on the following link : [https://github.com/PierroD/Market/issues/new](https://github.com/PierroD/Market/issues/new?assignees=PierroD&labels=bug&projects=&template=%F0%9F%90%9B-bug---issue-report.md&title=%5BBUG%5D+%2F+%5BISSUE%5D+keywords+or+short+sentence)
 
+If you are using version `2.4.8` or newer, please provide the part of the log file that preceed the crash
+
+> Follow the following instructions to find log file
+
+- Go were Market is located (only god and you know where it's located)
+- Find the `logs` folder in it
+- You might see one or multiples files with the following naming : MarketLogs_XX-XX-XXXX
+- Look at the latest one
+- If you aren't able to locate the problem, please send the trace to the issue or mp me on discord `lindra`
+
+Those logs are used to help me locating bug, optimizing code, etc... 
+
+All of those data are stored localy (so you and only you will be able to access them)
+
+I use them myself while building the app.
+
 ### 🆕 How do I ask for a new feature ?
 
 You need to click on the following link : [https://github.com/PierroD/Market/issues/new](https://github.com/PierroD/Market/issues/new)
@@ -105,3 +121,50 @@ This is all the console command included to the fps unlocker (with default value
   },
 ```
 
+### 🖹 About the logger used by Market
+
+It's a project I created in 2020, and I decided to implement it to this solution as it might help me and also helps you finding bugs, memory leaks etc...
+
+Even if I did some testing before releasing it, to optimize the log generation (it will use some space on your disk), I do recommand to clear those logs once a while.
+
+If you want to look forward, the project is also open source : [PLogger](https://github.com/pierrod/plogger)
+
+If you don't have much disk space and you want to prevent the logger to generate a lot of logs you can "disable" most of them :
+
+Find the file name : `LINDRA - Market.exe.config`
+
+It should look like this :
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <section name="PLogger" type="PLogger.Configuration.PLoggerConfig, PLogger" />
+  </configSections>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.7.2" />
+  </startup>
+  <PLogger>
+    <targets>
+      <add saveType="json" fileName="\\logs\\MarketLogs" filePath="" minLevel="Infos" detailMode="true" activityId="true" />
+    </targets>
+  </PLogger>
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="Newtonsoft.Json" publicKeyToken="30ad4fe6b2a6aeed" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-13.0.0.0" newVersion="13.0.0.0" />
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+</configuration>
+```
+
+You can edit the following line :
+
+```xml
+<!-- Actual version -->
+   <add saveType="json" fileName="\\logs\\MarketLogs" filePath="" minLevel="Infos" detailMode="true" activityId="true" />
+<!-- Do not log version -->
+   <add saveType="json" fileName="\\logs\\MarketLogs" filePath="" minLevel="Fatal" detailMode="false" activityId="true" />
+```
