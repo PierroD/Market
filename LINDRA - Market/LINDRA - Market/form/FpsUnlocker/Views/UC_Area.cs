@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PLogger;
 
 namespace LINDRA___Market.form.FpsUnlocker.Views
 {
@@ -36,12 +37,17 @@ namespace LINDRA___Market.form.FpsUnlocker.Views
 
         private void trackbarSafeAreaX_ValueChanged(object sender, EventArgs e)
         {
+            Log.setFunctionPassedThrough();
+            Log.Debug("trackbarSafeAreaX set value to :", trackbarSafeAreaX.Value, "In game value", (double)trackbarSafeAreaX.Value / 100);
             labelSafeAreaXValue.Text = $"{(double)trackbarSafeAreaX.Value / 100}";
             FpsSettings.bar_horizontal = trackbarSafeAreaX.Value;
         }
 
         private void trackbarSafeAreaY_ValueChanged(object sender, EventArgs e)
         {
+            Log.setFunctionPassedThrough();
+            Log.Debug("trackbarSafeAreaY set value to :", trackbarSafeAreaY.Value, "In game value", (double)trackbarSafeAreaY.Value / 100);
+
             labelSafeAreaYValue.Text = $"{(double)trackbarSafeAreaY.Value / 100}";
             FpsSettings.bar_vertical = trackbarSafeAreaY.Value;
 

@@ -12,13 +12,13 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PLogger;
 
 namespace LINDRA___Market.form.Console
 {
     public partial class FormConsole : Form
     {
         private Form parent;
-        private Thread gameThread;
 
         public FormConsole(Form parent)
         {
@@ -28,6 +28,7 @@ namespace LINDRA___Market.form.Console
 
         private void FormConsole_Load(object sender, EventArgs e)
         {
+            Log.setActivityId();
             this.BackColor = AppColors.backgroundColor;
             panelTopLeft.BackColor = AppColors.backgroundTransparencyColor;
             panelTopRight.BackColor = AppColors.backgroundTransparencyColor;
@@ -49,7 +50,9 @@ namespace LINDRA___Market.form.Console
 
         private void buttons_SideBar_Click(object sender, EventArgs e)
         {
+            Log.setFunctionPassedThrough();
             Guna2Button button = ((Guna2Button)sender);
+            Log.Infos("FormConsoleMenu switch to", button.Name);
             labelPage.Text = button.Name.Replace("button", String.Empty);
             pictureBoxPage.Image = (Bitmap)button.Image;
             SwitchUserControl.SwitchUserControl.Switch(panelMain, GetUserControlInstance(button.Name.Replace("button", String.Empty)));
@@ -59,7 +62,9 @@ namespace LINDRA___Market.form.Console
 
         private void FormConsole_FormClosing(object sender, FormClosingEventArgs e)
         {
-            gameThread.Abort();
+            Log.setFunctionPassedThrough();
+            Log.Infos("Closing FormConsole");
+            Log.setPreviousActivityId();
             parent.Visible = true;
         }
 
@@ -67,21 +72,31 @@ namespace LINDRA___Market.form.Console
         {
             if (COD.checkGame())
             {
-
-                labelGameName.Text = COD.LongGameName();
-                labelGameName.ForeColor = AppColors.textColor;
-
+                if (labelGameName.Text != COD.LongGameName())
+                {
+                    Log.setFunctionPassedThrough();
+                    Log.Infos("Game detected", COD.LongGameName());
+                    labelGameName.Text = COD.LongGameName();
+                    labelGameName.ForeColor = AppColors.textColor;
+                }
             }
             else
             {
-                labelGameName.Text = "No game found";
-                labelGameName.ForeColor = AppColors.secondaryColor;
+                if (labelGameName.Text != "No game found")
+                {
+                    Log.setFunctionPassedThrough();
+                    Log.Infos("No game detected");
+                    labelGameName.Text = "No game found";
+                    labelGameName.ForeColor = AppColors.secondaryColor;
+                }
             }
 
         }
 
         private UserControl GetUserControlInstance(string buttonName)
         {
+            Log.setFunctionPassedThrough();
+            Log.Infos("Switch to UC_Instance", buttonName);
             switch (buttonName)
             {
                 case "Console":

@@ -1,4 +1,5 @@
 ﻿using LINDRA___Market.Utils;
+using PLogger;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,6 +42,8 @@ namespace LINDRA___Market.Views
         }
         private void UC_About_Load(object sender, EventArgs e)
         {
+            Log.setFunctionPassedThrough();
+            Log.Infos("Start 'About' color thread");
             colorThread = new Thread(new ThreadStart(() => loadColorTheme()));
             colorThread.Start();
         }
@@ -52,16 +55,22 @@ namespace LINDRA___Market.Views
 
         private void buttonReport_Click(object sender, EventArgs e)
         {
+            Log.setFunctionPassedThrough();
+            Log.Infos("buttonReport Clicked");
             System.Diagnostics.Process.Start("https://github.com/PierroD/Market/issues/new");
         }
 
         private void buttonVisit_Click(object sender, EventArgs e)
         {
+            Log.setFunctionPassedThrough();
+            Log.Infos("buttonVisit Clicked");
             System.Diagnostics.Process.Start("https://github.com/PierroD/Market/");
         }
 
         private void buttonFAQ_Click(object sender, EventArgs e)
         {
+            Log.setFunctionPassedThrough();
+            Log.Infos("buttonFAQ Clicked");
             System.Diagnostics.Process.Start("https://github.com/PierroD/Market/blob/main/_readmes/FAQ.md");
         }
     }

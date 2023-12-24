@@ -13,6 +13,7 @@ using Guna.UI2.WinForms;
 using MarketOffsets;
 using LINDRA___Market.Utils;
 using Guna.UI2.WinForms.Enums;
+using PLogger;
 
 namespace LINDRA___Market.form
 {
@@ -33,7 +34,9 @@ namespace LINDRA___Market.form
 
         private void buttons_SideBar_Click(object sender, EventArgs e)
         {
+            Log.setFunctionPassedThrough();
             Guna2Button button = ((Guna2Button)sender);
+            Log.Infos("FpsUnlocker switch view to :", button.Name);
             SwitchUserControl.SwitchUserControl.Switch(panelMain, GetUserControlInstance(button.Name.Replace("button", String.Empty)));
         }
 
@@ -41,6 +44,7 @@ namespace LINDRA___Market.form
 
         private void fps_unlocker_Load(object sender, EventArgs e)
         {
+            Log.setActivityId();
             gameThread = new Thread(new ThreadStart(injectInGame));
             gameThread.Start();
             loadColorTheme();
@@ -48,6 +52,8 @@ namespace LINDRA___Market.form
 
         private bool isGameAllowed(string gameName)
         {
+            Log.setFunctionPassedThrough();
+            Log.Infos("isGame :", gameName, "AllowedToUseSafeArea :", allowedSafeAreaGames.Contains(gameName));
             return allowedSafeAreaGames.Contains(gameName);
         }
         private void loadColorTheme()
@@ -72,6 +78,8 @@ namespace LINDRA___Market.form
 
         private UserControl GetUserControlInstance(string buttonName)
         {
+            Log.setFunctionPassedThrough();
+            Log.Infos("Switch to UC_Instance", buttonName);
             switch (buttonName)
             {
                 case "Visuals":
@@ -100,19 +108,30 @@ namespace LINDRA___Market.form
             try
             {
                 string gameName = COD.GameName();
-                if (previousGame != gameName)
+                if (previousGame != gameName && gameName != null)
                 {
+                    Log.Infos("Previous Game", previousGame, "Game Name", gameName);
                     buttonArea.Visible = isGameAllowed(gameName);
                 }
                 if (COD.checkGame())
                 {
-                    labelGameName.Text = COD.LongGameName();
-                    labelGameName.ForeColor = AppColors.textColor;
+                    if (labelGameName.Text != COD.LongGameName())
+                    {
+                        Log.setFunctionPassedThrough();
+                        Log.Infos("Game detected", COD.LongGameName());
+                        labelGameName.Text = COD.LongGameName();
+                        labelGameName.ForeColor = AppColors.textColor;
+                    }
                 }
                 else
                 {
-                    labelGameName.Text = "No game found";
-                    labelGameName.ForeColor = AppColors.secondaryColor;
+                    if (labelGameName.Text != "No game found")
+                    {
+                        Log.setFunctionPassedThrough();
+                        Log.Infos("No game detected");
+                        labelGameName.Text = "No game found";
+                        labelGameName.ForeColor = AppColors.secondaryColor;
+                    }
                 }
 
             }
@@ -124,6 +143,9 @@ namespace LINDRA___Market.form
         {
             gameThread.Abort();
             parent.Visible = true;
+            Log.setFunctionPassedThrough();
+            Log.Infos("Closing fps_unlocker");
+            Log.setPreviousActivityId();
         }
 
         private UserControl CreateUserControl(string usercontrolName)

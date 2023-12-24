@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using LINDRA___Market.Utils;
 using LINDRA___Market.form;
 using LINDRA___Market.form.Console;
+using PLogger;
 
 namespace LINDRA___Market.Views
 {
@@ -20,7 +21,7 @@ namespace LINDRA___Market.Views
         {
             InitializeComponent();
         }
-        
+
         Thread colorThread;
         /// <summary>
         /// This function change the UI based on the theme selected in the settings
@@ -68,8 +69,11 @@ namespace LINDRA___Market.Views
 
         private void buttonFpsRun_Click(object sender, EventArgs e)
         {
+            Log.setFunctionPassedThrough();
+            Log.Infos("Try to start : fps_unlocker");
             if (Application.OpenForms.OfType<fps_unlocker>().Count() <= 0)
             {
+                Log.Infos("Starting : fps_unlocker");
                 fps_unlocker form = new fps_unlocker((this.Parent.Parent as Form));
                 form.Show();
             }
@@ -78,8 +82,11 @@ namespace LINDRA___Market.Views
 
         private void buttonConsole_Click(object sender, EventArgs e)
         {
+            Log.setFunctionPassedThrough();
+            Log.Infos("Try to start : FormConsole");
             if (Application.OpenForms.OfType<FormConsole>().Count() <= 0)
             {
+                Log.Infos("Starting : FormConsole");
                 FormConsole form = new FormConsole((this.Parent.Parent as Form));
                 form.Show();
             }

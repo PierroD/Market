@@ -12,6 +12,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PLogger;
 
 namespace LINDRA___Market.form.Console.Views
 {
@@ -122,6 +123,8 @@ namespace LINDRA___Market.form.Console.Views
         #region SearchDvars
         async void SearchDvars(string dvar)
         {
+            Log.setFunctionPassedThrough();
+            Log.Infos("Searching dvars :", textBoxSearch.Text);
             flowLayoutPanelResults.Controls.Clear();
             Game game = DvarLists.games.Where(g => g.gameName == comboBoxDvarList.Text).FirstOrDefault();
             List<Command> commands = game.commands.Where(c => c.content.Contains(dvar) || c.description.Contains(dvar)).ToList();

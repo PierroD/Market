@@ -12,6 +12,7 @@ using Guna.UI2.WinForms;
 using System.Reflection;
 using System.Threading;
 using System.IO;
+using PLogger;
 
 namespace LINDRA___Market
 {
@@ -22,6 +23,7 @@ namespace LINDRA___Market
         public form_market()
         {
             InitializeComponent();
+            Log.setActivityId();
         }
 
 
@@ -56,8 +58,6 @@ namespace LINDRA___Market
                 buttonClose.IconColor = AppColors.textColor;
                 labelTitle.ForeColor = AppColors.textColor;
                 labelSignature.ForeColor = AppColors.textColor;
-                /*  scrollBarPanel.FillColor = FormColors.backgroundSecondaryColor;
-                  scrollBarPanel.ThumbColor = FormColors.backgroundPrimaryColor;*/
                 Thread.Sleep(10);
             }
 
@@ -65,7 +65,9 @@ namespace LINDRA___Market
 
         private void buttons_SideBar_Click(object sender, EventArgs e)
         {
+            Log.setFunctionPassedThrough();
             Guna2Button button = ((Guna2Button)sender);
+            Log.Infos("Menu switch to", button.Name);
             labelPage.Text = button.Name.Replace("button", String.Empty);
             pictureBoxPage.Image = (Bitmap)button.Image;
             SwitchUserControl.SwitchUserControl.Switch(panelMain, GetUserControlInstance(button.Name.Replace("button", String.Empty)));
@@ -74,6 +76,8 @@ namespace LINDRA___Market
         dynamic home, settings, about;
         private UserControl GetUserControlInstance(string buttonName)
         {
+            Log.setFunctionPassedThrough();
+            Log.Infos("Switch to UC_Instance", buttonName);
             switch (buttonName)
             {
                 case "Home":
@@ -92,25 +96,31 @@ namespace LINDRA___Market
                     return about;
 
                 default:
+                    Log.Error("Couldn't find the CU_Instance name :", buttonName);
                     return null;
             }
         }
 
         private void form_market_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Log.setFunctionPassedThrough();
+            Log.Infos("Closing Market");
             if (colorThread.IsAlive || colorThread.IsBackground)
             {
+                Log.Infos("Closing ColorThread");
                 colorThread.Abort();
             }
             home.stopThreads();
             try
             {
                 about.stopThreads();
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
+                Log.Error("About Thread didn't exist on runtime (normal behaviour)");
                 // normal if about doesn't exist no need to throw an error
             }
-             saveSettings();
+            saveSettings();
         }
 
         private UserControl CreateUserControl(string usercontrolName)
@@ -121,17 +131,23 @@ namespace LINDRA___Market
         private static string config_folder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\";
         private void loadConfig()
         {
+            Log.setFunctionPassedThrough();
+            Log.Infos("Load app.ini config");
             string configFileLoad = config_folder + "app.ini";
             if (File.Exists(configFileLoad))
             {
                 INIFile ini = new INIFile(configFileLoad);
-                
+
                 AppSettings.version = ini.IniReadValue("Version", "AppVersion");
                 AppSettings.isDarkMode = bool.Parse(ini.IniReadValue("Settings", "DarkMode"));
                 using (var wc = new System.Net.WebClient())
                     AppSettings.latestVersion = wc.DownloadString(ini.IniReadValue("Version", "LastestVersionUrl"));
-                    buttonUpdate.Visible = (AppSettings.version != AppSettings.latestVersion);
-           }
+                buttonUpdate.Visible = (AppSettings.version != AppSettings.latestVersion);
+            }
+            else
+            {
+                Log.Error("app.ini doesn't exist, impossible to load Market config file");
+            }
         }
 
         private void buttonUpdate_Click(object sender, EventArgs e)
@@ -141,6 +157,9 @@ namespace LINDRA___Market
 
         private void saveSettings()
         {
+            Log.setFunctionPassedThrough();
+            Log.Infos("Save app.ini config");
+
             string configFileLoad = config_folder + "app.ini";
             INIFile ini = new INIFile(configFileLoad);
 

@@ -11,6 +11,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PLogger;
 
 namespace LINDRA___Market.form.Console.Views
 {
@@ -26,7 +27,7 @@ namespace LINDRA___Market.form.Console.Views
         {
             this.BackColor = AppColors.backgroundColor;
             textBoxEntry.FillColor = AppColors.backgroundColor;
-            textBoxEntry.ForeColor = AppColors.textColor; 
+            textBoxEntry.ForeColor = AppColors.textColor;
             buttonClear.FillColor = AppColors.secondaryColor;
             buttonClear.ForeColor = AppColors.textColor;
             buttonSend.FillColor = AppColors.primaryColor;
@@ -40,6 +41,8 @@ namespace LINDRA___Market.form.Console.Views
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
+            Log.setFunctionPassedThrough();
+            Log.Infos("Clear configs");
             textBoxEntry.Text = String.Empty;
             labelConfigName.Text = "Configs :";
         }
@@ -51,6 +54,8 @@ namespace LINDRA___Market.form.Console.Views
 
         private void buttonSend_Click(object sender, EventArgs e)
         {
+            Log.setFunctionPassedThrough();
+            Log.Infos("Sent through the console :", $"{textBoxEntry.Text};");
             ExternalConsole.Send($"{textBoxEntry.Text};");
         }
 
@@ -61,14 +66,18 @@ namespace LINDRA___Market.form.Console.Views
             openFileDialogConfig.FileName = String.Empty;
             if (openFileDialogConfig.ShowDialog() == DialogResult.OK)
             {
+                Log.setFunctionPassedThrough();
+                Log.Infos("Open files :", String.Join(",", openFileDialogConfig.FileNames));
                 LoadConfigFile(openFileDialogConfig.FileNames);
             }
         }
 
         void LoadConfigFile(string[] filenames)
         {
+            Log.setFunctionPassedThrough();
             foreach (string file in filenames)
             {
+                Log.Infos("Load config file :", file);
                 labelConfigName.Text += $" {Path.GetFileName(file)}";
                 textBoxEntry.Text += File.ReadAllText(file);
                 textBoxEntry.Text += Environment.NewLine;
@@ -79,12 +88,14 @@ namespace LINDRA___Market.form.Console.Views
         {
             if (textBoxEntry.Text.Trim() != String.Empty)
             {
+                Log.setFunctionPassedThrough();
                 DoesDirectoryExist();
                 saveFileDialogConfig.InitialDirectory = configPath;
                 openFileDialogConfig.FileName = String.Empty;
                 if (saveFileDialogConfig.ShowDialog() == DialogResult.OK)
                 {
                     File.WriteAllText(saveFileDialogConfig.FileName, textBoxEntry.Text);
+                    Log.Infos("Save config file :", saveFileDialogConfig.FileName);
                     MessageBox.Show($"Successfully saved file {saveFileDialogConfig.FileName}", "Saving file completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -92,6 +103,8 @@ namespace LINDRA___Market.form.Console.Views
 
         private void DoesDirectoryExist()
         {
+            Log.setFunctionPassedThrough();
+            Log.Infos("DoesDirectoryExist :", Directory.Exists(configPath));
             if (!Directory.Exists(configPath))
                 Directory.CreateDirectory(configPath);
         }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LINDRA___Market.Utils;
+using PLogger;
 
 namespace LINDRA___Market.form.FpsUnlocker.Views
 {
@@ -37,24 +38,36 @@ namespace LINDRA___Market.form.FpsUnlocker.Views
 
         private void trackbarFov_ValueChanged(object sender, EventArgs e)
         {
+            Log.setFunctionPassedThrough();
+            Log.Debug("trackbarFov set value to :", trackbarFov.Value);
+
             labelFovValue.Text = trackbarFov.Value.ToString();
             FpsSettings.bar_fov = trackbarFov.Value;
         }
 
         private void trackbarFps_ValueChanged(object sender, EventArgs e)
         {
+            Log.setFunctionPassedThrough();
+            Log.Debug("trackbarFps set value to :", trackbarFps.Value);
+
             labelFpsValue.Text = trackbarFps.Value.ToString();
             FpsSettings.bar_fps = trackbarFps.Value;
         }
 
         private void trackbarFovScale_ValueChanged(object sender, EventArgs e)
         {
+            Log.setFunctionPassedThrough();
+            Log.Debug("trackbarFovScale set value to :", trackbarFovScale.Value, "In game value", (double)trackbarFovScale.Value / 1000);
+
             labelFovScaleValue.Text = $"{(double)trackbarFovScale.Value / 1000}";
             FpsSettings.bar_fovScale = trackbarFovScale.Value;
         }
 
         private void trackbarFovMinimum_ValueChanged(object sender, EventArgs e)
         {
+            Log.setFunctionPassedThrough();
+            Log.Debug("trackbarFovMinimum set value to :", trackbarFovMinimum.Value);
+
             labelFovMinimumValue.Text = trackbarFovMinimum.Value.ToString();
             FpsSettings.bar_fovMin = trackbarFovMinimum.Value;
         }

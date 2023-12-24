@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LINDRA___Market.Utils;
+using PLogger;
 
 namespace LINDRA___Market.form.FpsUnlocker.Views
 {
@@ -41,35 +42,56 @@ namespace LINDRA___Market.form.FpsUnlocker.Views
 
         private void comboBoxLightMap_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Log.setFunctionPassedThrough();
+            Log.Debug("comboBoxLightMap set value to :", comboBoxLightMap.SelectedIndex);
+
             FpsSettings.lightmap = comboBoxLightMap.SelectedIndex;
         }
         private void comboBoxSpecularMap_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Log.setFunctionPassedThrough();
+            Log.Debug("comboBoxSpecularMap set value to :", comboBoxSpecularMap.SelectedIndex);
+
             FpsSettings.specularmap = comboBoxSpecularMap.SelectedIndex;
         }
 
         private void switchMovie_CheckedChanged(object sender, EventArgs e)
         {
+            Log.setFunctionPassedThrough();
+            Log.Debug("switchMovie set value to :", switchMovie.Checked);
+
             FpsSettings.sw_movie = switchMovie.Checked;
         }
 
         private void switchFog_CheckedChanged(object sender, EventArgs e)
         {
+            Log.setFunctionPassedThrough();
+            Log.Debug("switchFog set value to :", switchFog.Checked);
+
             FpsSettings.sw_fog = switchFog.Checked;
         }
 
         private void switchGlow_CheckedChanged(object sender, EventArgs e)
         {
+            Log.setFunctionPassedThrough();
+            Log.Debug("switchGlow set value to :", switchGlow.Checked);
+
             FpsSettings.sw_glow = switchGlow.Checked;
         }
 
         private void switchBullet_CheckedChanged(object sender, EventArgs e)
         {
+            Log.setFunctionPassedThrough();
+            Log.Debug("switchBullet set value to :", switchBullet.Checked);
+
             FpsSettings.sw_bullet = switchBullet.Checked;
         }
 
         private void switchCamos_CheckedChanged(object sender, EventArgs e)
         {
+            Log.setFunctionPassedThrough();
+            Log.Debug("switchCamos set value to :", switchCamos.Checked);
+
             FpsSettings.sw_camos = switchCamos.Checked;
         }
 

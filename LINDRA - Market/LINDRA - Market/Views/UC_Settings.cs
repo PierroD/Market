@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using IWshRuntimeLibrary;
 using LINDRA___Market.Utils;
 using Markdig;
+using PLogger;
 
 namespace LINDRA___Market.Views
 {
@@ -57,13 +58,15 @@ namespace LINDRA___Market.Views
 
         private void switchDarkMode_CheckedChanged(object sender, EventArgs e)
         {
+            Log.setFunctionPassedThrough();
+            Log.Infos("Switch DarkMode :", switchDarkMode.Checked);
             AppSettings.isDarkMode = switchDarkMode.Checked;
             loadColorTheme();
         }
 
         private void timer_update_Tick(object sender, EventArgs e)
         {
-            if(AppSettings.version != version)
+            if (AppSettings.version != version)
             {
                 version = AppSettings.version;
             }
@@ -77,6 +80,8 @@ namespace LINDRA___Market.Views
         private static string config_folder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\";
         private void checkUpdates()
         {
+            Log.setFunctionPassedThrough();
+            Log.Infos("Load updates text");
             string configFileLoad = config_folder + "app.ini";
             INIFile ini = new INIFile(configFileLoad);
             string updates;
@@ -87,8 +92,12 @@ namespace LINDRA___Market.Views
 
         void checkLastestVersion()
         {
+            Log.setFunctionPassedThrough();
+
             if (!AppSettings.version.Equals(AppSettings.latestVersion))
                 buttonUpdate.Visible = true;
+
+            Log.Infos("Check if there is a latest version :", buttonUpdate.Visible, "Available version is : ", AppSettings.latestVersion);
 
             labelVersion.Text = $"Current version : v{AppSettings.version}";
             labelLatestVersion.Text = $"Latest version : v{AppSettings.latestVersion}";
@@ -96,6 +105,8 @@ namespace LINDRA___Market.Views
 
         private void buttonShortcut_Click(object sender, EventArgs e)
         {
+            Log.setFunctionPassedThrough();
+            Log.Infos("Create a shortcut");
             object shDesktop = (object)"Desktop";
             WshShell shell = new WshShell();
             string shortcutAddress = (string)shell.SpecialFolders.Item(ref shDesktop) + @"\LINDRA - Market.lnk";
@@ -108,6 +119,8 @@ namespace LINDRA___Market.Views
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
+            Log.setFunctionPassedThrough();
+            Log.Infos("Start updating Market");
             Process.Start($"{Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)}\\MarketUpdater.exe");
             Application.Exit();
         }
