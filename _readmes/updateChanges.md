@@ -1,3 +1,7 @@
+### v2.4.8
+- Add a logger (if faced any issue you will be able to send a trace log of your session), [Read FAQ](https://github.com/PierroD/Market/blob/main/_readmes/FAQ.md)
+
+
 ### v2.4.7
 - Fixed prevent FpsUnlocker from crashing when you close the game
 - Add the SafeArea option to the FpsUnlocker
