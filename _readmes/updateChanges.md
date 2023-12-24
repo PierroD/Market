@@ -1,5 +1,5 @@
 ### v2.4.8
-- Add a logger (if faced any issue you will be able to send a trace log of your session), [Read FAQ](https://github.com/PierroD/Market/blob/main/_readmes/FAQ.md)
+- Add a logger (if you face any issue you will be able to send a trace log of your session), [Read FAQ](https://github.com/PierroD/Market/blob/main/_readmes/FAQ.md)
 
 
 ### v2.4.7
