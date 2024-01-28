@@ -24,6 +24,7 @@ namespace LINDRA___Market.form
         Form parent;
         private string[] allowedSafeAreaGames = { "iw4mp", "iw5mp" };
         private string previousGame = "";
+        private bool safeAreaPreviousState = false;
         public fps_unlocker(Form parent)
         {
             InitializeComponent();
@@ -53,8 +54,13 @@ namespace LINDRA___Market.form
         private bool isGameAllowed(string gameName)
         {
             Log.setFunctionPassedThrough();
-            Log.Infos("isGame :", gameName, "AllowedToUseSafeArea :", allowedSafeAreaGames.Contains(gameName));
-            return allowedSafeAreaGames.Contains(gameName);
+            bool isGameAllwed = allowedSafeAreaGames.Contains(gameName);
+            if (buttonArea.Visible != safeAreaPreviousState)
+            {
+                safeAreaPreviousState = isGameAllwed;
+                Log.Infos("isGame :", gameName, "AllowedToUseSafeArea :", allowedSafeAreaGames.Contains(gameName));
+            }
+            return isGameAllwed;
         }
         private void loadColorTheme()
         {
@@ -110,7 +116,7 @@ namespace LINDRA___Market.form
                 string gameName = COD.GameName();
                 if (previousGame != gameName && gameName != null)
                 {
-                    Log.Infos("Previous Game", previousGame, "Game Name", gameName);
+                    Log.Trace("Previous Game", previousGame, "Game Name", gameName);
                     buttonArea.Visible = isGameAllowed(gameName);
                 }
                 if (COD.checkGame())

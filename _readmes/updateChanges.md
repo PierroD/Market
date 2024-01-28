@@ -1,3 +1,7 @@
+### v2.4.9
+- Fix Logger issue where the log files were to big, [Read FAQ](https://github.com/PierroD/Market/blob/main/_readmes/FAQ.md)
+- **Please be sure to delete all the files in the log folder to gain some harddrive space**
+
 ### v2.4.8
 - Add a logger (if you face any issue you will be able to send a trace log of your session), [Read FAQ](https://github.com/PierroD/Market/blob/main/_readmes/FAQ.md)
 
