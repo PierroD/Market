@@ -1,4 +1,5 @@
 ### v2.4.9
+- Fix loading settings crashes
 - Fix Logger issue where the log files were to big, [Read FAQ](https://github.com/PierroD/Market/blob/main/_readmes/FAQ.md)
 - **Please be sure to delete all the files in the log folder to gain some harddrive space**
 
