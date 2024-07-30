@@ -67,8 +67,6 @@ namespace LINDRA___Market.form.FpsUnlocker.Views
                 FpsSettings.sw_glow = (bool.Parse(ini.IniReadValue("Disable", "NoGlow")));
                 FpsSettings.sw_bullet = (bool.Parse(ini.IniReadValue("Disable", "NoBullet")));
                 FpsSettings.sw_camos = (bool.Parse(ini.IniReadValue("Disable", "NoSkins")));
-                FpsSettings.allies_feed = (Color.FromArgb(int.Parse(ini.IniReadValue("Feed", "Allies"))));
-                FpsSettings.axis_feed = (Color.FromArgb(int.Parse(ini.IniReadValue("Feed", "Axis"))));
                 try
                 {
                     FpsSettings.bar_fovScale = (int.Parse(ini.IniReadValue("Fov&fps", "FovMinimum")));

@@ -124,5 +124,6 @@ namespace LINDRA___Market.Views
             Process.Start($"{Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)}\\MarketUpdater.exe");
             Application.Exit();
         }
+
     }
 }
