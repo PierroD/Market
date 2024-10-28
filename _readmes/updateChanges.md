@@ -1,3 +1,7 @@
+### V2.4.10
+- Feat Added BO2 Zombie offsets (few of them aren't working, but no issues detected so far
+- FPS Unlocker for BO2 Zombie (console will not work)
+
 ### v2.4.9
 - Fix loading settings crashes
 - Fix Logger issue where the log files were to big, [Read FAQ](https://github.com/PierroD/Market/blob/main/_readmes/FAQ.md)
