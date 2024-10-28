@@ -51,6 +51,7 @@
     <Compile Include="Offsets\iw3mp.cs" />
     <Compile Include="Offsets\iw4mp.cs" />
     <Compile Include="Offsets\iw5mp.cs" />
+    <Compile Include="Offsets\t6zm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Trainer.cs" />
   </ItemGroup>
