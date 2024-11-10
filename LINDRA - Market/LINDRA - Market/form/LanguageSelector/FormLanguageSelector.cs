@@ -82,21 +82,29 @@ namespace LINDRA___Market.form.LanguageSelector
             {
                 case "Maps":
                     if (maps == null)
-                        maps = new UC_Maps();
-                    maps.MapDetailsSelected += MapDetailsSelectedEvent;
+                    {
+                        maps = CreateUserControl<UC_Maps>(buttonName);
+                        maps.MapDetailsSelected += MapDetailsSelectedEvent;
+                    }
                     return maps;
                 case "MapDetails":
                     if (mapDetails == null)
-                        mapDetails = new UC_MapDetails();
+                        mapDetails = CreateUserControl<UC_MapDetails>(buttonName);
                     return mapDetails;
                 case "Settings":
                     if (settings == null)
-                        settings = new UC_Settings();
+                        settings = CreateUserControl<UC_Settings>(buttonName); ;
                     return settings;
                 default:
                     return null;
             }
         }
+
+        private T CreateUserControl<T>(string usercontrolName)
+        {
+            return (T)Assembly.GetExecutingAssembly().CreateInstance($"LINDRA___Market.form.LanguageSelector.Views.UC_{usercontrolName}"); ;
+        }
+
 
         private void LoadSettings()
         {

@@ -162,6 +162,7 @@ namespace LINDRA___Market.form.LanguageSelector.Views
                     string newFilePath = file.Replace(englishFileName, $"{language.key}_{this.mapDetails.workshopJson.FolderName}");
                     File.Copy(file, newFilePath);
                 }
+                MessageBox.Show($"Language files have been created successfully in {language.name} for {this.mapDetails.workshopJson.Title}", "Create language files", MessageBoxButtons.OK);
                 Notify($"Language files have been created successfully in {language.name} for {this.mapDetails.workshopJson.Title}", "Market", "Success language files", ToolTipIcon.Info);
             }
             catch (Exception ex)

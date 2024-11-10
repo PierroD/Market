@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.panelMain = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelLanguage = new Guna.UI2.WinForms.Guna2Panel();
+            this.buttonLanguage = new Guna.UI2.WinForms.Guna2Button();
+            this.labelLanguageDescription = new System.Windows.Forms.Label();
+            this.labelLanguageTitle = new System.Windows.Forms.Label();
+            this.pictureBoxLanguage = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panelConsole = new Guna.UI2.WinForms.Guna2Panel();
             this.buttonConsole = new Guna.UI2.WinForms.Guna2Button();
             this.labelConsoleDescription = new System.Windows.Forms.Label();
@@ -39,18 +44,13 @@
             this.labelFpsDescription = new System.Windows.Forms.Label();
             this.labelFpsTitle = new System.Windows.Forms.Label();
             this.pictureBoxFps = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.panelLanguage = new Guna.UI2.WinForms.Guna2Panel();
-            this.buttonLanguage = new Guna.UI2.WinForms.Guna2Button();
-            this.labelLanguageDescription = new System.Windows.Forms.Label();
-            this.labelLanguageTitle = new System.Windows.Forms.Label();
-            this.pictureBoxLanguage = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panelMain.SuspendLayout();
+            this.panelLanguage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLanguage)).BeginInit();
             this.panelConsole.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConsole)).BeginInit();
             this.panelFps.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFps)).BeginInit();
-            this.panelLanguage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLanguage)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMain
@@ -65,6 +65,69 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(680, 403);
             this.panelMain.TabIndex = 3;
+            // 
+            // panelLanguage
+            // 
+            this.panelLanguage.BackColor = System.Drawing.Color.Transparent;
+            this.panelLanguage.BorderRadius = 12;
+            this.panelLanguage.Controls.Add(this.buttonLanguage);
+            this.panelLanguage.Controls.Add(this.labelLanguageDescription);
+            this.panelLanguage.Controls.Add(this.labelLanguageTitle);
+            this.panelLanguage.Controls.Add(this.pictureBoxLanguage);
+            this.panelLanguage.FillColor = System.Drawing.Color.Black;
+            this.panelLanguage.Location = new System.Drawing.Point(413, 270);
+            this.panelLanguage.Name = "panelLanguage";
+            this.panelLanguage.Size = new System.Drawing.Size(189, 194);
+            this.panelLanguage.TabIndex = 5;
+            // 
+            // buttonLanguage
+            // 
+            this.buttonLanguage.BorderRadius = 8;
+            this.buttonLanguage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonLanguage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonLanguage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonLanguage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonLanguage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonLanguage.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLanguage.ForeColor = System.Drawing.Color.White;
+            this.buttonLanguage.Location = new System.Drawing.Point(47, 134);
+            this.buttonLanguage.Name = "buttonLanguage";
+            this.buttonLanguage.Size = new System.Drawing.Size(103, 42);
+            this.buttonLanguage.TabIndex = 4;
+            this.buttonLanguage.Text = "Run";
+            this.buttonLanguage.Click += new System.EventHandler(this.buttonLanguage_Click);
+            // 
+            // labelLanguageDescription
+            // 
+            this.labelLanguageDescription.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLanguageDescription.ForeColor = System.Drawing.Color.White;
+            this.labelLanguageDescription.Location = new System.Drawing.Point(0, 77);
+            this.labelLanguageDescription.Name = "labelLanguageDescription";
+            this.labelLanguageDescription.Size = new System.Drawing.Size(189, 36);
+            this.labelLanguageDescription.TabIndex = 2;
+            this.labelLanguageDescription.Text = "Change custom maps language on Black Ops III Zombie ";
+            this.labelLanguageDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelLanguageTitle
+            // 
+            this.labelLanguageTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLanguageTitle.ForeColor = System.Drawing.Color.White;
+            this.labelLanguageTitle.Location = new System.Drawing.Point(0, 50);
+            this.labelLanguageTitle.Name = "labelLanguageTitle";
+            this.labelLanguageTitle.Size = new System.Drawing.Size(189, 23);
+            this.labelLanguageTitle.TabIndex = 1;
+            this.labelLanguageTitle.Text = "Language Selector";
+            this.labelLanguageTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBoxLanguage
+            // 
+            this.pictureBoxLanguage.ImageRotate = 0F;
+            this.pictureBoxLanguage.Location = new System.Drawing.Point(12, 11);
+            this.pictureBoxLanguage.Name = "pictureBoxLanguage";
+            this.pictureBoxLanguage.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pictureBoxLanguage.Size = new System.Drawing.Size(10, 10);
+            this.pictureBoxLanguage.TabIndex = 0;
+            this.pictureBoxLanguage.TabStop = false;
             // 
             // panelConsole
             // 
@@ -192,69 +255,6 @@
             this.pictureBoxFps.TabIndex = 0;
             this.pictureBoxFps.TabStop = false;
             // 
-            // panelLanguage
-            // 
-            this.panelLanguage.BackColor = System.Drawing.Color.Transparent;
-            this.panelLanguage.BorderRadius = 12;
-            this.panelLanguage.Controls.Add(this.buttonLanguage);
-            this.panelLanguage.Controls.Add(this.labelLanguageDescription);
-            this.panelLanguage.Controls.Add(this.labelLanguageTitle);
-            this.panelLanguage.Controls.Add(this.pictureBoxLanguage);
-            this.panelLanguage.FillColor = System.Drawing.Color.Black;
-            this.panelLanguage.Location = new System.Drawing.Point(57, 263);
-            this.panelLanguage.Name = "panelLanguage";
-            this.panelLanguage.Size = new System.Drawing.Size(189, 194);
-            this.panelLanguage.TabIndex = 5;
-            // 
-            // buttonLanguage
-            // 
-            this.buttonLanguage.BorderRadius = 8;
-            this.buttonLanguage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonLanguage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonLanguage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonLanguage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonLanguage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonLanguage.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLanguage.ForeColor = System.Drawing.Color.White;
-            this.buttonLanguage.Location = new System.Drawing.Point(47, 134);
-            this.buttonLanguage.Name = "buttonLanguage";
-            this.buttonLanguage.Size = new System.Drawing.Size(103, 42);
-            this.buttonLanguage.TabIndex = 4;
-            this.buttonLanguage.Text = "Run";
-            this.buttonLanguage.Click += new System.EventHandler(this.buttonLanguage_Click);
-            // 
-            // labelLanguageDescription
-            // 
-            this.labelLanguageDescription.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLanguageDescription.ForeColor = System.Drawing.Color.White;
-            this.labelLanguageDescription.Location = new System.Drawing.Point(0, 77);
-            this.labelLanguageDescription.Name = "labelLanguageDescription";
-            this.labelLanguageDescription.Size = new System.Drawing.Size(189, 36);
-            this.labelLanguageDescription.TabIndex = 2;
-            this.labelLanguageDescription.Text = "Change custom maps language on Black Ops III Zombie ";
-            this.labelLanguageDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelLanguageTitle
-            // 
-            this.labelLanguageTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLanguageTitle.ForeColor = System.Drawing.Color.White;
-            this.labelLanguageTitle.Location = new System.Drawing.Point(0, 50);
-            this.labelLanguageTitle.Name = "labelLanguageTitle";
-            this.labelLanguageTitle.Size = new System.Drawing.Size(189, 23);
-            this.labelLanguageTitle.TabIndex = 1;
-            this.labelLanguageTitle.Text = "Language Selector";
-            this.labelLanguageTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBoxLanguage
-            // 
-            this.pictureBoxLanguage.ImageRotate = 0F;
-            this.pictureBoxLanguage.Location = new System.Drawing.Point(12, 11);
-            this.pictureBoxLanguage.Name = "pictureBoxLanguage";
-            this.pictureBoxLanguage.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pictureBoxLanguage.Size = new System.Drawing.Size(10, 10);
-            this.pictureBoxLanguage.TabIndex = 0;
-            this.pictureBoxLanguage.TabStop = false;
-            // 
             // UC_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,12 +265,12 @@
             this.Size = new System.Drawing.Size(680, 403);
             this.Load += new System.EventHandler(this.UC_Home_Load);
             this.panelMain.ResumeLayout(false);
+            this.panelLanguage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLanguage)).EndInit();
             this.panelConsole.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConsole)).EndInit();
             this.panelFps.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFps)).EndInit();
-            this.panelLanguage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLanguage)).EndInit();
             this.ResumeLayout(false);
 
         }

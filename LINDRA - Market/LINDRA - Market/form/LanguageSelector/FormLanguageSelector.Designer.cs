@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLanguageSelector));
             this.labelTitle = new System.Windows.Forms.Label();
             this.labelFolderPath = new System.Windows.Forms.Label();
             this.labelPage = new System.Windows.Forms.Label();
@@ -265,6 +266,7 @@
             this.Controls.Add(this.panelTopRight);
             this.Controls.Add(this.panelTopLeft);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormLanguageSelector";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLanguageSelector";

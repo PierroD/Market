@@ -14,6 +14,7 @@ using MarketOffsets;
 using LINDRA___Market.Utils;
 using Guna.UI2.WinForms.Enums;
 using PLogger;
+using LINDRA___Market.form.FpsUnlocker.Views;
 
 namespace LINDRA___Market.form
 {
@@ -40,8 +41,6 @@ namespace LINDRA___Market.form
             Log.Infos("FpsUnlocker switch view to :", button.Name);
             SwitchUserControl.SwitchUserControl.Switch(panelMain, GetUserControlInstance(button.Name.Replace("button", String.Empty)));
         }
-
-        dynamic visuals, disable, area, settings;
 
         private void fps_unlocker_Load(object sender, EventArgs e)
         {
@@ -82,6 +81,10 @@ namespace LINDRA___Market.form
             buttonClose.IconColor = AppColors.textColor;
         }
 
+        UC_Visuals visuals;
+        UC_Disable disable;
+        UC_Area area;
+        UC_Settings settings;
         private UserControl GetUserControlInstance(string buttonName)
         {
             Log.setFunctionPassedThrough();
@@ -90,19 +93,19 @@ namespace LINDRA___Market.form
             {
                 case "Visuals":
                     if (visuals == null)
-                        visuals = CreateUserControl(buttonName);
+                        visuals = CreateUserControl<UC_Visuals>(buttonName);
                     return visuals;
                 case "Disable":
                     if (disable == null)
-                        disable = CreateUserControl(buttonName);
+                        disable = CreateUserControl<UC_Disable>(buttonName);
                     return disable;
                 case "Area":
                     if (area == null)
-                        area = CreateUserControl(buttonName);
+                        area = CreateUserControl<UC_Area>(buttonName);
                     return area;
                 case "Settings":
                     if (settings == null)
-                        settings = CreateUserControl(buttonName);
+                        settings = CreateUserControl<UC_Settings>(buttonName);
                     return settings;
                 default:
                     return null;
@@ -154,9 +157,9 @@ namespace LINDRA___Market.form
             Log.setPreviousActivityId();
         }
 
-        private UserControl CreateUserControl(string usercontrolName)
+        private T CreateUserControl<T>(string usercontrolName)
         {
-            return (UserControl)Assembly.GetExecutingAssembly().CreateInstance($"LINDRA___Market.form.FpsUnlocker.Views.UC_{usercontrolName}"); ;
+            return (T)Assembly.GetExecutingAssembly().CreateInstance($"LINDRA___Market.form.FpsUnlocker.Views.UC_{usercontrolName}"); ;
         }
 
         private void injectInGame()
