@@ -18,6 +18,15 @@ All of those data are stored localy (so you and only you will be able to access 
 
 I use them myself while building the app.
 
+### 🔧 Tools available
+
+- FPS Unlockers : unlock your in-game FPS and tweak your game settings
+
+- External Console : it's a call of duty External console to inject some dvar
+
+- Language Selector : add BlackOps 3 language files to the maps which doesn't support your language
+
+
 ### 🆕 How do I ask for a new feature ?
 
 You need to click on the following link : [https://github.com/PierroD/Market/issues/new](https://github.com/PierroD/Market/issues/new)
@@ -38,6 +47,8 @@ I'm not working for Valve so there is always a risk !
 
 ### 🎮 Which games are supported ?
 
+FPS Unlocker :
+
 - Call of Duty 4 Modern Warfare - Multiplayer
 
 - Call of Duty Modern Warfare 2 - Multiplayer
@@ -45,6 +56,24 @@ I'm not working for Valve so there is always a risk !
 - Call of Duty BlackOps - Multiplayer
 
 - Call of Duty Modern Warfare 3 - Multiplayer
+
+- Call of Duty BlackOps 2 - Zombies
+
+External Console :
+
+- Call of Duty 4 Modern Warfare - Multiplayer
+
+- Call of Duty Modern Warfare 2 - Multiplayer
+
+- Call of Duty BlackOps - Multiplayer
+
+- Call of Duty Modern Warfare 3 - Multiplayer
+
+- Call of Duty BlackOps 2 - Zombies
+
+Language Selector :
+
+-  Call of Duty BlackOps 3
 
 ### 🤦 Can you add another Call of Duty Game ?
 

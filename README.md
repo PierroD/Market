@@ -6,8 +6,8 @@
 </details>
 
 
-# Market (latest update 11/06/2023)
-Call of Duty FPS unlocker Market, is the latest version of my FPS Unlocker, if you want to learn a bit more about this **Market**, I will let you take a look at another GitHub repo called *CODEx*.
+# Market (latest update 11/10/2024)
+Call of Duty Market, is the latest version of my FPS Unlocker, if you want to learn a bit more about this **Market** tool, I will let you take a look at another GitHub repo called *CODEx*.
 
 # Table of contents
 - Installation guide

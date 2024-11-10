@@ -1,4 +1,9 @@
 ### V2.4.10
+- Feat add Bo3 Language Selector
+> Select your game favorite language and fix the crashing issue when a custom map doesn't have your country language
+
+
+### V2.4.10
 - Feat Added BO2 Zombie offsets (few of them aren't working, but no issues detected so far
 - FPS Unlocker for BO2 Zombie (console will not work)
 
