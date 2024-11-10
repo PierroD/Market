@@ -163,6 +163,47 @@
     <Compile Include="form\FpsUnlocker\Views\UC_Visuals.Designer.cs">
       <DependentUpon>UC_Visuals.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\LanguageSelector\FormLanguageSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\LanguageSelector\FormLanguageSelector.Designer.cs">
+      <DependentUpon>FormLanguageSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\LanguageSelector\Languages.cs" />
+    <Compile Include="form\LanguageSelector\LanguageSelectorSettings.cs" />
+    <Compile Include="form\LanguageSelector\MapDetails.cs" />
+    <Compile Include="form\LanguageSelector\Settings.cs" />
+    <Compile Include="form\LanguageSelector\Views\UC_Language.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="form\LanguageSelector\Views\UC_Language.Designer.cs">
+      <DependentUpon>UC_Language.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\LanguageSelector\Views\UC_Map.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="form\LanguageSelector\Views\UC_Map.Designer.cs">
+      <DependentUpon>UC_Map.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\LanguageSelector\Views\UC_MapDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="form\LanguageSelector\Views\UC_MapDetails.Designer.cs">
+      <DependentUpon>UC_MapDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\LanguageSelector\Views\UC_Maps.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="form\LanguageSelector\Views\UC_Maps.Designer.cs">
+      <DependentUpon>UC_Maps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\LanguageSelector\Views\UC_Settings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="form\LanguageSelector\Views\UC_Settings.Designer.cs">
+      <DependentUpon>UC_Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\LanguageSelector\WorkshopJson.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\AppSettings.cs" />
@@ -224,6 +265,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\FpsUnlocker\Views\UC_Visuals.resx">
       <DependentUpon>UC_Visuals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\LanguageSelector\FormLanguageSelector.resx">
+      <DependentUpon>FormLanguageSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\LanguageSelector\Views\UC_Language.resx">
+      <DependentUpon>UC_Language.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\LanguageSelector\Views\UC_Map.resx">
+      <DependentUpon>UC_Map.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\LanguageSelector\Views\UC_MapDetails.resx">
+      <DependentUpon>UC_MapDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\LanguageSelector\Views\UC_Maps.resx">
+      <DependentUpon>UC_Maps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\LanguageSelector\Views\UC_Settings.resx">
+      <DependentUpon>UC_Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -382,6 +441,12 @@
     <None Include="Resources\SearchLight.png" />
     <None Include="Resources\FullScreenDark.png" />
     <None Include="Resources\FullScreenLight.png" />
+    <None Include="Resources\MapListDark.png" />
+    <None Include="Resources\MapListLight.png" />
+    <None Include="Resources\MapsDark.png" />
+    <None Include="Resources\MapsLight.png" />
+    <None Include="Resources\MapDetailsDark.png" />
+    <None Include="Resources\MapDetailsLight.png" />
     <Content Include="Resources\sliders_on_bo1.png" />
     <None Include="Resources\UpdatesOn.png" />
     <None Include="Resources\UpdatesDark.png" />

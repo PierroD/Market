@@ -27,17 +27,29 @@ namespace MarketUpdater.Utils
                 archive.ExtractToDirectory(destinationDirPath, false);
                 return;
             }
+          //  archive.ExtractToDirectory(destinationDirPath + "\\update", true);
+
 
             foreach (ZipArchiveEntry entry in archive.Entries)
             {
                 string fullPath = Path.Combine(destinationDirPath, entry.FullName);
                 if (notToUpdate.Contains(entry.Name))
                     continue;
+
+                if (entry.FullName.Contains("/"))
+                {
+                    string directory = Path.GetDirectoryName(entry.FullName);
+                    string directoryPath = Path.Combine(destinationDirPath, directory);
+                    if (!Directory.Exists(directoryPath)) {
+                        Directory.CreateDirectory(directoryPath);
+                    }
+                }
+
                 // If it's a directory, it doesn't have a "Name".
                 if (string.IsNullOrEmpty(entry.Name))
                     Directory.CreateDirectory(Path.GetDirectoryName(fullPath));
                 else
-                    entry.ExtractToFile(fullPath, true); 
+                    entry.ExtractToFile(fullPath, true);
             }
         }
     }

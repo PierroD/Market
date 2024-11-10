@@ -118,8 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="SettingsLight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SettingsLight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="align-left_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\align-left_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MapsLight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MapsLight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CameraLight" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CameraLight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,17 +151,23 @@
   <data name="ConsoleLight" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ConsoleLight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SettingsLight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SettingsLight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="InfoDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InfoDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UpdatesDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UpdatesDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="FullScreenDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FullScreenDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MapsDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MapsDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="HomeLight" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HomeLight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="InfoDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\InfoDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FullScreenLight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FullScreenLight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="EyeLight" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EyeLight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,10 +187,10 @@
   <data name="SearchLight" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SearchLight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FullScreenDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FullScreenDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MapDetailsDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MapDetailsDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FullScreenLight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FullScreenLight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MapDetailsLight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MapDetailsLight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

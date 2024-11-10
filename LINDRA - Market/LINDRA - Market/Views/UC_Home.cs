@@ -12,6 +12,7 @@ using LINDRA___Market.Utils;
 using LINDRA___Market.form;
 using LINDRA___Market.form.Console;
 using PLogger;
+using LINDRA___Market.form.LanguageSelector;
 
 namespace LINDRA___Market.Views
 {
@@ -47,6 +48,15 @@ namespace LINDRA___Market.Views
                 buttonConsole.FillColor = AppColors.secondaryColor;
                 buttonConsole.ForeColor = AppColors.textColor;
                 #endregion
+                #region LanguageSelector
+                panelLanguage.FillColor = AppColors.backgroundTransparencyColor;
+                pictureBoxLanguage.FillColor = AppColors.secondaryColor;
+                labelLanguageTitle.ForeColor = AppColors.secondaryColor;
+                labelLanguageDescription.ForeColor = AppColors.textColor;
+                buttonLanguage.FillColor = AppColors.secondaryColor;
+                buttonLanguage.ForeColor = AppColors.textColor;
+                #endregion
+
                 Thread.Sleep(10);
             }
         }
@@ -90,6 +100,19 @@ namespace LINDRA___Market.Views
                 FormConsole form = new FormConsole((this.Parent.Parent as Form));
                 form.Show();
             }
+        }
+
+        private void buttonLanguage_Click(object sender, EventArgs e)
+        {
+            Log.setFunctionPassedThrough();
+            Log.Infos("Try to start : LanguageSelector");
+            if (Application.OpenForms.OfType<FormLanguageSelector>().Count() <= 0)
+            {
+                Log.Infos("Starting : LanguageSelector");
+                FormLanguageSelector form = new FormLanguageSelector((this.Parent.Parent as Form));
+                form.Show();
+            }
+
         }
     }
 }
