@@ -49,7 +49,25 @@ namespace LINDRA___Market.Utils
             }
         }
 
-        private byte[] Read(int Address, int Length)
+        public static long ModuleBase(string ProcessName)
+        {
+            try
+            {
+                Process[] processesByName = Process.GetProcessesByName(ProcessName);
+                if (processesByName.Length == 0)
+                {
+                    return 0;
+                }
+                return processesByName[0].MainModule.BaseAddress.ToInt64();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ModuleBase - " + ex.Message);
+                return 0;
+            }
+        }
+
+        private byte[] Read(long Address, int Length)
         {
             byte[] array = new byte[Length];
             IntPtr lpNumberOfBytesWritten = IntPtr.Zero;
@@ -57,33 +75,33 @@ namespace LINDRA___Market.Utils
             return array;
         }
 
-        private void Write(int Address, int Value)
+        private void Write(long Address, int Value)
         {
             byte[] bytes = BitConverter.GetBytes(Value);
             IntPtr lpNumberOfBytesWritten = IntPtr.Zero;
             WriteProcessMemory(pHandel, (IntPtr)Address, bytes, (uint)bytes.Length, out lpNumberOfBytesWritten);
         }
 
-        public void WriteInteger(int Address, int Value)
+        public void WriteInteger(long Address, int Value)
         {
             Write(Address, Value);
         }
 
-        public void WriteFloat(int Address, float Float)
+        public void WriteFloat(long Address, float Float)
         {
             byte[] bytes = BitConverter.GetBytes(Float);
             IntPtr lpNumberOfBytesWritten = IntPtr.Zero;
             WriteProcessMemory(pHandel, new IntPtr(Address), bytes, 4u, out lpNumberOfBytesWritten);
         }
 
-        public void WriteString(int Address, string Text)
+        public void WriteString(long Address, string Text)
         {
             byte[] bytes = new ASCIIEncoding().GetBytes(Text);
             IntPtr lpNumberOfBytesWritten = IntPtr.Zero;
             WriteProcessMemory(pHandel, (IntPtr)Address, bytes, (uint)bytes.Length, out lpNumberOfBytesWritten);
         }
 
-        public void WriteBytes(int Address, byte[] Bytes)
+        public void WriteBytes(long Address, byte[] Bytes)
         {
             IntPtr lpNumberOfBytesWritten = IntPtr.Zero;
             WriteProcessMemory(pHandel, (IntPtr)Address, Bytes, (uint)Bytes.Length, out lpNumberOfBytesWritten);
@@ -94,7 +112,7 @@ namespace LINDRA___Market.Utils
             WriteProcessMemory(pHandel, Address, Bytes, (uint)Bytes.Length, out lpNumberOfBytesWritten);
         }
 
-        public void WriteNOP(int Address, byte[] array)
+        public void WriteNOP(long Address, byte[] array)
         {
             IntPtr lpNumberOfBytesWritten = IntPtr.Zero;
             WriteProcessMemory(pHandel, (IntPtr)Address, array, (uint)array.Length, out lpNumberOfBytesWritten);
@@ -115,22 +133,31 @@ namespace LINDRA___Market.Utils
             ReadProcessMemory(aProcess, (IntPtr)(long)aAddress, vValue, (uint)sSize, out IntPtr _);
         }
 
-        public int ReadInteger(int Address, int Length = 4)
+        public int ReadInteger(long Address, int Length = 4)
         {
             return BitConverter.ToInt32(Read(Address, Length), 0);
         }
 
-        public string ReadString(int Address, int Length = 4)
+        /// <summary>
+        /// Reads an 8-byte machine pointer. Only used for 64-bit targets - 32-bit
+        /// games keep using ReadInteger, whose 4-byte pointer still fits.
+        /// </summary>
+        public long ReadPointer(long Address)
+        {
+            return BitConverter.ToInt64(Read(Address, 8), 0);
+        }
+
+        public string ReadString(long Address, int Length = 4)
         {
             return new ASCIIEncoding().GetString(Read(Address, Length));
         }
 
-        public double ReadFloat(int Address, int Length = 4)
+        public double ReadFloat(long Address, int Length = 4)
         {
             return BitConverter.ToSingle(Read(Address, Length), 0);
         }
 
-        public byte[] ReadBytes(int Address, int Length)
+        public byte[] ReadBytes(long Address, int Length)
         {
             return Read(Address, Length);
         }

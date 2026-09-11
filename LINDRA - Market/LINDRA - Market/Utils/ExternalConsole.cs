@@ -47,8 +47,18 @@ namespace LINDRA___Market.Utils
                 {
                     dynamic cod = COD.Game();
                     t.Process_Handle(COD.GameName());
-                    callbytes = BitConverter.GetBytes(cod.GetType().GetProperty("cbuf_addtext").GetValue(cod));
-                    nop_address = cod.GetType().GetProperty("nop_address").GetValue(cod);
+                    long cbufAddtext = Convert.ToInt64(cod.GetType().GetProperty("cbuf_addtext").GetValue(cod));
+
+                    // The console relies on an x86 remote-thread stub, which cannot run inside a
+                    // 64-bit game process. Games without a known cbuf_addtext address report 0.
+                    if (cbufAddtext == 0)
+                    {
+                        MessageBox.Show("The external console is not supported for this game version yet (64-bit build).", "Not supported", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
+                    callbytes = BitConverter.GetBytes(cbufAddtext);
+                    nop_address = Convert.ToInt32(cod.GetType().GetProperty("nop_address").GetValue(cod));
                     t.WriteNOP(nop_address, nopBytes);
                     cbuf_addtext_alloc = t.MemoryAllocation(cbuf_addtext_wrapper);
                     commandbytes = Encoding.ASCII.GetBytes(commands);

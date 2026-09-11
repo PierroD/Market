@@ -9,24 +9,24 @@ namespace MarketOffsets.Offsets
 {
     internal class iw3mp : IFovAndFps, IVisuals, IDisable, IConsole
     {
-        public int dvar { get { return 0xC; } }
-        public int cg_fov { get { return 0x8C13D8; } }
-        public int cg_fovMin { get { return 0x740624; } }
-        public int cg_fovScale { get { return 0x8BE2E4; } }
-        public int com_maxfps { get { return 0x146EEF8; } }
+        public long dvar { get { return 0xC; } }
+        public long cg_fov { get { return 0x8C13D8; } }
+        public long cg_fovMin { get { return 0x740624; } }
+        public long cg_fovScale { get { return 0x8BE2E4; } }
+        public long com_maxfps { get { return 0x146EEF8; } }
 
-        public int r_lightMap { get { return 0xD560A7C; } }
-        public int r_specularMap { get { return 0xD560A60; } }
-        public int r_filmUseTweaks { get { return 0xD560984; } }
+        public long r_lightMap { get { return 0xD560A7C; } }
+        public long r_specularMap { get { return 0xD560A60; } }
+        public long r_filmUseTweaks { get { return 0xD560984; } }
 
-        public int cg_brass { get { return 0x740644; } }
-        public int r_fog { get { return 0xD560BF4; } }
-        public int r_glow { get { return 0xD560A8C; } }
-        public int r_detail { get { return 0xD560A78; } }
-        public int r_detailMap { get { return 0xD560A78; } }
+        public long cg_brass { get { return 0x740644; } }
+        public long r_fog { get { return 0xD560BF4; } }
+        public long r_glow { get { return 0xD560A8C; } }
+        public long r_detail { get { return 0xD560A78; } }
+        public long r_detailMap { get { return 0xD560A78; } }
 
-        public int cbuf_addtext { get { return 0x56C230; } }
-        public int nop_address { get { return 0x0; } }
+        public long cbuf_addtext { get { return 0x56C230; } }
+        public long nop_address { get { return 0x0; } }
 
     }
 }

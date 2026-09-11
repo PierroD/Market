@@ -13,6 +13,20 @@ namespace MarketOffsets
         static string[] games = {  "iw3mp","iw4mp", "iw5mp", "BlackOpsMP", "t6zm" };
         static Type CallofDuty;
         static string gameName;
+
+        /// <summary>
+        /// True when the currently attached game is running as a 64-bit process.
+        /// 64-bit games expose their addresses as RVA from <see cref="ModuleBase"/>
+        /// and store their dvar pointers as 8 bytes.
+        /// </summary>
+        public static bool Is64Bit { get; private set; }
+
+        /// <summary>
+        /// Base address of the currently attached game module (0 for 32-bit games,
+        /// whose offsets are already absolute).
+        /// </summary>
+        public static long ModuleBase { get; private set; }
+
         public static bool checkGame()
         {
 
@@ -20,8 +34,21 @@ namespace MarketOffsets
             {
                 if (new Trainer().Process_Handle(game))
                 {
-                    CallofDuty = Type.GetType("MarketOffsets.Offsets" + "." + game);
                     gameName = game;
+                    Is64Bit = Trainer.Is64BitProcess(game);
+                    ModuleBase = Is64Bit ? Trainer.ModuleBase(game) : 0;
+
+                    // 64-bit builds have their own offset class : iw4mp -> iw4mp64
+                    string className = Is64Bit ? game + "64" : game;
+                    CallofDuty = Type.GetType("MarketOffsets.Offsets" + "." + className);
+
+                    if (CallofDuty == null)
+                    {
+                        // No 64-bit offsets yet for this game, fall back to the 32-bit class
+                        Is64Bit = false;
+                        ModuleBase = 0;
+                        CallofDuty = Type.GetType("MarketOffsets.Offsets" + "." + game);
+                    }
                     return true;
                 }
             }

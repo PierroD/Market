@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -10,6 +11,50 @@ namespace MarketOffsets.Utils
 		private IntPtr aProcess;
 
 		private IntPtr pHandel;
+
+		/// <summary>
+		/// Reads the PE header of the target's main module to tell whether it is an
+		/// AMD64 image (0x8664) or a 32-bit image (0x014C).
+		/// </summary>
+		public static bool Is64BitProcess(string ProcessName)
+		{
+			try
+			{
+				Process[] processesByName = Process.GetProcessesByName(ProcessName);
+				if (processesByName.Length == 0)
+					return false;
+
+				using (FileStream fs = File.OpenRead(processesByName[0].MainModule.FileName))
+				using (BinaryReader br = new BinaryReader(fs))
+				{
+					fs.Position = 0x3C;
+					int peOffset = br.ReadInt32();
+					fs.Position = peOffset + 4;
+					return br.ReadUInt16() == 0x8664;
+				}
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine("Is64BitProcess - " + ex.Message);
+				return false;
+			}
+		}
+
+		public static long ModuleBase(string ProcessName)
+		{
+			try
+			{
+				Process[] processesByName = Process.GetProcessesByName(ProcessName);
+				if (processesByName.Length == 0)
+					return 0;
+				return processesByName[0].MainModule.BaseAddress.ToInt64();
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine("ModuleBase - " + ex.Message);
+				return 0;
+			}
+		}
 
 		[DllImport("kernel32.dll")]
 		private static extern int ReadProcessMemory(IntPtr hProcess, IntPtr lpBaseAddress, [In][Out] byte[] buffer, uint size, out IntPtr lpNumberOfBytesWritten);

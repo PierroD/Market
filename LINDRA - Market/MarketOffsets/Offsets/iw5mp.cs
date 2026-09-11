@@ -9,29 +9,29 @@ namespace MarketOffsets.Offsets
 {
     internal class iw5mp : IFovAndFps, IVisuals, IDisable, IConsole, ISafeArea
     {
-        public int dvar { get { return 0xC; } }
-        public int cg_fov { get { return 0xB0C738; } }
+        public long dvar { get { return 0xC; } }
+        public long cg_fov { get { return 0xB0C738; } }
 
-        public int cg_fovMin { get { return 0x8FC8D8; } }
+        public long cg_fovMin { get { return 0x8FC8D8; } }
 
-        public int cg_fovScale { get { return 0xB065C8; } }
-        public int com_maxfps { get { return 0x1CF0B84; } }
+        public long cg_fovScale { get { return 0xB065C8; } }
+        public long com_maxfps { get { return 0x1CF0B84; } }
 
-        public int r_lightMap { get { return 0x5FC07C8; } }
-        public int r_specularMap { get { return 0x5FC07A8; } }
-        public int r_filmUseTweaks { get { return 0x5FC0698; } }
+        public long r_lightMap { get { return 0x5FC07C8; } }
+        public long r_specularMap { get { return 0x5FC07A8; } }
+        public long r_filmUseTweaks { get { return 0x5FC0698; } }
 
-        public int cg_brass { get { return 0x8FC90C; } }
-        public int r_fog { get { return 0x5FC091C; } }
-        public int r_glow { get { return 0x5FC07D4; } }
-        public int r_detail { get { return 0x5FC07C4; } }
-        public int r_detailMap { get { return 0x5FC0654; } }
+        public long cg_brass { get { return 0x8FC90C; } }
+        public long r_fog { get { return 0x5FC091C; } }
+        public long r_glow { get { return 0x5FC07D4; } }
+        public long r_detail { get { return 0x5FC07C4; } }
+        public long r_detailMap { get { return 0x5FC0654; } }
 
-        public int cbuf_addtext { get { return 0x545650; } }
-        public int nop_address { get { return 0x0; } }
+        public long cbuf_addtext { get { return 0x545650; } }
+        public long nop_address { get { return 0x0; } }
 
-        public int profileMenuOption_safeAreaHorz { get { return 0x132D214; } }
-        public int profileMenuOption_safeAreaVert { get { return 0x132AD1C; } }
+        public long profileMenuOption_safeAreaHorz { get { return 0x132D214; } }
+        public long profileMenuOption_safeAreaVert { get { return 0x132AD1C; } }
 
     }
 }

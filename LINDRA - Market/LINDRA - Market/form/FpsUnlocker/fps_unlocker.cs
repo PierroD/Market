@@ -171,26 +171,59 @@ namespace LINDRA___Market.form
                     dynamic cod = COD.Game();
                     string gameName = COD.GameName();
                     t.Process_Handle(gameName);
-                    t.WriteFloat(t.ReadInteger((int)cod.GetType().GetProperty("cg_fov").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.bar_fov);
-                    t.WriteFloat(t.ReadInteger((int)cod.GetType().GetProperty("cg_fovScale").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), (float)FpsSettings.bar_fovScale / 1000);
-                    t.WriteFloat(t.ReadInteger((int)cod.GetType().GetProperty("cg_fovMin").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.bar_fovMin);
-                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("com_maxfps").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.bar_fps);
-                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_lightMap").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.lightmap);
-                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_specularMap").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.specularmap);
-                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_filmUseTweaks").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_movie ? 1 : 0);
-                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_fog").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_fog ? 0 : 1);
-                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_glow").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_glow ? 0 : 1);
-                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_detail").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_camos ? 0 : 1);
-                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_detailMap").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_camos ? 0 : 1);
-                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("cg_brass").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_bullet ? 0 : 1);
+
+                    long dvar = Convert.ToInt64(cod.GetType().GetProperty("dvar").GetValue(cod));
+                    long moduleBase = COD.ModuleBase;
+
+                    long cg_fov = DvarObject(cod, "cg_fov", moduleBase);
+                    long cg_fovScale = DvarObject(cod, "cg_fovScale", moduleBase);
+                    long cg_fovMin = DvarObject(cod, "cg_fovMin", moduleBase);
+                    long com_maxfps = DvarObject(cod, "com_maxfps", moduleBase);
+                    long r_lightMap = DvarObject(cod, "r_lightMap", moduleBase);
+                    long r_specularMap = DvarObject(cod, "r_specularMap", moduleBase);
+                    long r_filmUseTweaks = DvarObject(cod, "r_filmUseTweaks", moduleBase);
+                    long r_fog = DvarObject(cod, "r_fog", moduleBase);
+                    long r_glow = DvarObject(cod, "r_glow", moduleBase);
+                    long r_detail = DvarObject(cod, "r_detail", moduleBase);
+                    long r_detailMap = DvarObject(cod, "r_detailMap", moduleBase);
+                    long cg_brass = DvarObject(cod, "cg_brass", moduleBase);
+
+                    if (cg_fov != 0) t.WriteFloat(cg_fov + dvar, FpsSettings.bar_fov);
+                    if (cg_fovScale != 0) t.WriteFloat(cg_fovScale + dvar, (float)FpsSettings.bar_fovScale / 1000);
+                    if (cg_fovMin != 0) t.WriteFloat(cg_fovMin + dvar, FpsSettings.bar_fovMin);
+                    if (com_maxfps != 0) t.WriteInteger(com_maxfps + dvar, FpsSettings.bar_fps);
+                    if (r_lightMap != 0) t.WriteInteger(r_lightMap + dvar, FpsSettings.lightmap);
+                    if (r_specularMap != 0) t.WriteInteger(r_specularMap + dvar, FpsSettings.specularmap);
+                    if (r_filmUseTweaks != 0) t.WriteInteger(r_filmUseTweaks + dvar, FpsSettings.sw_movie ? 1 : 0);
+                    if (r_fog != 0) t.WriteInteger(r_fog + dvar, FpsSettings.sw_fog ? 0 : 1);
+                    if (r_glow != 0) t.WriteInteger(r_glow + dvar, FpsSettings.sw_glow ? 0 : 1);
+                    if (r_detail != 0) t.WriteInteger(r_detail + dvar, FpsSettings.sw_camos ? 0 : 1);
+                    if (r_detailMap != 0) t.WriteInteger(r_detailMap + dvar, FpsSettings.sw_camos ? 0 : 1);
+                    if (cg_brass != 0) t.WriteInteger(cg_brass + dvar, FpsSettings.sw_bullet ? 0 : 1);
                     if (buttonArea.Visible)
                     {
-                        t.WriteFloat(t.ReadInteger((int)cod.GetType().GetProperty("profileMenuOption_safeAreaHorz").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), (float)FpsSettings.bar_horizontal / 100);
-                        t.WriteFloat(t.ReadInteger((int)cod.GetType().GetProperty("profileMenuOption_safeAreaVert").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), (float)FpsSettings.bar_vertical / 100);
+                        long safeAreaHorz = DvarObject(cod, "profileMenuOption_safeAreaHorz", moduleBase);
+                        long safeAreaVert = DvarObject(cod, "profileMenuOption_safeAreaVert", moduleBase);
+                        if (safeAreaHorz != 0) t.WriteFloat(safeAreaHorz + dvar, (float)FpsSettings.bar_horizontal / 100);
+                        if (safeAreaVert != 0) t.WriteFloat(safeAreaVert + dvar, (float)FpsSettings.bar_vertical / 100);
                     }
                     Thread.Sleep(100);
                 }
             }
+        }
+
+        /// <summary>
+        /// Resolves the address of the dvar_t structure for a named dvar.
+        /// 32-bit games : the offset is already an absolute address that stores a 4-byte pointer.
+        /// 64-bit games : the offset is an RVA from the module base that stores an 8-byte pointer.
+        /// Returns 0 when the dvar has not been registered yet.
+        /// </summary>
+        private long DvarObject(dynamic cod, string dvarName, long moduleBase)
+        {
+            long offset = Convert.ToInt64(cod.GetType().GetProperty(dvarName).GetValue(cod));
+            if (offset == 0) return 0;
+            if (COD.Is64Bit) return t.ReadPointer(moduleBase + offset);
+            return t.ReadInteger(offset);
         }
     }
 }
