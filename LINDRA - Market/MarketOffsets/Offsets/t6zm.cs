@@ -26,6 +26,6 @@ namespace MarketOffsets.Offsets
         public long r_detail => 0x0;
         public long r_detailMap => 0x0;
         public long cbuf_addtext => 0x4C7120;
-        public long nop_address => 0x8c768a;
+        public long nop_address => 0x0;
     }
 }
