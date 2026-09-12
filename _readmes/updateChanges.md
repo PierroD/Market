@@ -1,4 +1,10 @@
-### V2.4.10
+### V2.6.10
+- Fix update MW2MP & MW3MP offsets due to x64 release
+- Thx to @milolethbridge offering a solution 
+- Thx to @PhDreamX for reporting the issue
+
+
+### V2.5.10
 - Feat add Bo3 Language Selector
 > Select your game favorite language and fix the crashing issue when a custom map doesn't have your country language
 
