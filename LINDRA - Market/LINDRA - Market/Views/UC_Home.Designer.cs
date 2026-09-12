@@ -151,7 +151,8 @@
             this.buttonConsole.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonConsole.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.buttonConsole.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonConsole.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonConsole.Enabled = false;
+            this.buttonConsole.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.buttonConsole.ForeColor = System.Drawing.Color.White;
             this.buttonConsole.Location = new System.Drawing.Point(47, 134);
             this.buttonConsole.Name = "buttonConsole";

@@ -17,20 +17,11 @@ packages
 #ignore ini files (.ini)
 #*.ini
 
-#ignore Release
-LINDRA - Market/LINDRA - Market/bin/Release/
-LINDRA - Market/MarketUpdater/bin/Release/
-LINDRA - Market/MarketOffsets/bin/Release/
+#ignore Debug & Release
+LINDRA - Market/LINDRA - Market/bin/*
+LINDRA - Market/MarketUpdater/bin/*
+LINDRA - Market/MarketOffsets/bin/*
 
-LINDRA - Market/LINDRA - Market/obj/Release/
-LINDRA - Market/MarketUpdater/obj/Release/
-LINDRA - Market/MarketOffsets/obj/Release/
-
-#ignore Debug
-LINDRA - Market/LINDRA - Market/bin/Debug/
-LINDRA - Market/MarketUpdater/bin/Debug/
-LINDRA - Market/MarketOffsets/bin/Debug/
-
-LINDRA - Market/LINDRA - Market/obj/Debug/
-LINDRA - Market/MarketUpdater/obj/Debug/
-LINDRA - Market/MarketOffsets/obj/Debug/
+LINDRA - Market/LINDRA - Market/obj/*
+LINDRA - Market/MarketUpdater/obj/*
+LINDRA - Market/MarketOffsets/obj/*

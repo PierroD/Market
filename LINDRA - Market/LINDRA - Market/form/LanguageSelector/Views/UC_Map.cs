@@ -25,7 +25,7 @@ namespace LINDRA___Market.form.LanguageSelector.Views
         public delegate void MapDetailsSelectedEventHandler(object sender, MapDetails mapDetails);
         public event MapDetailsSelectedEventHandler MapDetailsSelected;
 
-        protected virtual void OnMapDetailsSelectedd(MapDetails mapDetails)
+        protected virtual void OnMapDetailsSelected(MapDetails mapDetails)
         {
             MapDetailsSelected?.Invoke(this, mapDetails);
         }
@@ -93,7 +93,7 @@ namespace LINDRA___Market.form.LanguageSelector.Views
                 directory = directory,
                 directoryFiles = directoryFiles,
             };
-            OnMapDetailsSelectedd(mapDetails);
+            OnMapDetailsSelected(mapDetails);
         }
     }
 }

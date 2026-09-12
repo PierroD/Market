@@ -9,29 +9,30 @@ namespace MarketOffsets.Offsets
 {
     internal class iw4mp : IFovAndFps, IVisuals, IDisable, IConsole, ISafeArea
     {
-        public int dvar { get { return 0xC; } }
-        public int cg_fov { get { return 0xAAC1F8; } }
-        public int cg_fovMin { get { return 0x88CB54; } }
 
-        public int cg_fovScale { get { return 0xAA6098; } }
+        public long dvar => 0x10;
+        public long cg_fov => 0x6BD178;
+        public long cg_fovMin => 0x6BD180;
 
-        public int com_maxfps { get { return 0x1B90730; } }
+        public long cg_fovScale => 0x6BD188;
 
-        public int r_lightMap { get { return 0x695D9C8; } }
-        public int r_specularMap { get { return 0x695D9AC; } }
-        public int r_filmUseTweaks { get { return 0x695D898; } }
+        public long com_maxfps => 0x1BD95A8;
 
-        public int cg_brass { get { return 0x88E20C; } }
-        public int r_fog { get { return 0x695DB18; } }
-        public int r_glow { get { return 0x695D9D0; } }
-        public int r_detail { get { return 0x695D9C4; } }
-        public int r_detailMap { get { return 0x695D860; } }
+        public long r_lightMap => 0x8CC6870;
+        public long r_specularMap => 0x8CC6680;
+        public long r_filmUseTweaks => 0x8CC6750;
 
-        public int cbuf_addtext { get { return 0x563BE0; } }
-        public int nop_address { get { return 0x0; } }
+        public long cg_brass => 0x06BD0B8;
+        public long r_fog => 0x8CC6A08;
+        public long r_glow => 0x8CC6B78;
+        public long r_detail => 0x8CC6BB0;
+        public long r_detailMap => 0x8CC66A8;
 
-        public int profileMenuOption_safeAreaHorz { get { return 0x10F5984; } }
-        public int profileMenuOption_safeAreaVert { get { return 0x10F4600; } }
+        public long cbuf_addtext => 0x0; // 0x1E6DC0 need to update the ExternalConsole.cs to use this new address, but for now, we can leave it as 0x0 since we are not using it in the current implementation.
+        public long nop_address => 0x0; // didn't change
+
+        public long profileMenuOption_safeAreaHorz => 0x6CCCA0;
+        public long profileMenuOption_safeAreaVert => 0x6CCCA8;
 
     }
 }

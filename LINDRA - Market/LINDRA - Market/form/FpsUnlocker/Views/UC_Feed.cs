@@ -62,14 +62,14 @@ namespace LINDRA___Market.form.Views
 
         private void buttonSetFeedColor_Click(object sender, EventArgs e)
         {
-            if (COD.GameName() == "iw4mp")
-            {
-                ExternalConsole.Send($"g_teamcolor_axis {FpsSettings.axis_feed.R / 255} {FpsSettings.axis_feed.G / 255} {FpsSettings.axis_feed.B / 255}; g_teamcolor_allies {FpsSettings.allies_feed.R / 255} {FpsSettings.allies_feed.G / 255} {FpsSettings.allies_feed.B / 255}");
-            }
-            else
-            {
-                ExternalConsole.Send($"cg_teamcolor_axis {FpsSettings.axis_feed.R / 255} {FpsSettings.axis_feed.G / 255} {FpsSettings.axis_feed.B / 255}; cg_teamcolor_allies {FpsSettings.allies_feed.R / 255} {FpsSettings.allies_feed.G / 255} {FpsSettings.allies_feed.B / 255}");
-            }
+            //if (COD.GameName() == "iw4mp")
+            //{
+            //    ExternalConsole.Send($"g_teamcolor_axis {FpsSettings.axis_feed.R / 255} {FpsSettings.axis_feed.G / 255} {FpsSettings.axis_feed.B / 255}; g_teamcolor_allies {FpsSettings.allies_feed.R / 255} {FpsSettings.allies_feed.G / 255} {FpsSettings.allies_feed.B / 255}");
+            //}
+            //else
+            //{
+            //    ExternalConsole.Send($"cg_teamcolor_axis {FpsSettings.axis_feed.R / 255} {FpsSettings.axis_feed.G / 255} {FpsSettings.axis_feed.B / 255}; cg_teamcolor_allies {FpsSettings.allies_feed.R / 255} {FpsSettings.allies_feed.G / 255} {FpsSettings.allies_feed.B / 255}");
+            //}
         }
 
         private void update_timer_Tick(object sender, EventArgs e)

@@ -14,6 +14,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MarketUpdater
 {
@@ -42,6 +43,7 @@ namespace MarketUpdater
         private static string configIniPath = $"{Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)}\\app.ini";
         INIFile ini = new INIFile(configIniPath);
         private string tempFolder = Path.GetTempPath() + "Market";
+        private string zipPath = "";
         private void update()
         {
             string[] updateDownload;
@@ -49,26 +51,34 @@ namespace MarketUpdater
             using (var wc = new WebClient())
                 updateDownload = wc.DownloadString(downloadUrl).Split(new[] { '\r', '\n' });
 
+            string latestUpdate = updateDownload[0];
+
             if (!Directory.Exists(tempFolder))
             {
                 Directory.CreateDirectory(tempFolder);
                 labelMainText.Text = "Create temp download folder";
             }
-            string zip_path = tempFolder + "\\" + Guid.NewGuid() + ".zip";
+            zipPath = tempFolder + "\\" + Guid.NewGuid() + ".zip";
             labelMainText.Text = ("Downloading update");
             using (WebClient wc = new WebClient())
             {
-                wc.DownloadFile(
+                wc.DownloadProgressChanged += Wc_DownloadProgressChanged;
+                wc.DownloadFileCompleted += Wc_DownloadFileCompleted;
+                wc.DownloadFileAsync(
                     // download link
-                    new Uri(updateDownload[0]),
+                    new Uri(latestUpdate),
                     // physical link
-                    zip_path
+                    zipPath
                     );
             }
             labelMainText.Text = ("Extracting files and updating Market");
 
+        }
+
+        private void Wc_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
+        {
             string install_path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            using (var strm = File.OpenRead(zip_path))
+            using (var strm = File.OpenRead(zipPath))
             using (ZipArchive archive = new ZipArchive(strm))
                 ZipArchiveExtensions.ExtractToDirectory(archive, install_path, true);
 
@@ -77,6 +87,13 @@ namespace MarketUpdater
             labelMainText.Text = ("Update is done");
             timerLoading.Stop();
             buttonStart.Enabled = true;
+
+        }
+
+        // Event to track the progress
+        private void Wc_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+        {
+            labelProgress.Text = $"{e.ProgressPercentage}%";
         }
 
         private void Form1_Shown(object sender, EventArgs e)

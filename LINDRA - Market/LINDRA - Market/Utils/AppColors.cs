@@ -38,6 +38,7 @@ namespace LINDRA___Market.Utils
         }
     }
 
+    // icons #AE377F
     static class LightMode 
     {
         public static Color text { get; } = Color.FromArgb(19, 6, 14);
@@ -48,6 +49,7 @@ namespace LINDRA___Market.Utils
         public static Color secondary { get; } = Color.FromArgb(230, 168, 205);
         public static Color accent { get; } = Color.FromArgb(174, 55, 127);
     }
+    // icons #C85198
     static class DarkMode 
     {
         public static Color text { get; } = Color.FromArgb(249, 236, 244);

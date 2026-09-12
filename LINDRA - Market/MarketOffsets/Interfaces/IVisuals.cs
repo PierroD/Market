@@ -8,9 +8,9 @@ namespace MarketOffsets.Interfaces
 {
     internal interface IVisuals
     {
-        int r_lightMap { get; }
-        int r_specularMap { get; }
-        int r_filmUseTweaks { get; }
+        long r_lightMap { get; }
+        long r_specularMap { get; }
+        long r_filmUseTweaks { get; }
 
     }
 }

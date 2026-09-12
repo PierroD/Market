@@ -9,8 +9,8 @@ namespace MarketOffsets.Interfaces
     internal interface ISafeArea
     {
 
-        int profileMenuOption_safeAreaHorz { get; }
-        int profileMenuOption_safeAreaVert { get; }
+        long profileMenuOption_safeAreaHorz { get; }
+        long profileMenuOption_safeAreaVert { get; }
 
     }
 }
