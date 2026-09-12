@@ -8,7 +8,7 @@ namespace MarketOffsets.Interfaces
 {
     internal interface IConsole
     {
-        int cbuf_addtext { get; }
-        int nop_address { get; }
+        long cbuf_addtext { get; }
+        long nop_address { get; }
     }
 }

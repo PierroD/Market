@@ -20,7 +20,8 @@ namespace LINDRA___Market.form
 {
     public partial class fps_unlocker : Form
     {
-        Trainer t = new Trainer();
+        Trainer trainer = new Trainer();
+
         Thread gameThread;
         Form parent;
         private string[] allowedSafeAreaGames = { "iw4mp", "iw5mp" };
@@ -170,23 +171,47 @@ namespace LINDRA___Market.form
                 {
                     dynamic cod = COD.Game();
                     string gameName = COD.GameName();
-                    t.Process_Handle(gameName);
-                    t.WriteFloat(t.ReadInteger((int)cod.GetType().GetProperty("cg_fov").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.bar_fov);
-                    t.WriteFloat(t.ReadInteger((int)cod.GetType().GetProperty("cg_fovScale").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), (float)FpsSettings.bar_fovScale / 1000);
-                    t.WriteFloat(t.ReadInteger((int)cod.GetType().GetProperty("cg_fovMin").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.bar_fovMin);
-                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("com_maxfps").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.bar_fps);
-                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_lightMap").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.lightmap);
-                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_specularMap").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.specularmap);
-                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_filmUseTweaks").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_movie ? 1 : 0);
-                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_fog").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_fog ? 0 : 1);
-                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_glow").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_glow ? 0 : 1);
-                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_detail").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_camos ? 0 : 1);
-                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("r_detailMap").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_camos ? 0 : 1);
-                    t.WriteInteger(t.ReadInteger((int)cod.GetType().GetProperty("cg_brass").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_bullet ? 0 : 1);
-                    if (buttonArea.Visible)
+                    trainer.Process_Handle(gameName);
+                    if (COD.Is64BitGame())
                     {
-                        t.WriteFloat(t.ReadInteger((int)cod.GetType().GetProperty("profileMenuOption_safeAreaHorz").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), (float)FpsSettings.bar_horizontal / 100);
-                        t.WriteFloat(t.ReadInteger((int)cod.GetType().GetProperty("profileMenuOption_safeAreaVert").GetValue(cod)) + (int)cod.GetType().GetProperty("dvar").GetValue(cod), (float)FpsSettings.bar_vertical / 100);
+                        trainer.WriteFloat(trainer.ReadLong(cod.GetType().GetProperty("cg_fov").GetValue(cod)) + (long)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.bar_fov);
+                        trainer.WriteFloat(trainer.ReadLong(cod.GetType().GetProperty("cg_fovScale").GetValue(cod)) + cod.GetType().GetProperty("dvar").GetValue(cod), (float)FpsSettings.bar_fovScale / 1000);
+                        trainer.WriteFloat(trainer.ReadLong(cod.GetType().GetProperty("cg_fovMin").GetValue(cod)) + cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.bar_fovMin);
+                        trainer.WriteInteger(trainer.ReadLong(cod.GetType().GetProperty("com_maxfps").GetValue(cod)) + cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.bar_fps);
+                        trainer.WriteInteger(trainer.ReadLong(cod.GetType().GetProperty("r_lightMap").GetValue(cod)) + cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.lightmap);
+                        trainer.WriteInteger(trainer.ReadLong(cod.GetType().GetProperty("r_specularMap").GetValue(cod)) + cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.specularmap);
+                        trainer.WriteInteger(trainer.ReadLong(cod.GetType().GetProperty("r_filmUseTweaks").GetValue(cod)) + cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_movie ? 1 : 0);
+                        trainer.WriteInteger(trainer.ReadLong(cod.GetType().GetProperty("r_fog").GetValue(cod)) + cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_fog ? 0 : 1);
+                        trainer.WriteInteger(trainer.ReadLong(cod.GetType().GetProperty("r_glow").GetValue(cod)) + cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_glow ? 0 : 1);
+                        trainer.WriteInteger(trainer.ReadLong(cod.GetType().GetProperty("r_detail").GetValue(cod)) + cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_camos ? 0 : 1);
+                        trainer.WriteInteger(trainer.ReadLong(cod.GetType().GetProperty("r_detailMap").GetValue(cod)) + cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_camos ? 0 : 1);
+                        trainer.WriteInteger(trainer.ReadLong(cod.GetType().GetProperty("cg_brass").GetValue(cod)) + cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_bullet ? 0 : 1);
+                        if (buttonArea.Visible)
+                        {
+                            trainer.WriteFloat(trainer.ReadLong(cod.GetType().GetProperty("profileMenuOption_safeAreaHorz").GetValue(cod)) + cod.GetType().GetProperty("dvar").GetValue(cod), (float)FpsSettings.bar_horizontal / 100);
+                            trainer.WriteFloat(trainer.ReadLong(cod.GetType().GetProperty("profileMenuOption_safeAreaVert").GetValue(cod)) + cod.GetType().GetProperty("dvar").GetValue(cod), (float)FpsSettings.bar_vertical / 100);
+                        }
+                    }
+                    else
+                    {
+                        trainer.WriteFloat(trainer.ReadInteger(cod.GetType().GetProperty("cg_fov").GetValue(cod)) + (long)cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.bar_fov);
+                        trainer.WriteFloat(trainer.ReadInteger(cod.GetType().GetProperty("cg_fovScale").GetValue(cod)) + cod.GetType().GetProperty("dvar").GetValue(cod), (float)FpsSettings.bar_fovScale / 1000);
+                        trainer.WriteFloat(trainer.ReadInteger(cod.GetType().GetProperty("cg_fovMin").GetValue(cod)) + cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.bar_fovMin);
+                        trainer.WriteInteger(trainer.ReadInteger(cod.GetType().GetProperty("com_maxfps").GetValue(cod)) + cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.bar_fps);
+                        trainer.WriteInteger(trainer.ReadInteger(cod.GetType().GetProperty("r_lightMap").GetValue(cod)) + cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.lightmap);
+                        trainer.WriteInteger(trainer.ReadInteger(cod.GetType().GetProperty("r_specularMap").GetValue(cod)) + cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.specularmap);
+                        trainer.WriteInteger(trainer.ReadInteger(cod.GetType().GetProperty("r_filmUseTweaks").GetValue(cod)) + cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_movie ? 1 : 0);
+                        trainer.WriteInteger(trainer.ReadInteger(cod.GetType().GetProperty("r_fog").GetValue(cod)) + cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_fog ? 0 : 1);
+                        trainer.WriteInteger(trainer.ReadInteger(cod.GetType().GetProperty("r_glow").GetValue(cod)) + cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_glow ? 0 : 1);
+                        trainer.WriteInteger(trainer.ReadInteger(cod.GetType().GetProperty("r_detail").GetValue(cod)) + cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_camos ? 0 : 1);
+                        trainer.WriteInteger(trainer.ReadInteger(cod.GetType().GetProperty("r_detailMap").GetValue(cod)) + cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_camos ? 0 : 1);
+                        trainer.WriteInteger(trainer.ReadInteger(cod.GetType().GetProperty("cg_brass").GetValue(cod)) + cod.GetType().GetProperty("dvar").GetValue(cod), FpsSettings.sw_bullet ? 0 : 1);
+                        if (buttonArea.Visible)
+                        {
+                            trainer.WriteFloat(trainer.ReadInteger(cod.GetType().GetProperty("profileMenuOption_safeAreaHorz").GetValue(cod)) + cod.GetType().GetProperty("dvar").GetValue(cod), (float)FpsSettings.bar_horizontal / 100);
+                            trainer.WriteFloat(trainer.ReadInteger(cod.GetType().GetProperty("profileMenuOption_safeAreaVert").GetValue(cod)) + cod.GetType().GetProperty("dvar").GetValue(cod), (float)FpsSettings.bar_vertical / 100);
+                        }
+
                     }
                     Thread.Sleep(100);
                 }

@@ -8,10 +8,10 @@ namespace MarketOffsets.Interfaces
 {
     internal interface IDisable
     {
-        int cg_brass { get; }
-        int r_fog { get; }
-        int r_glow { get; }
-        int r_detail { get; }
-        int r_detailMap { get; }
+        long cg_brass { get; }
+        long r_fog { get; }
+        long r_glow { get; }
+        long r_detail { get; }
+        long r_detailMap { get; }
     }
 }

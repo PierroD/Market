@@ -8,13 +8,13 @@ namespace MarketOffsets.Interfaces
 {
     internal interface IFovAndFps
     {
-        int dvar { get; }
-        int cg_fov { get; }
+        long dvar { get; }
+        long cg_fov { get; }
 
-        int cg_fovMin { get; }
+        long cg_fovMin { get; }
 
-        int cg_fovScale { get; }
+        long cg_fovScale { get; }
 
-        int com_maxfps { get; }
+        long com_maxfps { get; }
     }
 }

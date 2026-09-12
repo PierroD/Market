@@ -9,29 +9,29 @@ namespace MarketOffsets.Offsets
 {
     internal class iw5mp : IFovAndFps, IVisuals, IDisable, IConsole, ISafeArea
     {
-        public int dvar { get { return 0xC; } }
-        public int cg_fov { get { return 0xB0C738; } }
+        public long dvar => 0x10;
+        public long cg_fov => 0x7D2688;
 
-        public int cg_fovMin { get { return 0x8FC8D8; } }
+        public long cg_fovMin => 0x7D2690;
 
-        public int cg_fovScale { get { return 0xB065C8; } }
-        public int com_maxfps { get { return 0x1CF0B84; } }
+        public long cg_fovScale => 0x7D2698;
+        public long com_maxfps => 0x2CDD820;
 
-        public int r_lightMap { get { return 0x5FC07C8; } }
-        public int r_specularMap { get { return 0x5FC07A8; } }
-        public int r_filmUseTweaks { get { return 0x5FC0698; } }
+        public long r_lightMap => 0x264A1A8;
+        public long r_specularMap => 0x264A1C8;
+        public long r_filmUseTweaks => 0x264A538;
 
-        public int cg_brass { get { return 0x8FC90C; } }
-        public int r_fog { get { return 0x5FC091C; } }
-        public int r_glow { get { return 0x5FC07D4; } }
-        public int r_detail { get { return 0x5FC07C4; } }
-        public int r_detailMap { get { return 0x5FC0654; } }
+        public long cg_brass => 0x7D25D8;
+        public long r_fog => 0x264A138;
+        public long r_glow => 0x264A500;
+        public long r_detail => 0x264A190;
+        public long r_detailMap => 0x264A1B8;
 
-        public int cbuf_addtext { get { return 0x545650; } }
-        public int nop_address { get { return 0x0; } }
+        public long cbuf_addtext => 0x0; // not tested yet
+        public long nop_address => 0x0;
 
-        public int profileMenuOption_safeAreaHorz { get { return 0x132D214; } }
-        public int profileMenuOption_safeAreaVert { get { return 0x132AD1C; } }
+        public long profileMenuOption_safeAreaHorz => 0x7FE840;
+        public long profileMenuOption_safeAreaVert => 0x7FE848;
 
     }
 }

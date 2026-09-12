@@ -30,7 +30,14 @@ namespace LINDRA___Market.form.LanguageSelector.Views
         {
 
             this.BackColor = AppColors.backgroundColor;
+            buttonCopyLink.FillColor = AppColors.secondaryColor;
+            buttonCopyLink.ForeColor = AppColors.textColor;
+            buttonBrowse.FillColor = AppColors.secondaryColor;
+            buttonBrowse.ForeColor = AppColors.textColor;
             labelName.ForeColor = AppColors.textColor;
+            textBoxDescription.DisabledState.FillColor = AppColors.backgroundColor;
+            textBoxDescription.DisabledState.ForeColor = AppColors.textColor;
+            textBoxDescription.DisabledState.BorderColor = AppColors.textColor;
             textBoxDescription.FillColor = AppColors.backgroundColor;
             textBoxDescription.ForeColor = AppColors.textColor;
             textBoxDescription.BorderColor = AppColors.textColor;
@@ -190,5 +197,16 @@ namespace LINDRA___Market.form.LanguageSelector.Views
         }
         #endregion
 
+        private void buttonOpen_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start($"https://steamcommunity.com/sharedfiles/filedetails/?id={this.mapDetails.workshopJson.PublisherID}");
+            Notify($"Open steam page for {this.mapDetails.workshopJson.Title}", "Market", "Open Steam page", ToolTipIcon.Info);
+        }
+
+        private void buttonCopyLink_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText($"https://steamcommunity.com/sharedfiles/filedetails/?id={this.mapDetails.workshopJson.PublisherID}");
+            Notify($"Steam link been copied for {this.mapDetails.workshopJson.Title}", "Market", "Copy Steam link", ToolTipIcon.Info);
+        }
     }
 }

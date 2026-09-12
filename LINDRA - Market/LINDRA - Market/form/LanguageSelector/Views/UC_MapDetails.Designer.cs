@@ -43,6 +43,8 @@
             this.pictureBoxPreview = new Guna.UI2.WinForms.Guna2PictureBox();
             this.flowLayoutPanelResults = new System.Windows.Forms.FlowLayoutPanel();
             this.notifyIconResult = new System.Windows.Forms.NotifyIcon(this.components);
+            this.buttonCopyLink = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonBrowse = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,6 +60,7 @@
             // 
             // textBoxDescription
             // 
+            this.textBoxDescription.BackColor = System.Drawing.Color.Transparent;
             this.textBoxDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxDescription.DefaultText = "";
             this.textBoxDescription.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -200,11 +203,52 @@
             this.notifyIconResult.Text = "Market";
             this.notifyIconResult.Visible = true;
             // 
+            // buttonCopyLink
+            // 
+            this.buttonCopyLink.BackColor = System.Drawing.Color.Transparent;
+            this.buttonCopyLink.BorderRadius = 8;
+            this.buttonCopyLink.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCopyLink.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonCopyLink.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonCopyLink.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonCopyLink.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonCopyLink.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonCopyLink.ForeColor = System.Drawing.Color.White;
+            this.buttonCopyLink.Location = new System.Drawing.Point(358, 143);
+            this.buttonCopyLink.Name = "buttonCopyLink";
+            this.buttonCopyLink.Size = new System.Drawing.Size(87, 28);
+            this.buttonCopyLink.TabIndex = 25;
+            this.buttonCopyLink.Text = "Copy Link";
+            this.buttonCopyLink.UseTransparentBackground = true;
+            this.buttonCopyLink.Click += new System.EventHandler(this.buttonCopyLink_Click);
+            // 
+            // buttonBrowse
+            // 
+            this.buttonBrowse.BackColor = System.Drawing.Color.Transparent;
+            this.buttonBrowse.BorderColor = System.Drawing.Color.Transparent;
+            this.buttonBrowse.BorderRadius = 8;
+            this.buttonBrowse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonBrowse.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonBrowse.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonBrowse.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonBrowse.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonBrowse.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonBrowse.ForeColor = System.Drawing.Color.White;
+            this.buttonBrowse.Location = new System.Drawing.Point(265, 143);
+            this.buttonBrowse.Name = "buttonBrowse";
+            this.buttonBrowse.Size = new System.Drawing.Size(87, 28);
+            this.buttonBrowse.TabIndex = 26;
+            this.buttonBrowse.Text = "Browse";
+            this.buttonBrowse.UseTransparentBackground = true;
+            this.buttonBrowse.Click += new System.EventHandler(this.buttonOpen_Click);
+            // 
             // UC_MapDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.Controls.Add(this.buttonBrowse);
+            this.Controls.Add(this.buttonCopyLink);
             this.Controls.Add(this.flowLayoutPanelResults);
             this.Controls.Add(this.labelFolderName);
             this.Controls.Add(this.labelType);
@@ -241,5 +285,7 @@
         private System.Windows.Forms.Label labelFolderName;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelResults;
         private System.Windows.Forms.NotifyIcon notifyIconResult;
+        private Guna.UI2.WinForms.Guna2Button buttonCopyLink;
+        private Guna.UI2.WinForms.Guna2Button buttonBrowse;
     }
 }

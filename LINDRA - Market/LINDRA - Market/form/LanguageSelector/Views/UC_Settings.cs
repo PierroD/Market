@@ -49,7 +49,7 @@ namespace LINDRA___Market.form.LanguageSelector.Views
             {
                 LoadLanguageCombobox();
                 Language language = this.languages.languages.First(l => l.key == LanguageSelectorSettings.favoriteLanguageKey);
-                comboboxFavoriteLanguage.SelectedIndex = comboboxFavoriteLanguage.Items.IndexOf(language.name); ;
+                comboboxFavoriteLanguage.SelectedIndex = comboboxFavoriteLanguage.Items.IndexOf(language.name);
             }
 
         }

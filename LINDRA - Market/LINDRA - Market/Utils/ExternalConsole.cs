@@ -47,6 +47,11 @@ namespace LINDRA___Market.Utils
                 {
                     dynamic cod = COD.Game();
                     t.Process_Handle(COD.GameName());
+                    if(cod.GetType().GetProperty("cbuf_addtext").GetValue(cod) == 0)
+                    {
+                        MessageBox.Show("cbuf_addtext is 0, cannot send command", "Error", MessageBoxButtons.OK);
+                        return;
+                    }
                     callbytes = BitConverter.GetBytes(cod.GetType().GetProperty("cbuf_addtext").GetValue(cod));
                     nop_address = cod.GetType().GetProperty("nop_address").GetValue(cod);
                     t.WriteNOP(nop_address, nopBytes);
