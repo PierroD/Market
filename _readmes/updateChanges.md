@@ -1,3 +1,9 @@
+### V2.7.10
+- Feat adding MW2 SinglePlayer offsets due to x64 release
+- Feat adding BO2 SP offsets
+- Fix BO2 MP / SP / ZM offsets
+
+
 ### V2.6.10
 - Fix update MW2MP & MW3MP offsets due to x64 release
 - Thx to @milolethbridge offering a solution 
