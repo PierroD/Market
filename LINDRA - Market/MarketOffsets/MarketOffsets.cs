@@ -9,9 +9,9 @@ using MarketOffsets.Interfaces;
 namespace MarketOffsets
 {
     public class COD
-    {                           //    cod4,  mw2  ,   mw3  ,     bo1   , bo2 zombie  
-        static string[] games = {  "iw3mp","iw4mp", "iw5mp", "BlackOpsMP", "t6zm" };
-        static string[] x64games = { "iw4mp", "iw5mp"};
+    {                           //    cod4,  mw2sp/mp      ,   mw3  ,     bo1     , bo2 sp/mp/zm  
+        static string[] games = { "iw3mp", "iw4sp", "iw4mp", "iw5mp", "BlackOpsMP", "t6sp", "t6mp", "t6zm", };
+        static string[] x64games = { "iw4sp", "iw4mp", "iw5mp" };
         static Type CallofDuty;
         static string gameName;
         public static bool checkGame()
@@ -50,6 +50,8 @@ namespace MarketOffsets
             {
                 case "iw3mp":
                     return "Call of Duty 4 Modern Warfare - Multiplayer";
+                case "iw4sp":
+                    return "Call of Duty Modern Warfare 2 - SinglePlayer";
                 case "iw4mp":
                     return "Call of Duty Modern Warfare 2 - Multiplayer";
                 case "BlackOpsMP":
@@ -57,6 +59,8 @@ namespace MarketOffsets
 
                 case "iw5mp":
                     return "Call of Duty Modern Warfare 3 - Multiplayer";
+                case "t6sp":
+                    return "Call of Duty BlackOps 2 - SinglePlayer";
                 case "t6mp":
                     return "Call of Duty BlackOps 2 - Multiplayer";
                 case "t6zm":

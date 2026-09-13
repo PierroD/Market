@@ -67,8 +67,10 @@
     <Compile Include="MarketOffsets.cs" />
     <Compile Include="Offsets\BlackOpsMP.cs" />
     <Compile Include="Offsets\iw3mp.cs" />
+    <Compile Include="Offsets\iw4sp.cs" />
     <Compile Include="Offsets\iw4mp.cs" />
     <Compile Include="Offsets\iw5mp.cs" />
+    <Compile Include="Offsets\t6sp.cs" />
     <Compile Include="Offsets\t6zm.cs" />
     <Compile Include="Offsets\t6mp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

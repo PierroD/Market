@@ -170,7 +170,7 @@ namespace LINDRA___Market.Utils
             ReadProcessMemory(aProcess, (IntPtr)(long)aAddress, vValue, (uint)sSize, out IntPtr _);
         }
 
-        public int ReadInteger(int Address)
+        public int ReadInteger(long Address)
         {
             return BitConverter.ToInt32(Read(Address, this.pointerSize), 0);
         }

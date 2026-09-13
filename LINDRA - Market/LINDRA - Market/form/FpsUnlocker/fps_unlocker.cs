@@ -24,7 +24,7 @@ namespace LINDRA___Market.form
 
         Thread gameThread;
         Form parent;
-        private string[] allowedSafeAreaGames = { "iw4mp", "iw5mp" };
+        private string[] allowedSafeAreaGames = { "iw4sp", "iw4mp", "iw5mp" };
         private string previousGame = "";
         private bool safeAreaPreviousState = false;
         public fps_unlocker(Form parent)
