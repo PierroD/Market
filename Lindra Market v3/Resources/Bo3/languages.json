@@ -1,0 +1,102 @@
+[
+    {
+        "key": "es",
+        "name": "Español"
+    },
+    {
+        "key": "eo",
+        "name": "Esperanto"
+    },
+    {
+        "key": "fa",
+        "name": "فارسی"
+    },
+    {
+        "key": "fi",
+        "name": "Suomi"
+    },
+    {
+        "key": "fr",
+        "name": "Français"
+    },
+    {
+        "key": "ga",
+        "name": "Gaeilge"
+    },
+    {
+        "key": "en",
+        "name": "English"
+    },
+    {
+        "key": "de",
+        "name": "Deutsch"
+    },
+    {
+        "key": "el",
+        "name": "Ελληνικά"
+    },
+    {
+        "key": "cs",
+        "name": "Čeština"
+    },
+    {
+        "key": "da",
+        "name": "Dansk"
+    },
+    {
+        "key": "it",
+        "name": "Italiano"
+    },
+    {
+        "key": "ja",
+        "name": "日本語"
+    },
+    {
+        "key": "ko",
+        "name": "한국어"
+    },
+    {
+        "key": "lb",
+        "name": "Lëtzebuergesch"
+    },
+    {
+        "key": "lt",
+        "name": "Lietuvių"
+    },
+    {
+        "key": "lv",
+        "name": "Latviešu"
+    },
+    {
+        "key": "nl",
+        "name": "Nederlands"
+    },
+    {
+        "key": "pl",
+        "name": "Polski"
+    },
+    {
+        "key": "ro",
+        "name": "Română"
+    },
+    {
+        "key": "ru",
+        "name": "Русский"
+    },
+    {
+        "key": "sl",
+        "name": "Slovenščina"
+    },
+    {
+        "key": "sv",
+        "name": "Svenska"
+    },
+    {
+        "key": "sw",
+        "name": "Kiswahili"
+    },
+    {
+        "key": "zh",
+        "name": "中文"
+    }
+]

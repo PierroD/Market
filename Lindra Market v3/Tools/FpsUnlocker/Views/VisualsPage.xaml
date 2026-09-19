@@ -1,0 +1,286 @@
+<Page x:Class="Lindra_Market_v3.Tools.FpsUnlocker.Views.VisualsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      xmlns:local="clr-namespace:Lindra_Market_v3.Tools.FpsUnlocker.Views"
+      mc:Ignorable="d"
+      d:DesignHeight="950" d:DesignWidth="800"
+      Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+      Background="Transparent"
+      PreviewMouseWheel="Page_PreviewMouseWheel"
+      Title="VisualsPage">
+
+    <ScrollViewer x:Name="PageScrollViewer"
+                  Background="Transparent"
+                  VerticalScrollBarVisibility="Auto"
+                  HorizontalScrollBarVisibility="Disabled">
+        <StackPanel Margin="32,24,32,40" MaxWidth="680">
+
+            <!-- Page Header -->
+            <ui:TextBlock Text="{DynamicResource Visuals_PageTitle}"
+                          FontTypography="Title"
+                          Margin="0,0,0,4" />
+            <ui:TextBlock Text="{DynamicResource Visuals_PageSubtitle}"
+                          Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                          Margin="0,0,0,24" />
+
+            <!-- SECTION 1: CAMÉRA & FPS -->
+            <ui:TextBlock Text="{DynamicResource Visuals_Sec_Camera}"
+                          FontTypography="Subtitle"
+                          Margin="0,0,0,12" />
+
+            <StackPanel Margin="0,0,0,24">
+                <!-- FieldOfView -->
+                <ui:CardControl Margin="0,0,0,8">
+                    <ui:CardControl.Header>
+                        <StackPanel>
+                            <ui:TextBlock Text="{DynamicResource Visuals_Fov_Title}" FontTypography="BodyStrong" />
+                            <ui:TextBlock Text="{DynamicResource Visuals_Fov_Sub}"
+                                          Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                                          FontTypography="Caption" />
+                        </StackPanel>
+                    </ui:CardControl.Header>
+                    <ui:CardControl.Icon>
+                        <ui:SymbolIcon Symbol="ZoomIn24" />
+                    </ui:CardControl.Icon>
+                    <Grid Width="220">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Slider x:Name="FieldOfViewSlider" Grid.Column="0"
+                                Minimum="65" Maximum="130" Value="65"
+                                VerticalAlignment="Center" Cursor="Hand" />
+                        <ui:TextBlock Grid.Column="1" MinWidth="40" Margin="12,0,0,0"
+                                      TextAlignment="Right" VerticalAlignment="Center"
+                                      FontTypography="BodyStrong"
+                                      Text="{Binding Value, ElementName=FieldOfViewSlider, StringFormat=N0}" />
+                    </Grid>
+                </ui:CardControl>
+
+                <!-- Max_FPS -->
+                <ui:CardControl Margin="0,0,0,8">
+                    <ui:CardControl.Header>
+                        <StackPanel>
+                            <ui:TextBlock Text="{DynamicResource Visuals_MaxFps_Title}" FontTypography="BodyStrong" />
+                            <ui:TextBlock Text="{DynamicResource Visuals_MaxFps_Sub}"
+                                          Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                                          FontTypography="Caption" />
+                        </StackPanel>
+                    </ui:CardControl.Header>
+                    <ui:CardControl.Icon>
+                        <ui:SymbolIcon Symbol="Flash24" />
+                    </ui:CardControl.Icon>
+                    <Grid Width="220">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Slider x:Name="MaxFpsSlider" Grid.Column="0"
+                                Minimum="90" Maximum="333" Value="90"
+                                VerticalAlignment="Center" Cursor="Hand" />
+                        <ui:TextBlock Grid.Column="1" MinWidth="40" Margin="12,0,0,0"
+                                      TextAlignment="Right" VerticalAlignment="Center"
+                                      FontTypography="BodyStrong"
+                                      Text="{Binding Value, ElementName=MaxFpsSlider, StringFormat=N0}" />
+                    </Grid>
+                </ui:CardControl>
+
+                <!-- FovScale -->
+                <ui:CardControl Margin="0,0,0,8">
+                    <ui:CardControl.Header>
+                        <StackPanel>
+                            <ui:TextBlock Text="{DynamicResource Visuals_FovScale_Title}" FontTypography="BodyStrong" />
+                            <ui:TextBlock Text="{DynamicResource Visuals_FovScale_Sub}"
+                                          Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                                          FontTypography="Caption" />
+                        </StackPanel>
+                    </ui:CardControl.Header>
+                    <ui:CardControl.Icon>
+                        <ui:SymbolIcon Symbol="ArrowMaximize24" />
+                    </ui:CardControl.Icon>
+                    <Grid Width="220">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Slider x:Name="FovScaleSlider" Grid.Column="0"
+                                Minimum="0" Maximum="2000" Value="1000"
+                                VerticalAlignment="Center" Cursor="Hand" />
+                        <ui:TextBlock Grid.Column="1" MinWidth="40" Margin="12,0,0,0"
+                                      TextAlignment="Right" VerticalAlignment="Center"
+                                      FontTypography="BodyStrong"
+                                      Text="{Binding Value, ElementName=FovScaleSlider, StringFormat=N0}" />
+                    </Grid>
+                </ui:CardControl>
+
+                <!-- FovMinimum -->
+                <ui:CardControl Margin="0,0,0,8">
+                    <ui:CardControl.Header>
+                        <StackPanel>
+                            <ui:TextBlock Text="{DynamicResource Visuals_FovMin_Title}" FontTypography="BodyStrong" />
+                            <ui:TextBlock Text="{DynamicResource Visuals_FovMin_Sub}"
+                                          Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                                          FontTypography="Caption" />
+                        </StackPanel>
+                    </ui:CardControl.Header>
+                    <ui:CardControl.Icon>
+                        <ui:SymbolIcon Symbol="ArrowMinimize24" />
+                    </ui:CardControl.Icon>
+                    <Grid Width="220">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Slider x:Name="FovMinimumSlider" Grid.Column="0"
+                                Minimum="1" Maximum="120" Value="1"
+                                VerticalAlignment="Center" Cursor="Hand" />
+                        <ui:TextBlock Grid.Column="1" MinWidth="40" Margin="12,0,0,0"
+                                      TextAlignment="Right" VerticalAlignment="Center"
+                                      FontTypography="BodyStrong"
+                                      Text="{Binding Value, ElementName=FovMinimumSlider, StringFormat=N0}" />
+                    </Grid>
+                </ui:CardControl>
+            </StackPanel>
+
+            <!-- SECTION 2: MAPS & TEXTURES -->
+            <ui:TextBlock Text="{DynamicResource Visuals_Sec_Maps}"
+                          FontTypography="Subtitle"
+                          Margin="0,8,0,12" />
+
+            <StackPanel Margin="0,0,0,24">
+                <!-- LightMap -->
+                <ui:CardControl Margin="0,0,0,8">
+                    <ui:CardControl.Header>
+                        <StackPanel>
+                            <ui:TextBlock Text="{DynamicResource Visuals_LightMap_Title}" FontTypography="BodyStrong" />
+                            <ui:TextBlock Text="{DynamicResource Visuals_LightMap_Sub}"
+                                          Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                                          FontTypography="Caption" />
+                        </StackPanel>
+                    </ui:CardControl.Header>
+                    <ui:CardControl.Icon>
+                        <ui:SymbolIcon Symbol="Lightbulb24" />
+                    </ui:CardControl.Icon>
+                    <ComboBox x:Name="LightMapComboBox" Width="160" SelectedIndex="1">
+                        <ComboBoxItem Content="Inverted" />
+                        <ComboBoxItem Content="Normal" />
+                        <ComboBoxItem Content="Extrabright" />
+                        <ComboBoxItem Content="Toobright" />
+                        <ComboBoxItem Content="Fullbright" />
+                    </ComboBox>
+                </ui:CardControl>
+
+                <!-- SpecularMap -->
+                <ui:CardControl Margin="0,0,0,8">
+                    <ui:CardControl.Header>
+                        <StackPanel>
+                            <ui:TextBlock Text="{DynamicResource Visuals_SpecularMap_Title}" FontTypography="BodyStrong" />
+                            <ui:TextBlock Text="{DynamicResource Visuals_SpecularMap_Sub}"
+                                          Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                                          FontTypography="Caption" />
+                        </StackPanel>
+                    </ui:CardControl.Header>
+                    <ui:CardControl.Icon>
+                        <ui:SymbolIcon Symbol="Sparkle24" />
+                    </ui:CardControl.Icon>
+                    <ComboBox x:Name="SpecularMapComboBox" Width="160" SelectedIndex="1">
+                        <ComboBoxItem Content="Disable" />
+                        <ComboBoxItem Content="Enable" />
+                        <ComboBoxItem Content="Chrome" />
+                    </ComboBox>
+                </ui:CardControl>
+            </StackPanel>
+
+            <!-- SECTION 3: EFFETS & RENDER MODIFIERS -->
+            <ui:TextBlock Text="{DynamicResource Visuals_Sec_Effects}"
+                          FontTypography="Subtitle"
+                          Margin="0,8,0,12" />
+
+            <StackPanel Margin="0,0,0,8">
+                <!-- Movie -->
+                <ui:CardControl Margin="0,0,0,8">
+                    <ui:CardControl.Header>
+                        <StackPanel>
+                            <ui:TextBlock Text="{DynamicResource Visuals_Movie_Title}" FontTypography="BodyStrong" />
+                            <ui:TextBlock Text="{DynamicResource Visuals_Movie_Sub}"
+                                          Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                                          FontTypography="Caption" />
+                        </StackPanel>
+                    </ui:CardControl.Header>
+                    <ui:CardControl.Icon>
+                        <ui:SymbolIcon Symbol="Video24" />
+                    </ui:CardControl.Icon>
+                    <ui:ToggleSwitch x:Name="MovieToggle" IsChecked="False" />
+                </ui:CardControl>
+
+                <!-- No Fog -->
+                <ui:CardControl Margin="0,0,0,8">
+                    <ui:CardControl.Header>
+                        <StackPanel>
+                            <ui:TextBlock Text="{DynamicResource Visuals_NoFog_Title}" FontTypography="BodyStrong" />
+                            <ui:TextBlock Text="{DynamicResource Visuals_NoFog_Sub}"
+                                          Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                                          FontTypography="Caption" />
+                        </StackPanel>
+                    </ui:CardControl.Header>
+                    <ui:CardControl.Icon>
+                        <ui:SymbolIcon Symbol="Cloud24" />
+                    </ui:CardControl.Icon>
+                    <ui:ToggleSwitch x:Name="NoFogToggle" IsChecked="False" />
+                </ui:CardControl>
+
+                <!-- No Glow -->
+                <ui:CardControl Margin="0,0,0,8">
+                    <ui:CardControl.Header>
+                        <StackPanel>
+                            <ui:TextBlock Text="{DynamicResource Visuals_NoGlow_Title}" FontTypography="BodyStrong" />
+                            <ui:TextBlock Text="{DynamicResource Visuals_NoGlow_Sub}"
+                                          Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                                          FontTypography="Caption" />
+                        </StackPanel>
+                    </ui:CardControl.Header>
+                    <ui:CardControl.Icon>
+                        <ui:SymbolIcon Symbol="WeatherSunny24" />
+                    </ui:CardControl.Icon>
+                    <ui:ToggleSwitch x:Name="NoGlowToggle" IsChecked="False" />
+                </ui:CardControl>
+
+                <!-- No Bullet -->
+                <ui:CardControl Margin="0,0,0,8">
+                    <ui:CardControl.Header>
+                        <StackPanel>
+                            <ui:TextBlock Text="{DynamicResource Visuals_NoBullet_Title}" FontTypography="BodyStrong" />
+                            <ui:TextBlock Text="{DynamicResource Visuals_NoBullet_Sub}"
+                                          Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                                          FontTypography="Caption" />
+                        </StackPanel>
+                    </ui:CardControl.Header>
+                    <ui:CardControl.Icon>
+                        <ui:SymbolIcon Symbol="Target24" />
+                    </ui:CardControl.Icon>
+                    <ui:ToggleSwitch x:Name="NoBulletToggle" IsChecked="False" />
+                </ui:CardControl>
+
+                <!-- No Camos -->
+                <ui:CardControl Margin="0,0,0,8">
+                    <ui:CardControl.Header>
+                        <StackPanel>
+                            <ui:TextBlock Text="{DynamicResource Visuals_NoCamos_Title}" FontTypography="BodyStrong" />
+                            <ui:TextBlock Text="{DynamicResource Visuals_NoCamos_Sub}"
+                                          Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                                          FontTypography="Caption" />
+                        </StackPanel>
+                    </ui:CardControl.Header>
+                    <ui:CardControl.Icon>
+                        <ui:SymbolIcon Symbol="PaintBrush24" />
+                    </ui:CardControl.Icon>
+                    <ui:ToggleSwitch x:Name="NoCamosToggle" IsChecked="False" />
+                </ui:CardControl>
+            </StackPanel>
+
+        </StackPanel>
+    </ScrollViewer>
+</Page>

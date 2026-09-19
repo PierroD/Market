@@ -1,0 +1,12 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Project Path="Lindra Market v3/Lindra Market v3.csproj">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+  <Project Path="MarketOffsets/MarketOffsets.csproj">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+</Solution>

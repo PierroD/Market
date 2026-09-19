@@ -1,0 +1,158 @@
+<Page x:Class="Lindra_Market_v3.Views.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      mc:Ignorable="d"
+      d:DesignHeight="700" d:DesignWidth="950"
+      Background="Transparent"
+      PreviewMouseWheel="Page_PreviewMouseWheel"
+      Title="HomePage">
+
+    <ScrollViewer x:Name="PageScrollViewer"
+                  Background="Transparent"
+                  VerticalScrollBarVisibility="Auto"
+                  HorizontalScrollBarVisibility="Disabled">
+        <Grid Margin="32,24,32,40">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- Page Title & Header -->
+            <Grid Grid.Row="0" Margin="0,0,0,24">
+                <StackPanel>
+                    <ui:TextBlock Text="{DynamicResource Home_Title}"
+                                  FontTypography="Title"
+                                  Margin="0,0,0,4" />
+                    <ui:TextBlock Text="{DynamicResource Home_Subtitle}"
+                                  Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                                  FontTypography="Body" />
+                </StackPanel>
+
+                <!-- Search Bar -->
+                <ui:TextBox Width="260"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            PlaceholderText="{DynamicResource Home_Search_Placeholder}"
+                            Icon="{ui:SymbolIcon Search24}"
+                            Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" />
+            </Grid>
+
+            <!-- Category Subtitle -->
+            <ui:TextBlock Grid.Row="1"
+                          Text="{DynamicResource Home_Catalog_Title}"
+                          FontTypography="Subtitle"
+                          Margin="0,0,0,16" />
+
+            <!-- Tools Cards Grid -->
+            <ItemsControl Grid.Row="2" ItemsSource="{Binding FilteredApps}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <ui:Card Width="300"
+                                 Margin="0,0,16,16"
+                                 Padding="20">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <!-- Top row: Icon container + Status badge -->
+                                <Grid Grid.Row="0" Margin="0,0,0,14">
+                                    <Border Width="44" Height="44"
+                                            CornerRadius="10"
+                                            HorizontalAlignment="Left"
+                                            Background="{Binding AccentBrush}"
+                                            Opacity="0.15" />
+                                    <ui:SymbolIcon Symbol="{Binding IconSymbol}"
+                                                   FontSize="22"
+                                                   Foreground="{Binding AccentBrush}"
+                                                   HorizontalAlignment="Left"
+                                                   VerticalAlignment="Center"
+                                                   Margin="11,0,0,0" />
+
+                                    <!-- Status Pill Badge -->
+                                    <Border HorizontalAlignment="Right"
+                                            VerticalAlignment="Center"
+                                            CornerRadius="12"
+                                            Padding="10,4"
+                                            Background="{DynamicResource ControlFillColorDefaultBrush}"
+                                            BorderThickness="1"
+                                            BorderBrush="{DynamicResource ControlStrokeColorDefaultBrush}">
+                                        <ui:TextBlock Text="{Binding StatusBadge}"
+                                                      FontTypography="Caption"
+                                                      Foreground="{Binding AccentBrush}"
+                                                      FontWeight="SemiBold" />
+                                    </Border>
+                                </Grid>
+
+                                <!-- Category Tag -->
+                                <ui:TextBlock Grid.Row="1"
+                                              Text="{Binding Category}"
+                                              FontTypography="Caption"
+                                              Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                                              Margin="0,0,0,4" />
+
+                                <!-- Tool Title -->
+                                <ui:TextBlock Grid.Row="2"
+                                              Text="{Binding Title}"
+                                              FontTypography="BodyStrong"
+                                              FontSize="16"
+                                              Margin="0,0,0,8" />
+
+                                <!-- Tool Subtitle / Description -->
+                                <ui:TextBlock Grid.Row="3"
+                                              Text="{Binding Subtitle}"
+                                              FontTypography="Caption"
+                                              Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                                              TextWrapping="Wrap"
+                                              MinHeight="44"
+                                              Margin="0,0,0,16" />
+
+                                <!-- Action Button -->
+                                <StackPanel Grid.Row="4">
+                                    <ui:Button Content="{Binding ButtonText}"
+                                               Appearance="Primary"
+                                               Icon="{ui:SymbolIcon Play24}"
+                                               Command="{Binding LaunchCommand}"
+                                               HorizontalAlignment="Stretch"
+                                               Visibility="{Binding IsAvailable, Converter={StaticResource BoolToVisibility}}" />
+
+                                    <ui:Button Content="{Binding ButtonText}"
+                                               Appearance="Secondary"
+                                               IsEnabled="False"
+                                               HorizontalAlignment="Stretch"
+                                               Visibility="{Binding IsAvailable, Converter={StaticResource InverseBoolToVisibility}}" />
+                                </StackPanel>
+
+                            </Grid>
+                        </ui:Card>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <!-- Footer -->
+            <StackPanel Grid.Row="3"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        Margin="0,24,0,0">
+                <ui:TextBlock Text="{DynamicResource Home_Footer_MadeWith}" Opacity="0.8" />
+                <ui:SymbolIcon Symbol="Heart24" Margin="2,0" Foreground="#E091C4" />
+                <ui:TextBlock Text="{DynamicResource Home_Footer_By}" FontTypography="BodyStrong" Opacity="0.8" />
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Page>

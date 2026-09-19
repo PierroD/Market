@@ -1,0 +1,87 @@
+<ui:FluentWindow x:Class="Lindra_Market_v3.Tools.FpsUnlocker.FpsUnlocker"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+        xmlns:local="clr-namespace:Lindra_Market_v3.Tools.FpsUnlocker"
+        xmlns:views="clr-namespace:Lindra_Market_v3.Tools.FpsUnlocker.Views"
+        mc:Ignorable="d"
+        Title="{DynamicResource FpsUnlocker_Title}"
+        Height="600"
+        Width="900"
+        ExtendsContentIntoTitleBar="True"
+        WindowBackdropType="Mica"
+        WindowCornerPreference="Round"
+        WindowStartupLocation="CenterScreen"
+        Background="{DynamicResource ApplicationBackgroundBrush}"
+        Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+        Icon="pack://application:,,,/Assets/app.png">
+    <Grid Background="{DynamicResource ApplicationBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <ui:TitleBar Grid.Row="0" Title="{DynamicResource FpsUnlocker_Title}">
+            <ui:TitleBar.Icon>
+                <ui:ImageIcon Source="pack://application:,,,/Assets/app.png" />
+            </ui:TitleBar.Icon>
+        </ui:TitleBar>
+
+        <!-- Le NavigationView occupe tout l'espace restant ; son Frame
+             affiche la page active, et sa barre d'icônes est collée en bas -->
+        <ui:NavigationView
+            x:Name="RootNavigation"
+            Grid.Row="1"
+            PaneDisplayMode="LeftMinimal"
+            IsBackButtonVisible="Collapsed"
+            IsPaneToggleVisible="False"
+            IsPaneOpen="False">
+
+            <ui:NavigationView.MenuItems>
+                <ui:NavigationViewItem
+            Content="{DynamicResource FpsUnlocker_Nav_Visuals}"
+            Icon="{ui:SymbolIcon Camera24}"
+            TargetPageType="{x:Type views:VisualsPage}" />
+               
+                <ui:NavigationViewItem
+            Content="{DynamicResource FpsUnlocker_Nav_Settings}"
+            Icon="{ui:SymbolIcon Settings24}"
+            TargetPageType="{x:Type views:SettingsPage}" />
+            </ui:NavigationView.MenuItems>
+        </ui:NavigationView>
+
+        <!-- Barre de statut de détection du jeu -->
+        <Border Grid.Row="2"
+                Background="{DynamicResource CardBackgroundFillColorDefaultBrush}"
+                BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
+                BorderThickness="0,1,0,0"
+                Padding="16,8">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <Ellipse x:Name="StatusIndicatorDot"
+                             Width="8" Height="8"
+                             Margin="0,0,8,0"
+                             Fill="{DynamicResource TextFillColorTertiaryBrush}" />
+                    <TextBlock x:Name="StatusGameText"
+                               Text="{DynamicResource FpsUnlocker_Status_Waiting}"
+                               FontSize="12"
+                               Foreground="{DynamicResource TextFillColorSecondaryBrush}" />
+                </StackPanel>
+
+                <TextBlock Grid.Column="1"
+                           x:Name="StatusPidText"
+                           FontSize="11"
+                           Foreground="{DynamicResource TextFillColorTertiaryBrush}"
+                           VerticalAlignment="Center" />
+            </Grid>
+        </Border>
+    </Grid>
+</ui:FluentWindow>

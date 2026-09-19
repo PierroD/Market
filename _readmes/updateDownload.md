@@ -1,1 +1,1 @@
-https://raw.githubusercontent.com/PierroD/Market/main/_updates/Market%20v2.7.10.zip
+https://github.com/PierroD/Market/releases/latest/download/LindraMarket_v3.zip

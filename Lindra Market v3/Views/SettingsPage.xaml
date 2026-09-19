@@ -1,0 +1,198 @@
+<Page x:Class="Lindra_Market_v3.Views.SettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      xmlns:utils="clr-namespace:Lindra_Market_v3.Utils"
+      mc:Ignorable="d"
+      d:DesignHeight="800" d:DesignWidth="900"
+      Background="Transparent"
+      PreviewMouseWheel="Page_PreviewMouseWheel"
+      Title="SettingsPage">
+
+    <ScrollViewer x:Name="PageScrollViewer"
+                  Background="Transparent"
+                  VerticalScrollBarVisibility="Auto"
+                  HorizontalScrollBarVisibility="Disabled">
+        <StackPanel Margin="32,24,32,40" MaxWidth="720">
+
+            <!-- En-tête de la page -->
+            <ui:TextBlock Text="{DynamicResource Settings_PageTitle}"
+                          FontTypography="Title"
+                          Margin="0,0,0,4" />
+            <ui:TextBlock Text="{DynamicResource Settings_PageSubtitle}"
+                          Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                          Margin="0,0,0,24" />
+
+            <!-- SECTION 1: APPARENCE & LANGUE -->
+            <ui:TextBlock Text="{DynamicResource Settings_Sec_Appearance}"
+                          FontTypography="Subtitle"
+                          Margin="0,0,0,12" />
+
+            <StackPanel Margin="0,0,0,24">
+                <!-- Thème -->
+                <ui:CardControl Margin="0,0,0,8">
+                    <ui:CardControl.Header>
+                        <StackPanel>
+                            <ui:TextBlock Text="{DynamicResource Settings_Theme_Title}" FontTypography="BodyStrong" />
+                            <ui:TextBlock Text="{DynamicResource Settings_Theme_Sub}"
+                                          Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                                          FontTypography="Caption" />
+                        </StackPanel>
+                    </ui:CardControl.Header>
+                    <ui:CardControl.Icon>
+                        <ui:SymbolIcon Symbol="DarkTheme24" />
+                    </ui:CardControl.Icon>
+                    <ComboBox x:Name="ThemeComboBox"
+                              Width="180"
+                              SelectionChanged="OnThemeSelectionChanged">
+                        <ComboBoxItem Content="{DynamicResource Settings_Theme_Light}" Tag="Light" />
+                        <ComboBoxItem Content="{DynamicResource Settings_Theme_Dark}" Tag="Dark" />
+                        <ComboBoxItem Content="{DynamicResource Settings_Theme_System}" Tag="Follow Windows" />
+                    </ComboBox>
+                </ui:CardControl>
+
+                <!-- Langue -->
+                <ui:CardControl Margin="0,0,0,8">
+                    <ui:CardControl.Header>
+                        <StackPanel>
+                            <ui:TextBlock Text="{DynamicResource Settings_Lang_Title}" FontTypography="BodyStrong" />
+                            <ui:TextBlock Text="{DynamicResource Settings_Lang_Sub}"
+                                          Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                                          FontTypography="Caption" />
+                        </StackPanel>
+                    </ui:CardControl.Header>
+                    <ui:CardControl.Icon>
+                        <ui:SymbolIcon Symbol="Globe24" />
+                    </ui:CardControl.Icon>
+                    <ComboBox x:Name="LanguageComboBox"
+                              Width="180"
+                              SelectionChanged="OnLanguageSelectionChanged">
+                        <ComboBoxItem Content="Français (French)" Tag="fr" />
+                        <ComboBoxItem Content="English (Anglais)" Tag="en" />
+                    </ComboBox>
+                </ui:CardControl>
+
+                <!-- Raccourci Bureau -->
+                <ui:CardControl Margin="0,0,0,8">
+                    <ui:CardControl.Header>
+                        <StackPanel>
+                            <ui:TextBlock Text="{DynamicResource Settings_Shortcut_Title}" FontTypography="BodyStrong" />
+                            <ui:TextBlock Text="{DynamicResource Settings_Shortcut_Sub}"
+                                          Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                                          FontTypography="Caption" />
+                        </StackPanel>
+                    </ui:CardControl.Header>
+                    <ui:CardControl.Icon>
+                        <ui:SymbolIcon Symbol="Desktop24" />
+                    </ui:CardControl.Icon>
+                    <ui:Button x:Name="CreateShortcutButton"
+                               Content="{DynamicResource Settings_Shortcut_Btn}"
+                               Icon="{ui:SymbolIcon Link24}"
+                               Appearance="Secondary"
+                               Click="OnCreateShortcutClick" />
+                </ui:CardControl>
+            </StackPanel>
+
+            <!-- SECTION 2: VERSION & MISES À JOUR -->
+            <ui:TextBlock Text="{DynamicResource Settings_Sec_Updates}"
+                          FontTypography="Subtitle"
+                          Margin="0,8,0,12" />
+
+            <StackPanel Margin="0,0,0,24">
+                <!-- Version Actuelle -->
+                <ui:CardControl Margin="0,0,0,8">
+                    <ui:CardControl.Header>
+                        <StackPanel>
+                            <ui:TextBlock Text="{DynamicResource Settings_Version_Current_Title}" FontTypography="BodyStrong" />
+                            <ui:TextBlock Text="{DynamicResource Settings_Version_Current_Sub}"
+                                          Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                                          FontTypography="Caption" />
+                        </StackPanel>
+                    </ui:CardControl.Header>
+                    <ui:CardControl.Icon>
+                        <ui:SymbolIcon Symbol="Info24" />
+                    </ui:CardControl.Icon>
+                    <ui:TextBlock x:Name="CurrentVersionText"
+                                  Text="{x:Static utils:AppVersionHelper.Version}"
+                                  FontTypography="BodyStrong"
+                                  VerticalAlignment="Center" />
+                </ui:CardControl>
+
+                <!-- Dernière Version Disponibilité -->
+                <ui:CardControl Margin="0,0,0,8">
+                    <ui:CardControl.Header>
+                        <StackPanel>
+                            <ui:TextBlock Text="{DynamicResource Settings_Version_Latest_Title}" FontTypography="BodyStrong" />
+                            <ui:TextBlock Text="{DynamicResource Settings_Version_Latest_Sub}"
+                                          Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                                          FontTypography="Caption" />
+                        </StackPanel>
+                    </ui:CardControl.Header>
+                    <ui:CardControl.Icon>
+                        <ui:SymbolIcon Symbol="ArrowDownload24" />
+                    </ui:CardControl.Icon>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <ui:TextBlock x:Name="LatestVersionText"
+                                      Text="Vérification..."
+                                      FontTypography="BodyStrong"
+                                      VerticalAlignment="Center"
+                                      Margin="0,0,12,0" />
+                        <ui:Button x:Name="CheckUpdateButton"
+                                   Content="{DynamicResource Settings_Version_CheckBtn}"
+                                   Icon="{ui:SymbolIcon ArrowClockwise24}"
+                                   Appearance="Secondary"
+                                   Click="OnCheckUpdateClick" />
+                    </StackPanel>
+                </ui:CardControl>
+            </StackPanel>
+
+            <!-- SECTION 3: NOTES DE MISE À JOUR (CHANGELOGS) -->
+            <ui:TextBlock Text="{DynamicResource Settings_Sec_Changelogs}"
+                          FontTypography="Subtitle"
+                          Margin="0,8,0,12" />
+
+            <ui:Card Padding="16">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="260" />
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0" Margin="0,0,0,12">
+                        <ui:TextBlock Text="{DynamicResource Settings_Changelogs_Sub}"
+                                      Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                                      FontTypography="Caption"
+                                      VerticalAlignment="Center" />
+                        <ui:Button Content="{DynamicResource Settings_Changelogs_Refresh}"
+                                   Icon="{ui:SymbolIcon ArrowClockwise24}"
+                                   Appearance="Secondary"
+                                   HorizontalAlignment="Right"
+                                   Click="OnRefreshChangelogsClick" />
+                    </Grid>
+
+                    <Border Grid.Row="1"
+                            BorderThickness="1"
+                            BorderBrush="{DynamicResource ControlStrokeColorDefaultBrush}"
+                            CornerRadius="6"
+                            Background="{DynamicResource ControlFillColorDefaultBrush}">
+                        <TextBox x:Name="ChangelogsTextBox"
+                                 IsReadOnly="True"
+                                 TextWrapping="Wrap"
+                                 AcceptsReturn="True"
+                                 VerticalScrollBarVisibility="Auto"
+                                 HorizontalScrollBarVisibility="Disabled"
+                                 BorderThickness="0"
+                                 Background="Transparent"
+                                 Padding="12"
+                                 FontFamily="Consolas, Segoe UI, sans-serif"
+                                 FontSize="13"
+                                 Text="Chargement des changelogs..." />
+                    </Border>
+                </Grid>
+            </ui:Card>
+
+        </StackPanel>
+    </ScrollViewer>
+</Page>

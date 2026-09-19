@@ -1,0 +1,258 @@
+<Page x:Class="Lindra_Market_v3.Tools.ExternalConsole.Views.ConsolePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      xmlns:local="clr-namespace:Lindra_Market_v3.Tools.ExternalConsole.Views"
+      xmlns:models="clr-namespace:Lindra_Market_v3.Tools.ExternalConsole.Models"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="850"
+      Title="ConsolePage"
+      Foreground="{DynamicResource TextFillColorPrimaryBrush}">
+
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <!-- Toolbar -->
+            <RowDefinition Height="Auto" />
+            <!-- Main Content (Editor + Log) -->
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Top Toolbar -->
+        <Border Grid.Row="0"
+                Background="{DynamicResource CardBackgroundFillColorDefaultBrush}"
+                BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
+                BorderThickness="1"
+                CornerRadius="8"
+                Padding="12,8"
+                Margin="0,0,0,12">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Action buttons -->
+                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                    <ui:Button x:Name="BtnSend"
+                               Appearance="Primary"
+                               Icon="{ui:SymbolIcon Send24}"
+                               Content="{DynamicResource Console_Btn_Send}"
+                               Click="BtnSend_Click"
+                               ToolTip="Ctrl + Enter"
+                               Margin="0,0,8,0" />
+
+                    <ui:Button x:Name="BtnClear"
+                               Appearance="Secondary"
+                               Icon="{ui:SymbolIcon Delete24}"
+                               Content="{DynamicResource Console_Btn_Clear}"
+                               Click="BtnClear_Click"
+                               Margin="0,0,8,0" />
+
+                    <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="4,2,12,2" />
+
+                    <ui:Button x:Name="BtnLoad"
+                               Appearance="Secondary"
+                               Icon="{ui:SymbolIcon FolderOpen24}"
+                               Content="{DynamicResource Console_Btn_Load}"
+                               Click="BtnLoad_Click"
+                               Margin="0,0,8,0" />
+
+                    <ui:Button x:Name="BtnSave"
+                               Appearance="Secondary"
+                               Icon="{ui:SymbolIcon Save24}"
+                               Content="{DynamicResource Console_Btn_Save}"
+                               Click="BtnSave_Click"
+                               Margin="0,0,8,0" />
+                </StackPanel>
+
+                <!-- Feedback status / info -->
+                <TextBlock Grid.Column="1"
+                           x:Name="StatusInfoText"
+                           FontSize="12"
+                           Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0,0,16,0"
+                           TextTrimming="CharacterEllipsis" />
+
+                <!-- Shortcut tip badge -->
+                <Border Grid.Column="2"
+                        Background="{DynamicResource SubtleFillColorSecondaryBrush}"
+                        CornerRadius="4"
+                        Padding="8,4"
+                        VerticalAlignment="Center">
+                    <TextBlock Text="Ctrl + Enter ↵"
+                               FontSize="11"
+                               FontFamily="Cascadia Code, Consolas"
+                               Foreground="{DynamicResource TextFillColorTertiaryBrush}" />
+                </Border>
+            </Grid>
+        </Border>
+
+        <!-- Editor and History Log Columns -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <!-- Editor (60%) -->
+                <ColumnDefinition Width="3*" MinWidth="250" />
+                <ColumnDefinition Width="12" />
+                <!-- History Log (40%) -->
+                <ColumnDefinition Width="2*" MinWidth="220" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Command Script Editor -->
+            <Border Grid.Column="0"
+                    Background="{DynamicResource CardBackgroundFillColorDefaultBrush}"
+                    BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
+                    BorderThickness="1"
+                    CornerRadius="8"
+                    Padding="12">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0"
+                               Text="{DynamicResource Console_Nav_Console}"
+                               FontSize="14"
+                               FontWeight="SemiBold"
+                               Margin="0,0,0,8" />
+
+                    <TextBox Grid.Row="1"
+                             x:Name="EditorTextBox"
+                             FontFamily="Cascadia Code, Consolas, Courier New"
+                             FontSize="13"
+                             AcceptsReturn="True"
+                             AcceptsTab="True"
+                             TextWrapping="Wrap"
+                             VerticalScrollBarVisibility="Auto"
+                             HorizontalScrollBarVisibility="Auto"
+                             Background="Transparent"
+                             BorderThickness="0"
+                             Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+                             PreviewKeyDown="EditorTextBox_PreviewKeyDown"
+                             TextChanged="EditorTextBox_TextChanged" />
+
+                    <!-- Placeholder overlay when empty -->
+                    <TextBlock Grid.Row="1"
+                               x:Name="PlaceholderTextBlock"
+                               Text="{DynamicResource Console_Editor_Placeholder}"
+                               FontFamily="Cascadia Code, Consolas, Courier New"
+                               FontSize="13"
+                               Foreground="{DynamicResource TextFillColorTertiaryBrush}"
+                               IsHitTestVisible="False"
+                               TextWrapping="Wrap"
+                               Margin="4,2,0,0" />
+                </Grid>
+            </Border>
+
+            <!-- GridSplitter -->
+            <GridSplitter Grid.Column="1"
+                          Width="4"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Stretch"
+                          Background="Transparent" />
+
+            <!-- Command History Log -->
+            <Border Grid.Column="2"
+                    Background="{DynamicResource CardBackgroundFillColorDefaultBrush}"
+                    BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
+                    BorderThickness="1"
+                    CornerRadius="8"
+                    Padding="12">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <!-- Header with Clear Log button -->
+                    <Grid Grid.Row="0" Margin="0,0,0,8">
+                        <TextBlock Text="{DynamicResource Console_Log_Title}"
+                                   FontSize="14"
+                                   FontWeight="SemiBold"
+                                   VerticalAlignment="Center" />
+
+                        <ui:Button x:Name="BtnClearLog"
+                                   Appearance="Transparent"
+                                   Icon="{ui:SymbolIcon Dismiss24}"
+                                   Padding="6,4"
+                                   HorizontalAlignment="Right"
+                                   ToolTip="{DynamicResource Console_Log_Clear}"
+                                   Click="BtnClearLog_Click" />
+                    </Grid>
+
+                    <!-- History Items List -->
+                    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                        <ItemsControl x:Name="HistoryItemsControl">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate DataType="{x:Type models:ConsoleHistoryEntry}">
+                                    <Border Margin="0,0,0,6"
+                                            Padding="8"
+                                            CornerRadius="6"
+                                            Background="{DynamicResource SubtleFillColorSecondaryBrush}"
+                                            BorderThickness="1"
+                                            BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+
+                                            <!-- Header: Timestamp & Status indicator -->
+                                            <Grid Grid.Row="0" Margin="0,0,0,4">
+                                                <TextBlock Text="{Binding FormattedTime}"
+                                                           FontSize="11"
+                                                           Foreground="{DynamicResource TextFillColorTertiaryBrush}" />
+
+                                                <TextBlock HorizontalAlignment="Right"
+                                                           FontSize="11"
+                                                           FontWeight="SemiBold">
+                                                    <TextBlock.Style>
+                                                        <Style TargetType="TextBlock">
+                                                            <Setter Property="Text" Value="✓ OK" />
+                                                            <Setter Property="Foreground" Value="#10B981" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding IsSuccess}" Value="False">
+                                                                    <Setter Property="Text" Value="✕ ERR" />
+                                                                    <Setter Property="Foreground" Value="#EF4444" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </TextBlock.Style>
+                                                </TextBlock>
+                                            </Grid>
+
+                                            <!-- Command content -->
+                                            <TextBlock Grid.Row="1"
+                                                       Text="{Binding Command}"
+                                                       FontFamily="Cascadia Code, Consolas"
+                                                       FontSize="12"
+                                                       TextWrapping="Wrap"
+                                                       Foreground="{DynamicResource TextFillColorPrimaryBrush}" />
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+
+                    <!-- Empty state text -->
+                    <TextBlock Grid.Row="1"
+                               x:Name="EmptyHistoryText"
+                               Text="{DynamicResource Console_Log_Empty}"
+                               FontSize="12"
+                               Foreground="{DynamicResource TextFillColorTertiaryBrush}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               TextWrapping="Wrap"
+                               TextAlignment="Center"
+                               Margin="16" />
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Page>

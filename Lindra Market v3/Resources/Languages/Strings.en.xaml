@@ -1,0 +1,249 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <!-- Main Navigation -->
+    <sys:String x:Key="Nav_Home">Home</sys:String>
+    <sys:String x:Key="Nav_Settings">Settings</sys:String>
+    <sys:String x:Key="Nav_About">About</sys:String>
+
+    <!-- HomePage -->
+    <sys:String x:Key="Home_Title">LINDRA's Market</sys:String>
+    <sys:String x:Key="Home_Subtitle">Discover and launch available game optimization and customization tools.</sys:String>
+    <sys:String x:Key="Home_Search_Placeholder">Search for a tool...</sys:String>
+    <sys:String x:Key="Home_Catalog_Title">Tools Catalog</sys:String>
+    <sys:String x:Key="Home_Status_Available">Available</sys:String>
+    <sys:String x:Key="Home_Status_Soon">Coming Soon</sys:String>
+    <sys:String x:Key="Home_Btn_Launch">Launch Tool</sys:String>
+    <sys:String x:Key="Home_Btn_InDev">In Development</sys:String>
+    <sys:String x:Key="Home_Footer_MadeWith">Made with </sys:String>
+    <sys:String x:Key="Home_Footer_By"> by LINDRA</sys:String>
+
+    <!-- HomePage Tools -->
+    <sys:String x:Key="Tool_FpsUnlocker_Title">FPS Unlocker</sys:String>
+    <sys:String x:Key="Tool_FpsUnlocker_Subtitle">Unlock your FPS, adjust Field Of View (FOV), and optimize in-game graphics rendering.</sys:String>
+    <sys:String x:Key="Tool_FpsUnlocker_Category">Performance &amp; Graphics</sys:String>
+
+    <sys:String x:Key="Tool_Console_Title">External Console</sys:String>
+    <sys:String x:Key="Tool_Console_Subtitle">Advanced external Call of Duty console to execute and unlock Dvars in real-time.</sys:String>
+    <sys:String x:Key="Tool_Console_Category">Console &amp; Debug</sys:String>
+
+    <sys:String x:Key="Tool_Bo3Lang_Title">BO3 Language Selector</sys:String>
+    <sys:String x:Key="Tool_Bo3Lang_Subtitle">Select your preferred game language and fix crashes when loading custom maps.</sys:String>
+    <sys:String x:Key="Tool_Bo3Lang_Category">Localization &amp; Utilities</sys:String>
+
+    <sys:String x:Key="Tool_Texture_Title">Texture &amp; Camo Manager</sys:String>
+    <sys:String x:Key="Tool_Texture_Subtitle">Customize weapon camos, textures, and visual game assets.</sys:String>
+    <sys:String x:Key="Tool_Texture_Category">Customization</sys:String>
+
+    <!-- FpsUnlocker Main Window -->
+    <sys:String x:Key="FpsUnlocker_Title">FPS Unlocker</sys:String>
+    <sys:String x:Key="FpsUnlocker_Nav_Visuals">Visuals</sys:String>
+    <sys:String x:Key="FpsUnlocker_Nav_Settings">Settings</sys:String>
+    <sys:String x:Key="FpsUnlocker_Status_Waiting">Waiting for a game...</sys:String>
+    <sys:String x:Key="FpsUnlocker_Status_Connected">Connected:</sys:String>
+    <sys:String x:Key="FpsUnlocker_Status_Unsupported">Not available for this game</sys:String>
+
+    <!-- FpsUnlocker - VisualsPage -->
+    <sys:String x:Key="Visuals_PageTitle">Visuals &amp; Graphics</sys:String>
+    <sys:String x:Key="Visuals_PageSubtitle">Adjust field of view, display performance, and in-game graphic effects.</sys:String>
+    <sys:String x:Key="Visuals_Sec_Camera">Camera &amp; Performance</sys:String>
+
+    <sys:String x:Key="Visuals_Fov_Title">Field Of View (FOV)</sys:String>
+    <sys:String x:Key="Visuals_Fov_Sub">Adjusts the main field of view (65 - 130)</sys:String>
+
+    <sys:String x:Key="Visuals_MaxFps_Title">Max FPS</sys:String>
+    <sys:String x:Key="Visuals_MaxFps_Sub">Maximum frame rate limit (90 - 333)</sys:String>
+
+    <sys:String x:Key="Visuals_FovScale_Title">FOV Scale</sys:String>
+    <sys:String x:Key="Visuals_FovScale_Sub">Field of view scaling factor (0 - 2000)</sys:String>
+
+    <sys:String x:Key="Visuals_FovMin_Title">FOV Minimum</sys:String>
+    <sys:String x:Key="Visuals_FovMin_Sub">Minimum allowed value for FOV (1 - 120)</sys:String>
+
+    <sys:String x:Key="Visuals_Sec_Maps">Maps &amp; Textures</sys:String>
+    <sys:String x:Key="Visuals_LightMap_Title">LightMap</sys:String>
+    <sys:String x:Key="Visuals_LightMap_Sub">In-game lightmap texture rendering mode</sys:String>
+
+    <sys:String x:Key="Visuals_SpecularMap_Title">SpecularMap</sys:String>
+    <sys:String x:Key="Visuals_SpecularMap_Sub">Enables or disables specular reflections</sys:String>
+
+    <sys:String x:Key="Visuals_Sec_Effects">Visual Effects &amp; Filters</sys:String>
+    <sys:String x:Key="Visuals_Movie_Title">Movie</sys:String>
+    <sys:String x:Key="Visuals_Movie_Sub">Cinematic rendering mode</sys:String>
+
+    <sys:String x:Key="Visuals_NoFog_Title">No Fog</sys:String>
+    <sys:String x:Key="Visuals_NoFog_Sub">Disables environmental fog effects</sys:String>
+
+    <sys:String x:Key="Visuals_NoGlow_Title">No Glow</sys:String>
+    <sys:String x:Key="Visuals_NoGlow_Sub">Disables bloom and glowing screen effects</sys:String>
+
+    <sys:String x:Key="Visuals_NoBullet_Title">No Bullet</sys:String>
+    <sys:String x:Key="Visuals_NoBullet_Sub">Hides bullet tracers and impact effects</sys:String>
+
+    <sys:String x:Key="Visuals_NoCamos_Title">No Camos</sys:String>
+    <sys:String x:Key="Visuals_NoCamos_Sub">Disables weapon camouflage rendering</sys:String>
+
+    <!-- FpsUnlocker - SettingsPage -->
+    <sys:String x:Key="FpsSettings_PageTitle">Settings &amp; Export</sys:String>
+    <sys:String x:Key="FpsSettings_PageSubtitle">Save, load, or reset visual settings in JSON format.</sys:String>
+    <sys:String x:Key="FpsSettings_Sec_Profile">Visual Profile Management</sys:String>
+
+    <sys:String x:Key="FpsSettings_Save_Title">Save JSON Configuration</sys:String>
+    <sys:String x:Key="FpsSettings_Save_Sub">Exports all your current Visuals settings into a .json file</sys:String>
+    <sys:String x:Key="FpsSettings_Save_Btn">Save (.json)</sys:String>
+
+    <sys:String x:Key="FpsSettings_Load_Title">Load JSON Configuration</sys:String>
+    <sys:String x:Key="FpsSettings_Load_Sub">Imports a .json file to apply visual settings instantly</sys:String>
+    <sys:String x:Key="FpsSettings_Load_Btn">Load File</sys:String>
+
+    <sys:String x:Key="FpsSettings_Reset_Title">Reset Settings</sys:String>
+    <sys:String x:Key="FpsSettings_Reset_Sub">Restores all visual values to defaults (FOV 65, Max FPS 90...)</sys:String>
+    <sys:String x:Key="FpsSettings_Reset_Btn">Reset</sys:String>
+
+    <sys:String x:Key="FpsSettings_InfoBar_Title">Information</sys:String>
+    <sys:String x:Key="FpsSettings_Info_Initial">No file loaded yet.</sys:String>
+    <sys:String x:Key="FpsSettings_Info_Saved">Configuration saved in </sys:String>
+    <sys:String x:Key="FpsSettings_Info_Loaded">Configuration loaded from </sys:String>
+    <sys:String x:Key="FpsSettings_Info_Reset">All visual settings have been reset to default values.</sys:String>
+    <sys:String x:Key="FpsSettings_Save_Success_Title">Save Successful</sys:String>
+    <sys:String x:Key="FpsSettings_Save_Error_Title">Save Error</sys:String>
+    <sys:String x:Key="FpsSettings_Save_Error_Msg">Unable to write JSON file to disk.</sys:String>
+    <sys:String x:Key="FpsSettings_Load_Success_Title">Load Successful</sys:String>
+    <sys:String x:Key="FpsSettings_Load_Error_Title">Load Error</sys:String>
+    <sys:String x:Key="FpsSettings_Load_Error_Msg">The selected file is not a valid configuration JSON file.</sys:String>
+    <sys:String x:Key="FpsSettings_Reset_Title_Notif">Settings Reset</sys:String>
+    <sys:String x:Key="FpsSettings_Dialog_JsonFilter">JSON File (*.json)|*.json|All Files (*.*)|*.*</sys:String>
+
+    <!-- Application Settings Page -->
+    <sys:String x:Key="Settings_PageTitle">Application Settings</sys:String>
+    <sys:String x:Key="Settings_PageSubtitle">Manage appearance, language, and check for online updates.</sys:String>
+    <sys:String x:Key="Settings_Sec_Appearance">Appearance &amp; System</sys:String>
+    <sys:String x:Key="Settings_Theme_Title">Display Theme</sys:String>
+    <sys:String x:Key="Settings_Theme_Sub">Customize the visual appearance of the application</sys:String>
+    <sys:String x:Key="Settings_Theme_Light">Light</sys:String>
+    <sys:String x:Key="Settings_Theme_Dark">Dark</sys:String>
+    <sys:String x:Key="Settings_Theme_System">System (Windows)</sys:String>
+
+    <sys:String x:Key="Settings_Lang_Title">Application Language</sys:String>
+    <sys:String x:Key="Settings_Lang_Sub">Select global display language</sys:String>
+
+    <sys:String x:Key="Settings_Shortcut_Title">Desktop Shortcut</sys:String>
+    <sys:String x:Key="Settings_Shortcut_Sub">Create a Lindra Market shortcut on your desktop</sys:String>
+    <sys:String x:Key="Settings_Shortcut_Btn">Create Shortcut</sys:String>
+    <sys:String x:Key="Settings_Shortcut_Success">Shortcut created!</sys:String>
+    <sys:String x:Key="Settings_Shortcut_Error">Error creating shortcut: {0}</sys:String>
+
+    <sys:String x:Key="Settings_Sec_Updates">Version &amp; Updates</sys:String>
+    <sys:String x:Key="Settings_Version_Current_Title">Installed Version</sys:String>
+    <sys:String x:Key="Settings_Version_Current_Sub">Version currently running on your system</sys:String>
+
+    <sys:String x:Key="Settings_Version_Latest_Title">Latest Available Version</sys:String>
+    <sys:String x:Key="Settings_Version_Latest_Sub">Most recent version published on GitHub</sys:String>
+    <sys:String x:Key="Settings_Version_CheckBtn">Check</sys:String>
+    <sys:String x:Key="Settings_Version_Status_UpToDate">Your application is up to date!</sys:String>
+    <sys:String x:Key="Settings_Version_Status_UpdateAvailable">New update available!</sys:String>
+    <sys:String x:Key="Settings_Version_Checking">Checking for updates...</sys:String>
+
+    <!-- Changelogs Section -->
+    <sys:String x:Key="Settings_Sec_Changelogs">Release Notes (Changelogs)</sys:String>
+    <sys:String x:Key="Settings_Changelogs_Sub">Live update history fetched from GitHub</sys:String>
+    <sys:String x:Key="Settings_Changelogs_Refresh">Refresh</sys:String>
+    <sys:String x:Key="Settings_Changelogs_Loading">Loading changelogs from GitHub...</sys:String>
+    <sys:String x:Key="Settings_Changelogs_Error">Failed to load changelogs.</sys:String>
+
+    <!-- External Console Tool -->
+    <sys:String x:Key="Console_Title">External Console</sys:String>
+    <sys:String x:Key="Console_Nav_Console">Console</sys:String>
+    <sys:String x:Key="Console_Nav_Dvars">Dvars Catalog</sys:String>
+    <sys:String x:Key="Console_Status_Connected">Connected:</sys:String>
+    <sys:String x:Key="Console_Status_Waiting">Waiting for a game...</sys:String>
+    <sys:String x:Key="Console_Editor_Placeholder">Enter your console commands here (one per line or semicolon-separated)...&#x0a;Shortcut: Ctrl + Enter to send.</sys:String>
+    <sys:String x:Key="Console_Btn_Send">Send</sys:String>
+    <sys:String x:Key="Console_Btn_Clear">Clear</sys:String>
+    <sys:String x:Key="Console_Btn_Load">Load (.cfg)</sys:String>
+    <sys:String x:Key="Console_Btn_Save">Save (.cfg)</sys:String>
+    <sys:String x:Key="Console_Log_Title">Command History</sys:String>
+    <sys:String x:Key="Console_Log_Clear">Clear Log</sys:String>
+    <sys:String x:Key="Console_Log_NoGame">Error: No compatible game detected or attached.</sys:String>
+    <sys:String x:Key="Console_Log_Success">Executed successfully</sys:String>
+    <sys:String x:Key="Console_Log_Failed">Execution failed (cbuf address unavailable)</sys:String>
+    <sys:String x:Key="Console_Log_Empty">No commands executed yet.</sys:String>
+    <sys:String x:Key="Console_Loaded_File">Loaded file: </sys:String>
+    <sys:String x:Key="Console_Saved_File">File saved successfully to: </sys:String>
+    <sys:String x:Key="Console_Dialog_CfgFilter">Config Files (*.cfg;*.txt)|*.cfg;*.txt|All Files (*.*)|*.*</sys:String>
+
+    <!-- Dvar Search Page -->
+    <sys:String x:Key="DvarSearch_PageTitle">Dvars Explorer</sys:String>
+    <sys:String x:Key="DvarSearch_PageSubtitle">Search and browse built-in variables and commands for each supported game.</sys:String>
+    <sys:String x:Key="DvarSearch_Game_Label">Game:</sys:String>
+    <sys:String x:Key="DvarSearch_Placeholder">Search a dvar or description (e.g. cg_fov, g_speed, jump...)</sys:String>
+    <sys:String x:Key="DvarSearch_Results_Count">Results: {0} / {1}</sys:String>
+    <sys:String x:Key="DvarSearch_Btn_Copy">Copy</sys:String>
+    <sys:String x:Key="DvarSearch_Btn_Copied">Copied!</sys:String>
+    <sys:String x:Key="DvarSearch_Btn_Insert">Insert into Console</sys:String>
+    <sys:String x:Key="DvarSearch_Btn_Execute">Execute</sys:String>
+    <sys:String x:Key="DvarSearch_NoResults">No dvars found matching your query.</sys:String>
+    <sys:String x:Key="DvarSearch_Loading">Loading catalog...</sys:String>
+
+    <!-- About Page -->
+    <sys:String x:Key="About_PageTitle">About</sys:String>
+    <sys:String x:Key="About_PageSubtitle">Application information, helpful links, and system diagnostic.</sys:String>
+    <sys:String x:Key="About_Hero_Title">Lindra Market v3</sys:String>
+    <sys:String x:Key="About_Hero_Desc">Modern toolset and utilities for the Call of Duty® game series.</sys:String>
+    <sys:String x:Key="About_Sec_Links">Links &amp; Resources</sys:String>
+    <sys:String x:Key="About_Github_Title">GitHub Repository</sys:String>
+    <sys:String x:Key="About_Github_Sub">Browse the source code, follow development, and contribute to the project.</sys:String>
+    <sys:String x:Key="About_Github_Btn">Visit</sys:String>
+    <sys:String x:Key="About_Report_Title">Report an Issue</sys:String>
+    <sys:String x:Key="About_Report_Sub">Open a GitHub ticket to report a bug or suggest a new feature.</sys:String>
+    <sys:String x:Key="About_Report_Btn">Report</sys:String>
+    <sys:String x:Key="About_Faq_Title">FAQ &amp; Documentation</sys:String>
+    <sys:String x:Key="About_Faq_Sub">Read frequently asked questions and the user guide on GitHub.</sys:String>
+    <sys:String x:Key="About_Faq_Btn">View</sys:String>
+    <sys:String x:Key="About_Sec_System">System Information &amp; Diagnostic</sys:String>
+    <sys:String x:Key="About_System_Sub">Technical details about your current runtime environment.</sys:String>
+    <sys:String x:Key="About_System_CopyBtn">Copy Info</sys:String>
+    <sys:String x:Key="About_System_Copied">Copied!</sys:String>
+    <sys:String x:Key="About_System_OS">Operating System</sys:String>
+    <sys:String x:Key="About_System_Runtime">.NET Runtime</sys:String>
+    <sys:String x:Key="About_System_Arch">Architecture</sys:String>
+    <sys:String x:Key="About_System_UiFramework">UI Framework</sys:String>
+    <sys:String x:Key="About_Sec_Disclaimer">Legal Disclaimer</sys:String>
+    <sys:String x:Key="About_Disclaimer_Text">Lindra Market is an independent open-source utility created for educational and customization purposes. This software is not affiliated with, endorsed by, or connected to Activision Publishing, Inc., Infinity Ward, or Treyarch. Call of Duty® is a registered trademark of Activision.</sys:String>
+
+    <!-- BO3 Language Selector -->
+    <sys:String x:Key="Bo3Lang_WindowTitle">BO3 Language Selector</sys:String>
+    <sys:String x:Key="Bo3Lang_Nav_Maps">Workshop Maps</sys:String>
+    <sys:String x:Key="Bo3Lang_Nav_Settings">Settings &amp; Path</sys:String>
+    <sys:String x:Key="Bo3Lang_Maps_PageTitle">Black Ops III Custom Maps</sys:String>
+    <sys:String x:Key="Bo3Lang_Maps_PageSubtitle">Select your custom maps and add your language zone files to prevent game load crashes.</sys:String>
+    <sys:String x:Key="Bo3Lang_TargetLang_Label">Target Language:</sys:String>
+    <sys:String x:Key="Bo3Lang_Search_Placeholder">Search maps by title, tags or folder...</sys:String>
+    <sys:String x:Key="Bo3Lang_Btn_PatchAll">Patch All (1-Click)</sys:String>
+    <sys:String x:Key="Bo3Lang_Btn_Refresh">Refresh</sys:String>
+    <sys:String x:Key="Bo3Lang_Maps_Count">Detected Maps: {0}</sys:String>
+    <sys:String x:Key="Bo3Lang_Map_Btn_Patch">Patch</sys:String>
+    <sys:String x:Key="Bo3Lang_Map_Btn_Patched">✓ Installed</sys:String>
+    <sys:String x:Key="Bo3Lang_Map_Btn_Unpatch">Remove</sys:String>
+    <sys:String x:Key="Bo3Lang_Map_Btn_Folder">Open Folder</sys:String>
+    <sys:String x:Key="Bo3Lang_Map_Btn_Workshop">Steam Workshop</sys:String>
+    <sys:String x:Key="Bo3Lang_Map_InstalledLangs">Languages:</sys:String>
+    <sys:String x:Key="Bo3Lang_Map_NoThumbnail">No preview</sys:String>
+    <sys:String x:Key="Bo3Lang_NoMaps_Title">No maps found</sys:String>
+    <sys:String x:Key="Bo3Lang_NoMaps_Desc">Check that the Black Ops III Steam Workshop folder (311210) is properly configured in Settings.</sys:String>
+    <sys:String x:Key="Bo3Lang_PatchAll_Confirm_Title">Batch Patch Confirmation</sys:String>
+    <sys:String x:Key="Bo3Lang_PatchAll_Confirm_Msg">Do you want to duplicate zone files to language {0} for all {1} detected maps?</sys:String>
+    <sys:String x:Key="Bo3Lang_PatchAll_Success">All maps were successfully patched to {0}!</sys:String>
+    <sys:String x:Key="Bo3Lang_Settings_PageTitle">BO3 Workshop Setup</sys:String>
+    <sys:String x:Key="Bo3Lang_Settings_PageSubtitle">Configure your Steam Workshop maps folder path and your default target language.</sys:String>
+    <sys:String x:Key="Bo3Lang_Settings_Sec_Path">Steam Workshop Path</sys:String>
+    <sys:String x:Key="Bo3Lang_Settings_Path_Title">BO3 Workshop Folder (311210)</sys:String>
+    <sys:String x:Key="Bo3Lang_Settings_Path_Sub">Location of the folder containing your downloaded custom maps</sys:String>
+    <sys:String x:Key="Bo3Lang_Settings_Btn_AutoDetect">Auto-Detect</sys:String>
+    <sys:String x:Key="Bo3Lang_Settings_Btn_Browse">Browse...</sys:String>
+    <sys:String x:Key="Bo3Lang_Settings_Sec_FavLang">Favorite Language</sys:String>
+    <sys:String x:Key="Bo3Lang_Settings_FavLang_Title">Preferred Map Language</sys:String>
+    <sys:String x:Key="Bo3Lang_Settings_FavLang_Sub">Default language preselected when opening the tool</sys:String>
+    <sys:String x:Key="Bo3Lang_Settings_Sec_HowItWorks">How does this fix work?</sys:String>
+    <sys:String x:Key="Bo3Lang_Settings_HowItWorks_Text">On PC, Black Ops III requires each custom map to have fastfile zone files (*.ff) matching your game's language (e.g. fr_*.ff for French, ge_*.ff for German). If map creators only package en_*.ff files, non-English game clients crash immediately when loading the map. This tool creates an exact copy of the en_ files renamed to your language, resolving the issue instantly.</sys:String>
+</ResourceDictionary>

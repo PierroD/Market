@@ -1,3 +1,11 @@
+### v3.0.0
+- Complete overhaul: rewritten in modern .NET 10 & WPF with Fluent Design (WPF-UI)
+- High-performance architecture: separated memory engine (`MarketOffsets.dll`) with 0% UI dependency
+- Full support for recent x64 and x86 Call of Duty titles (CoD4, MW2 SP/MP, MW3, BO1, BO2 MP/SP/ZM, BO3 Language Selector)
+- Clean theme system (Light / Dark / Follow Windows) and multi-language support (EN / FR)
+- External Console can is now fully operationnal for x64 and x86
+- Distribution via standalone GitHub Releases
+
 ### V2.7.10
 - Feat adding MW2 SinglePlayer offsets due to x64 release
 - Feat adding BO2 SP offsets

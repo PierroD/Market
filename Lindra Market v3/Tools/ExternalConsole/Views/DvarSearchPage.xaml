@@ -1,0 +1,218 @@
+<Page x:Class="Lindra_Market_v3.Tools.ExternalConsole.Views.DvarSearchPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      xmlns:local="clr-namespace:Lindra_Market_v3.Tools.ExternalConsole.Views"
+      xmlns:models="clr-namespace:Lindra_Market_v3.Tools.ExternalConsole.Models"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="850"
+      Title="DvarSearchPage"
+      Foreground="{DynamicResource TextFillColorPrimaryBrush}">
+
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <!-- Header & Filter Bar -->
+            <RowDefinition Height="Auto" />
+            <!-- Results List -->
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Top Controls -->
+        <Border Grid.Row="0"
+                Background="{DynamicResource CardBackgroundFillColorDefaultBrush}"
+                BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
+                BorderThickness="1"
+                CornerRadius="8"
+                Padding="16,12"
+                Margin="0,0,0,12">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <!-- Title & Subtitle -->
+                <StackPanel Grid.Row="0" Margin="0,0,0,12">
+                    <TextBlock Text="{DynamicResource DvarSearch_PageTitle}"
+                               FontSize="16"
+                               FontWeight="SemiBold" />
+                    <TextBlock Text="{DynamicResource DvarSearch_PageSubtitle}"
+                               FontSize="12"
+                               Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                               Margin="0,2,0,0" />
+                </StackPanel>
+
+                <!-- Filter & Search Controls -->
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="160" />
+                        <ColumnDefinition Width="12" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="12" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0"
+                               Text="{DynamicResource DvarSearch_Game_Label}"
+                               FontSize="13"
+                               FontWeight="Medium"
+                               VerticalAlignment="Center"
+                               Margin="0,0,8,0" />
+
+                    <!-- Game Selector -->
+                    <ComboBox Grid.Column="1"
+                              x:Name="GameComboBox"
+                              VerticalAlignment="Center"
+                              SelectionChanged="GameComboBox_SelectionChanged" />
+
+                    <!-- Search Input -->
+                    <ui:TextBox Grid.Column="3"
+                                x:Name="SearchTextBox"
+                                PlaceholderText="{DynamicResource DvarSearch_Placeholder}"
+                                Icon="{ui:SymbolIcon Search24}"
+                                ClearButtonEnabled="True"
+                                VerticalAlignment="Center"
+                                TextChanged="SearchTextBox_TextChanged" />
+
+                    <!-- Count Badge -->
+                    <Border Grid.Column="5"
+                            Background="{DynamicResource SubtleFillColorSecondaryBrush}"
+                            BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
+                            BorderThickness="1"
+                            CornerRadius="6"
+                            Padding="10,6"
+                            VerticalAlignment="Center">
+                        <TextBlock x:Name="ResultsCountText"
+                                   FontSize="12"
+                                   Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                                   FontWeight="Medium" />
+                    </Border>
+                </Grid>
+            </Grid>
+        </Border>
+
+        <!-- Results List with Virtualization -->
+        <Border Grid.Row="1"
+                Background="{DynamicResource CardBackgroundFillColorDefaultBrush}"
+                BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
+                BorderThickness="1"
+                CornerRadius="8"
+                Padding="8">
+            <Grid>
+                <ListView x:Name="DvarsListView"
+                          BorderThickness="0"
+                          Background="Transparent"
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                          ScrollViewer.VerticalScrollBarVisibility="Auto"
+                          VirtualizingStackPanel.IsVirtualizing="True"
+                          VirtualizingStackPanel.VirtualizationMode="Recycling">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            <Setter Property="Padding" Value="0" />
+                            <Setter Property="Margin" Value="0,0,0,6" />
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ListViewItem">
+                                        <ContentPresenter />
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate DataType="{x:Type models:DvarItem}">
+                            <Border Background="{DynamicResource SubtleFillColorSecondaryBrush}"
+                                    BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
+                                    BorderThickness="1"
+                                    CornerRadius="6"
+                                    Padding="14,10">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <!-- Dvar Content & Description -->
+                                        <ColumnDefinition Width="*" />
+                                        <!-- Quick Action Buttons -->
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- Information -->
+                                    <StackPanel Grid.Column="0" VerticalAlignment="Center" Margin="0,0,16,0">
+                                        <StackPanel Orientation="Horizontal" Margin="0,0,0,4">
+                                            <TextBlock Text="{Binding Name}"
+                                                       FontFamily="Cascadia Code, Consolas"
+                                                       FontSize="13"
+                                                       FontWeight="Bold"
+                                                       Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+                                                       VerticalAlignment="Center" />
+
+                                            <Border Margin="10,0,0,0"
+                                                    Background="{DynamicResource SubtleFillColorTertiaryBrush}"
+                                                    CornerRadius="4"
+                                                    Padding="6,2"
+                                                    VerticalAlignment="Center">
+                                                <TextBlock Text="{Binding Game}"
+                                                           FontSize="10"
+                                                           FontWeight="SemiBold"
+                                                           Foreground="{DynamicResource TextFillColorTertiaryBrush}" />
+                                            </Border>
+                                        </StackPanel>
+
+                                        <TextBlock Text="{Binding Description}"
+                                                   FontSize="12"
+                                                   Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                                                   TextWrapping="Wrap" />
+                                    </StackPanel>
+
+                                    <!-- Actions -->
+                                    <StackPanel Grid.Column="1"
+                                                Orientation="Horizontal"
+                                                VerticalAlignment="Center">
+                                        <!-- Copy to clipboard -->
+                                        <ui:Button Appearance="Secondary"
+                                                   Icon="{ui:SymbolIcon Copy24}"
+                                                   Content="{DynamicResource DvarSearch_Btn_Copy}"
+                                                   ToolTip="Copier dans le presse-papier"
+                                                   Margin="0,0,6,0"
+                                                   Click="BtnCopy_Click"
+                                                   Tag="{Binding Name}" />
+
+                                        <!-- Insert in Console -->
+                                        <ui:Button Appearance="Secondary"
+                                                   Icon="{ui:SymbolIcon Add24}"
+                                                   Content="{DynamicResource DvarSearch_Btn_Insert}"
+                                                   ToolTip="Ajouter à l'éditeur console"
+                                                   Margin="0,0,6,0"
+                                                   Click="BtnInsert_Click"
+                                                   Tag="{Binding Name}" />
+
+                                        <!-- Execute immediately -->
+                                        <ui:Button Appearance="Primary"
+                                                   Icon="{ui:SymbolIcon Play24}"
+                                                   Content="{DynamicResource DvarSearch_Btn_Execute}"
+                                                   ToolTip="Exécuter immédiatement dans le jeu"
+                                                   Click="BtnExecute_Click"
+                                                   Tag="{Binding Name}" />
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <!-- Empty State Message -->
+                <TextBlock x:Name="EmptyStateText"
+                           Text="{DynamicResource DvarSearch_NoResults}"
+                           FontSize="13"
+                           Foreground="{DynamicResource TextFillColorTertiaryBrush}"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Visibility="Collapsed" />
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

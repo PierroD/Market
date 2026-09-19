@@ -1,27 +1,26 @@
-#ignore the solution (.sln)
-*.sln
-
-#ignore the Visual studio temp something (.vs folder)
+# Visual Studio & IDE cache
 .vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
 
-#ignore the logfiles & txtfiles
-*.log
-*.txt
+# Build outputs & temporary files
+[Bb]in/
+[Oo]bj/
+dist/
+publish/
+*.ps1
 
-#ignore the portable version (.pdb)
+# Debugging symbols (PDBs)
 *.pdb
 
-#ignore packages
-packages
+# Logs
+*.log
 
-#ignore ini files (.ini)
-#*.ini
-
-#ignore Debug & Release
-LINDRA - Market/LINDRA - Market/bin/*
-LINDRA - Market/MarketUpdater/bin/*
-LINDRA - Market/MarketOffsets/bin/*
-
-LINDRA - Market/LINDRA - Market/obj/*
-LINDRA - Market/MarketUpdater/obj/*
-LINDRA - Market/MarketOffsets/obj/*
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
