@@ -81,7 +81,7 @@ namespace Lindra_Market_v3.Utils
                 // Fallback
             }
 
-            return "v3.0.0";
+            return "v3.0.1";
         }
 
         private static string FormatVersion(string version)

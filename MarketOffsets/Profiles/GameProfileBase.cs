@@ -49,10 +49,23 @@ public abstract class GameProfileBase : IGameProfile
             memory.WriteDvarFloat(Cg_Fov, DvarStructOffset, (float)config.FieldOfView);
 
         if (Cg_FovScale.HasValue)
-            memory.WriteDvarFloat(Cg_FovScale, DvarStructOffset, (float)config.FovScale / 1000f);
+        {
+            float scale = (float)config.FovScale / 1000f;
+            // Guard against 0 or uninitialized scale which zeroes out the FOV in the game engine
+            if (scale <= 0.05f)
+                scale = 1.0f;
+
+            memory.WriteDvarFloat(Cg_FovScale, DvarStructOffset, scale);
+        }
 
         if (Cg_FovMin.HasValue)
-            memory.WriteDvarFloat(Cg_FovMin, DvarStructOffset, (float)config.FovMinimum);
+        {
+            float minFov = (float)config.FovMinimum;
+            if (minFov <= 0f)
+                minFov = 1.0f;
+
+            memory.WriteDvarFloat(Cg_FovMin, DvarStructOffset, minFov);
+        }
 
         if (Com_MaxFps.HasValue)
             WriteDvarInteger(memory, Com_MaxFps, (int)config.MaxFps);

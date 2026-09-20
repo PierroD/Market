@@ -55,7 +55,7 @@
     <sys:String x:Key="Visuals_MaxFps_Sub">Limite maximale d'images par seconde (90 - 333)</sys:String>
 
     <sys:String x:Key="Visuals_FovScale_Title">FOV Scale</sys:String>
-    <sys:String x:Key="Visuals_FovScale_Sub">Échelle de mise à l'échelle du champ de vision (0 - 2000)</sys:String>
+    <sys:String x:Key="Visuals_FovScale_Sub">Facteur d'échelle du champ de vision (500 - 2000)</sys:String>
 
     <sys:String x:Key="Visuals_FovMin_Title">FOV Minimum</sys:String>
     <sys:String x:Key="Visuals_FovMin_Sub">Valeur minimale autorisée pour le FOV (1 - 120)</sys:String>

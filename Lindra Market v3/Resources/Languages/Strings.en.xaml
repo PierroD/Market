@@ -55,7 +55,7 @@
     <sys:String x:Key="Visuals_MaxFps_Sub">Maximum frame rate limit (90 - 333)</sys:String>
 
     <sys:String x:Key="Visuals_FovScale_Title">FOV Scale</sys:String>
-    <sys:String x:Key="Visuals_FovScale_Sub">Field of view scaling factor (0 - 2000)</sys:String>
+    <sys:String x:Key="Visuals_FovScale_Sub">Field of view scaling factor (500 - 2000)</sys:String>
 
     <sys:String x:Key="Visuals_FovMin_Title">FOV Minimum</sys:String>
     <sys:String x:Key="Visuals_FovMin_Sub">Minimum allowed value for FOV (1 - 120)</sys:String>
