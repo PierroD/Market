@@ -9,10 +9,10 @@
     <UseWPF>true</UseWPF>
     <Platforms>AnyCPU;x64</Platforms>
     <ApplicationIcon>Assets\app.ico</ApplicationIcon>
-    <Version>3.0.1</Version>
+    <Version>3.0.2</Version>
     <AssemblyVersion>3.0.0.0</AssemblyVersion>
     <FileVersion>3.0.0.0</FileVersion>
-    <InformationalVersion>v3.0.1</InformationalVersion>
+    <InformationalVersion>v3.0.2</InformationalVersion>
   </PropertyGroup>
 
   <ItemGroup>
