@@ -22,8 +22,8 @@ public sealed class Iw4SpProfile : GameProfileBase
     public override nint? R_Detail => 0x4116400;
     public override nint? R_DetailMap => 0x4116450;
 
-    public override nint? SafeAreaHorz => 0x5DF530;
-    public override nint? SafeAreaVert => 0x5DF538;
+    //public override nint? SafeAreaHorz => 0x5DF530;
+    //public override nint? SafeAreaVert => 0x5DF538;
 
     public override nint? Cbuf_AddText => 0x1EE890;
 }

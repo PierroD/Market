@@ -6,7 +6,7 @@ Call of Duty Market (v3) is the next-generation FPS Unlocker and game tweaking t
 
 ## Supported Games
 - **Call of Duty 4: Modern Warfare** (`iw3mp.exe`) - x86
-- **Call of Duty: Modern Warfare 2** (`iw4mp.exe` / `iw4sp.exe`) : 2.0.13 - x64 
+- **Call of Duty: Modern Warfare 2** (`iw4mp.exe` / `iw4sp.exe`) : 2.0.14 - x64 
 - **Call of Duty: Modern Warfare 3** (`iw5mp.exe`) : 2.0.12 - x64
 - **Call of Duty: Black Ops** (`BlackOpsMP.exe`) - x86
 - **Call of Duty: Black Ops II** (`t6mp.exe` / `t6sp.exe` / `t6zm.exe`) : (447) 43.1736.11 / (447) 43.0.-1.0 / 43.1701.1 - x86

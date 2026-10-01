@@ -1,3 +1,9 @@
+### v3.0.2
+- Feat update MW2 MP / SP offsets
+
+### v3.0.1
+- Fix prevent float going too low
+
 ### v3.0.0
 - Complete overhaul: rewritten in modern .NET 10 & WPF with Fluent Design (WPF-UI)
 - High-performance architecture: separated memory engine (`MarketOffsets.dll`) with 0% UI dependency
